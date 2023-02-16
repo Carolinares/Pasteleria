@@ -1,0 +1,21 @@
+
+/* estilo seccion creadores*/
+.creadores{
+    display: flex;
+    background-color: blue;
+    justify-content: center;
+    gap: 20px; /*espacio entre los hijos del contenedor.*/
+  }
+  /*estilo articulos card*/
+.card_nosotros{
+    width: 360px;
+    height: fit-content; /*ajusta el alto del contenido al tamaño de la caja*/
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+/*estilos img card*/
+.card_nosotros > img{
+  width: 100%;
+  object-fit: cover; /* para no dañar la imagen*/
+}
