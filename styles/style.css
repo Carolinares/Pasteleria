@@ -1,0 +1,28 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
+.bg-dark {
+    background-color: #522f1f!important;
+}
+
+.navbar-light .navbar-brand {
+    color: #EA8B82;
+}
+
+.navbar-light .navbar-brand:hover{
+    color: aliceblue;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ea8b82;
+    
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: aliceblue;
+}
+
+
+
