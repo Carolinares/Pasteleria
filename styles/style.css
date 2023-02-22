@@ -8,20 +8,29 @@ html{
 }
 
 .navbar-light .navbar-brand {
-    color: #EA8B82;
+    color: hsl(0, 10%, 94%);
 }
 
 .navbar-light .navbar-brand:hover{
-    color: aliceblue;
+    color: rgb(216, 129, 22);
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #ea8b82;
+    color:  hsl(0, 10%, 94%);
     
 }
 
+.navbar-light .navbar-nav .nav-link{
+    color:  hsl(0, 10%, 94%);
+    
+}
+
+.navbar-light .navbar-nav .nav-link.active{
+    color: #ff9800;
+}
+
 .navbar-light .navbar-nav .nav-link:hover{
-    color: aliceblue;
+    color: rgb(216, 129, 22);
 }
 
 
