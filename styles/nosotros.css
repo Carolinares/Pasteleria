@@ -1,8 +1,6 @@
-
 /* estilo seccion creadores*/
 .creadores{
     display: flex;
-    background-color: blue;
     justify-content: center;
     gap: 20px; /*espacio entre los hijos del contenedor.*/
   }
@@ -16,6 +14,7 @@
   }
 /*estilos img card*/
 .card_nosotros > img{
-  width: 100%;
+  width: 200px;
+  height: 240px;
   object-fit: cover; /* para no dañar la imagen*/
 }
