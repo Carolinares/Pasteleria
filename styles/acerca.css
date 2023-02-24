@@ -34,4 +34,35 @@ html{
 }
 
 
+section{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
 
+section.contenedor1{
+    display: flex;
+    
+}
+
+.contenedor1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+ 
+.contenedor0{
+    border: solid 1px black;
+    
+    
+}
+p{
+    padding: 20px;
+}
+
+h2{
+    padding: 10px;
+    text-align: auto;
+}
