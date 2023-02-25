@@ -37,15 +37,15 @@ html{
 
 /*Estilos sección Quienes somos- Edward*/
 
-section{
+#descripcion{
     display: flex;
     gap: 20px;
     padding: 20px;
 }
 
-section.contenedor1{
-    display: flex;
-    
+.contenedor0{
+  border: solid 1px black;
+  
 }
 
 .contenedor1{
@@ -56,20 +56,15 @@ section.contenedor1{
     padding: 20px;
 }
  
-.contenedor0{
-    border: solid 1px black;
-    
-    
-}
-p{
+
+.contenedor1 >p{
     padding: 20px;
 }
 
-h2{
+.contenedor1 >h2{
     padding: 10px;
     text-align: auto;
 }
-
 
 
 
