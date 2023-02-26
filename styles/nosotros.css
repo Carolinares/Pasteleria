@@ -1,11 +1,26 @@
+@import url('https://fonts.google.com/specimen/Fredoka?query=fredoka+&preview.size=32');
 
-html{
-  scroll-behavior: smooth;
+:root{
+    --primary-color: #522f1f;
+    --secondary-color: #ea8b82;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box !important;
+  font-family: 'Fredoka', sans-serif;
 }
 
+
+
 /* Estilos de Navbar */
+.navbar{
+  height:  100px;
+  width: 100% !important;
+}
+
 .bg-dark {
-  background-color: #522f1f!important;
+  background-color: var(--primary-color)!important;
 }
 
 .navbar-light .navbar-brand {
@@ -34,36 +49,66 @@ html{
   color: rgb(216, 129, 22);
 }
 
+body{
+  background-color: #fff5eb;
+  width: 100vw;
+}
+
+main{
+  padding: 40px;
+  display:flex;
+  flex-direction: column;
+  gap: 45px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 /*Estilos sección Quienes somos- Edward*/
-
 #descripcion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+#quienes-somos{
     display: flex;
     gap: 20px;
-    padding: 20px;
+    flex-wrap: wrap;
+    height: 300px;
+    align-content: center;
+}
+#quienes-somos img{
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.contenedor0{
+.contenedor-descripcion{
   border: solid 1px black;
-  
+  padding: 20px;
+  max-width: 1200px;  
+  border-radius: 10px;
+  height: 100%;
 }
 
-.contenedor1{
+.contenedor-descripcion h2, p{
+  color: var(--primary-color);
+}
+
+#que-hacemos{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
-}
- 
-
-.contenedor1 >p{
-    padding: 20px;
+    height: 300px;
 }
 
-.contenedor1 >h2{
-    padding: 10px;
-    text-align: auto;
+#que-hacemos img{
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 
@@ -71,20 +116,92 @@ html{
 /* estilo seccion creadores*/
 .creadores{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /*espacio entre los hijos del contenedor.*/
+    width: 100%;
+  }
+
+  .creadores h1{
+    background-image: ;
+    background-color: var(--primary-color);
+    width: 100%;
+    clip-path: polygon(100% 0, 98% 50%, 100% 100%, 0 100%, 2% 50%, 0 0);
+    color: #fff5eb;
+    text-align: center;
+    margin: 0;
+  }
+
+
+#cards-creadores{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
-    gap: 20px; /*espacio entre los hijos del contenedor.*/
+    gap: 30px;
   }
   /*estilo articulos card*/
 .card_nosotros{
-    width: 360px;
-    height: fit-content; /*ajusta el alto del contenido al tamaño de la caja*/
+    width: 300px;
+    max-height: 500px; /*ajusta el alto del contenido al tamaño de la caja*/
     display: flex;
     flex-direction: column; 
     align-items: center;
+    border-radius: 10px;
+    gap: 15px;
   }
-/*estilos img card*/
-.card_nosotros > img{
-  width: 200px;
+
+  /*estilos img card*/
+.imagen-card-nosotros{
+  width: 100%;
   height: 240px;
+  display: flex;
+  justify-content: center ;
+}
+.imagen-card-nosotros > img{
+  width: 200px;
   object-fit: cover; /* para no dañar la imagen*/
+  border-radius: 50%;
+}
+.descripcion-integrantes{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;  
+  border: solid 1px var(--primary-color);
+  border-radius: 10px;
+  max-height: 270px;
+}
+
+.descripcion-integrantes > h2{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary-color);
+    margin: 0;
+  }
+  .descripcion-integrantes > h3{
+    font-size: 1.4em;
+    text-align: center;
+    color: var(--primary-color);
+    margin: 0;
+  }
+
+.descripcion-integrantes > p{
+  height: 100px;  
+  overflow: hidden;
+  margin: 0;
+  }
+.iconos-card{
+  display: flex;
+  gap: 30px;
+}
+
+.iconos-card img{
+  width: 30px;
+  object-fit: cover;
+}
+footer{
+  width: 100% !important;
 }
