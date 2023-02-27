@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/contactenos.css">
     <link rel="stylesheet" href="./styles/components.css">
     <title>Contáctanos</title>
 </head>
@@ -69,9 +70,45 @@
         </nav>
     </header>
     
-    
-    <h1>Contactanos</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi ipsam natus exercitationem fuga quos consequuntur labore qui ipsa modi repudiandae sit molestiae, optio iusto animi vitae, obcaecati a. Sed, molestiae.</p>   
+    <section id="contacto">
+      <h3 class="titulo-seccion">Contáctanos</h3>
+
+      <form class="contacto__form" action="https://formspree.io/f/xyyaejew" method="post">
+
+        <div class="row">
+          <input
+            name="nombre"
+            pattern="[a-zA-Z ]{2,254}"
+            type="text"
+            placeholder="Nombre Completo"
+            class="input-mitad"
+          />
+          <input
+            name="correo"
+            type="email"
+            placeholder="Email"
+            class="input-mitad"
+          />
+
+          <input
+            name="Telefono"
+            type="number"
+            placeholder="+57 3110000000"
+            class="input-mitad"
+          />
+        </div>
+
+        <textarea
+          name="mensaje"
+          minlength="30"
+          cols="5"
+          rows="5"
+          placeholder="Tu Mensaje..."></textarea>
+
+        <button class="button" type="submit">Enviar</button>
+      </form>
+      <p class="p-form">¡No dudes en llenar el formulario!</p>
+    </section>
   
     
     <!-- inicio de footer -->
