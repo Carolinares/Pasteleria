@@ -1,11 +1,22 @@
- /*seccion contactanos*/
+:root{
+    --primary-color: #522f1f;
+    --secondary-color: #ea8b82;
+    --third-color: #fff5eb;
+    --accent-color: #fdcb2a;
+}
 
-#contacto{
+body{
+    background-color: var(--third-color);
+}
+
+/*seccion contactanos*/
+
+
+ #contacto{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: calc(100vh - 100px);
     gap: 1.5em;
     padding: 30px;
     padding-top: 135px;
