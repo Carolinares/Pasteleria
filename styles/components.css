@@ -1,8 +1,16 @@
+@import url('https://fonts.google.com/specimen/Fredoka?query=fredoka+&preview.size=32');
+
 :root{
     --primary-color: #522f1f;
     --secondary-color: #ea8b82;
     --third-color: #fff5eb;
     --accent-color: #fdcb2a;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box !important;
+  font-family: 'Fredoka', sans-serif;
 }
 
 html{
