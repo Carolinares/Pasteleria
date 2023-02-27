@@ -13,6 +13,23 @@ html{
     background-color: var(--primary-color)!important;
 }
 
+.img_logo{
+  height: 64px;
+}
+
+.dropdown-menu{
+  background-color: #522f1f;
+}
+
+.dropdown-item{
+  color: var(--accent-color);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 1.5rem;
+  padding-left: 0.5rem;
+}
+
 .navbar-light .navbar-brand {
     color: var(--third-color);
   }
