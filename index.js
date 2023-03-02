@@ -1,61 +1,114 @@
 const scrollTo = document.getElementsByClassName("scrollTo");
+const form = document.getElementById("contacto__form");
+const allInput = document.getElementsByClassName("input-mitad");
 
 
 Array.from(scrollTo).forEach(el => {
-    el.addEventListener("click", function (e) {
-      const target = e.currentTarget.getAttribute("target");
-      const sectionObjetivo = document.getElementById(target);
-      const position = sectionObjetivo.offsetTop - 100;
-      window.scrollTo({
-        top: position, behavior: "smooth"
-      })
+  el.addEventListener("click", function (e) {
+    const target = e.currentTarget.getAttribute("target");
+    const sectionObjetivo = document.getElementById(target);
+    const position = sectionObjetivo.offsetTop - 100;
+    window.scrollTo({
+      top: position, behavior: "smooth"
     })
   })
+})
 
-  function validateForm() {
-    // Get the input fields
-    const name = document.getElementById("form-nombre").value;
-    const email = document.getElementById("form-correo").value;
-    const telefono = document.getElementById("form-telefono").value;
 
-    // Check if the name field is empty
-    // Check if the name field is empty
-    if (name == "") {
-      alert("Name must be filled out");
+Array.from(allInput).forEach(el => {
+  el.addEventListener("blur", () => {
+    validateForm(el)
+  })
+});
+
+
+function validateForm(elemento) {
+  const nombre = document.getElementById("form-nombre");
+  const email = document.getElementById("form-correo");
+  const telefono = document.getElementById("form-telefono");
+  const mensaje = document.getElementById("form-mensaje");
+  const buttonForm = document.querySelector('button[type="submit"]');
+  const allAllert = document.getElementsByClassName("alert");
+  const alertNombre = nombre.parentElement.parentElement.children[2];
+  const alertEmail = email.parentElement.parentElement.children[2];
+  const alertTelefono = telefono.parentElement.parentElement.children[2];
+  const alertMensaje = mensaje.parentElement.children[1];
+  const nombreElemento = elemento.getAttribute('name');
+
+  if (!nombre.value ||
+    typeof (nombre.value) !== "string" ||
+    !(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(nombre.value))) {
+    buttonForm.classList.add("button-disabled");
+    alertNombre.classList.add("alert-error");
+    nombre.classList.remove('input-correct');
+    if (nombreElemento == "nombre") {
+      if (!nombre.value) {
+        alertNombre.textContent = '* Este campo es obligatorio';
+      } else if (!(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(nombre.value))) {
+        alertNombre.textContent = 'El dato ingresado no es un nombre';
+      }
       return false;
+    } 
+  }else {
+    alertNombre.classList.remove('alert-error');
+    nombre.classList.add('input-correct');
+  }
+
+  if(!email.value ||
+    !(/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email.value))) {
+      buttonForm.classList.add("button-disabled");
+      alertEmail.classList.add("alert-error");
+      email.classList.remove('input-correct');
+      if (nombreElemento == "correo") {
+        if (!email.value) {
+          alertEmail.textContent = '* Este campo es obligatorio';
+        }else if (!(/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email.value))) {
+          alertEmail.textContent = 'El dato ingresado no es un correo electrónico';
+        }
+        return false;
+      }
+    }else {
+      alertEmail.classList.remove('alert-error');
+      email.classList.add('input-correct');
     }
 
-    // Check if the name field contains only letters and spaces
-    if (!/^[a-zA-Z\s]*$/.test(name)) {
-      alert("Name can only contain letters and spaces");
+    if(!telefono.value ||
+      telefono.value.length !== 10){
+        buttonForm.classList.add("button-disabled");
+        alertTelefono.classList.add("alert-error");
+        telefono.classList.remove('input-correct');
+        if (nombreElemento == "telefono") {
+          if (!telefono.value){
+            alertTelefono.textContent = '* Este campo es obligatorio';
+          }else if (telefono.value.length !== 10){
+            alertTelefono.textContent = 'El número de teléfono debe tener 10 dígitos';
+          }
+          return false;
+        }
+      }else {
+        alertTelefono.classList.remove('alert-error');
+        telefono.classList.add('input-correct');
+      }
+
+    
+    if (!mensaje.value) {
+      buttonForm.classList.add("button-disabled");
+      alertMensaje.classList.add("alert-error");
+      mensaje.classList.remove('input-correct');
+      if (nombreElemento == "mensaje") {
+        alertMensaje.textContent = 'No has escrito ningún mensaje';
+      }
       return false;
+    } else {
+      alertMensaje.classList.remove('alert-error');
+      mensaje.classList.add('input-correct');
     }
-
-    // Check if the name field is between 2 and 50 characters long
-    if (name.length < 2 || name.length > 50) {
-      alert("Name must be between 2 and 50 characters long");
-      return false;
-    }
-
-
-    // Check if the email field is empty and is a valid email address
-    if (email == "" || !isValidEmail(email)) {
-      alert("Please enter a valid email address");
-      return false;
-    }
-
-    // Check if the message field is empty
-    if (telefono == "") {
-      alert("Please enter a message");
-      return false;
-    }
-
-    // Helper function to validate email addresses using a regular expression
-    function isValidEmail(email) {
-      var re = /\S+@\S+\.\S+/;
-      return re.test(email);
-        }
 
     // If all the fields are valid, allow the form to be submitted
+    Array.from(allAllert).forEach(el => {
+      el.classList.remove('alert-error');
+    });
+
+    buttonForm.classList.remove("button-disabled");
     return true;
   }
