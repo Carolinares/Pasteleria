@@ -9,8 +9,10 @@ body{
     background-color: var(--third-color);
 }
 
+main{
+  margin-top: 100px;
+}
 /*seccion contactanos*/
-
 
  #contacto{
     display: flex;
@@ -19,7 +21,6 @@ body{
     flex-direction: column;
     gap: 1.5em;
     padding: 30px;
-    padding-top: 135px;
 }
  .titulo-seccion{
     color: #d09030;
@@ -36,9 +37,18 @@ body{
     gap: 35px;
   }
 
+  .row > div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
   .contacto__form .row{
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+    width: 100%;
   }
 
   @media (max-width: 768px){
@@ -49,18 +59,42 @@ body{
 
   .contacto__form .row input,
   .contacto__form  textarea{
+    background-color: transparent !important;
     padding: 1.3rem 2rem;
     border: none;
-    border-radius: .5rem;
-    background-color: #eeeeee;
+    border-radius: 35px;
     outline: none;
-    box-shadow: 4px 4px 12px #30303096, -5px -5px 3px 0 #fff;
+    border: solid 1px gray;
+    width: 100%;
+  }
+
+  ::placeholder{
+    background-color: transparent !important;
+  }
+
+  .row > div{
+    position: relative;
+    padding: 0;
+  }
+  .row label{
+    background-color: var(--third-color);
+    position: absolute;
+    top: 0;
+    top: -.8em;
+    left: 1.8em;
+    padding: 0 10px;
+    color: rgb(85, 84, 84);
+    border-radius: 15px;
   }
 
   .contacto__form  textarea{
     padding: 2rem;
     width: 100%;
     resize: none;
+  }
+
+  textarea{
+    resize: vertical !important;
   }
 
   .contacto__form .btn-enviar{
@@ -72,16 +106,6 @@ body{
     padding: 1rem 2rem;
     border-radius: .5rem;
   }
-
-  .contacto__form .btn-enviar:hover{
-    cursor: pointer;
-    filter: brightness(1.2);
-    color: var(--secondary-color);
-    transition: transform 400ms linear;
-    transform-origin: left bottom;
-    transform: scale(1.02);
-  }
-  
  
   .p-form {
     display: flex;
@@ -93,4 +117,9 @@ body{
     display: flex;
     justify-content: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .alert{
+    margin: 0;
+    padding: 0 1.8em;
   }
