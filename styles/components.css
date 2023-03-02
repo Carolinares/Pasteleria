@@ -103,6 +103,7 @@ html{
     background-color: var(--accent-color);
     color: var(--primary-color);
     transition: all 0.2s ease-in;
+    user-select: none;
 }
 
 .button:hover{
@@ -111,6 +112,36 @@ html{
 
 .button:active{
     scale: 0.9;
+}
+
+.button-disabled{
+  pointer-events: none;
+  background-color: #bdbdbd;
+  color: rgb(86, 86, 86);
+}
+
+.alert-disabled{
+  display: none;
+}
+
+
+.alert-error{
+  display: block;
+  color: #a30000;
+}
+
+.input-error{
+  border: solid 1px #a30000;
+}
+
+.input-correct{
+  border: solid 1px #00a500 !important;  
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--third-color) inset;
 }
 
 @media screen and (max-width: 992px) {
