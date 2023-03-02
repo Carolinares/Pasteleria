@@ -59,3 +59,5 @@ Array.from(scrollTo).forEach(el => {
     // If all the fields are valid, allow the form to be submitted
     return true;
   }
+
+  
