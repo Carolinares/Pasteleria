@@ -1,115 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./styles/contactenos.css">
-    <link rel="stylesheet" href="./styles/components.css">
-    <title>Contáctanos</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles/contactenos.css">
+  <link rel="stylesheet" href="./styles/components.css">
+  <title>Contáctanos</title>
 </head>
+
 <body>
-    <header>
-        <!-- inicio de navBar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
-              <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="./index.html"
-                    >Inicio</a
-                  >
+  <header>
+    <!-- inicio de navBar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Servicios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="#">Catalogo de Productos</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Servicios
-                  </a>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <li>
-                      <a class="dropdown-item" href="#">Catalogo de Productos</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./nosotros.html">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="./contactenos.html">Contáctanos</a>
-                </li>
+                <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
               </ul>
-            </div>
-          </div>
-        </nav>
-    </header>
-    
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./contactenos.html">Contáctanos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
     <section id="contacto">
       <h3 class="titulo-seccion">Contáctanos</h3>
 
-      <form class="contacto__form" action="https://formspree.io/f/xyyaejew" method="post">
+      <form class="contacto__form" id="contacto__form" action="https://formspree.io/f/xyyaejew" method="post">
 
         <div class="row">
-          <input id="form-nombre"
-            name="nombre"
-            type="text"
-            placeholder="Nombre Completo"
-            class="input-mitad"
-          />
-          <input id="form-correo"
-            name="correo"
-            type="email"
-            placeholder="Email"
-            class="input-mitad"
-          />
+          <div>
+            <label for="nombre">Nombre completo</label>
+            <div>
+              <input id="form-nombre" name="nombre" type="text" class="input-mitad"/>
+            </div>
+            <div class="alert alert-disabled"></div>
+          </div>
 
-          <input id="form-telefono"
-            name="Telefono"
-            type="number"
-            placeholder="+57 3110000000"
-            class="input-mitad"
-          />
+          <div>
+            <label for="correo">Correo electrónico</label>
+            <div>
+              <input id="form-correo" name="correo" type="email" placeholder="ejemplo@abc.com" class="input-mitad"/>
+            </div>
+            <div class="alert alert-disabled"></div>
+          </div>
+
+          <div>
+            <label for="correo">Teléfono</label>
+            <div>
+              <input id="form-telefono" name="telefono" type="number" placeholder="3110000000" class="input-mitad"/>
+            </div>
+            <div class="alert alert-disabled"></div>
+          </div>
+
+          <div>
+           <textarea id="form-mensaje" name="mensaje" class="input-mitad" cols="10" rows="10"
+           placeholder="Escribe aqui tu Mensaje..."></textarea>
+            <div class="alert alert-disabled"></div>
+          </div>
         </div>
 
-        <textarea
-          name="mensaje"
-          minlength="30"
-          cols="5"
-          rows="5"
-          placeholder="Tu Mensaje..."></textarea>
 
-        <button class="button" type="submit">Enviar</button>
+        <button class="button button-disabled" type="submit">Enviar</button>
       </form>
       <p class="p-form">¡No dudes en llenar el formulario!</p>
     </section>
-  
-    
+
+
     <!-- inicio de footer -->
 
     <footer class="text-center text-light" style="background-color: #522f1f;">
@@ -164,4 +153,5 @@
     <script src="/index.js"></script>
 
 </body>
+
 </html>
