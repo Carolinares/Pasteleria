@@ -110,7 +110,7 @@ html {
 .login-btn {
   display: flex;
   align-items: center;
-  margin-left: 260px;
+  margin-left: 200px;
 }
 
 .login-btn a:hover {
