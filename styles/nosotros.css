@@ -135,7 +135,7 @@ main{
 #descripcion > img{
   max-width: 400px;
   width: 60vw;
-  filter: drop-shadow(0 0 20px var(--secondary-color));
+  filter: drop-shadow(0 0 35px var(--secondary-color));
 }
 
 
