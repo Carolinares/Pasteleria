@@ -1,38 +1,50 @@
 @import url('https://fonts.google.com/specimen/Fredoka?query=fredoka+&preview.size=32');
 
-:root{
-    --primary-color: #522f1f;
-    --secondary-color: #ea8b82;
-    --third-color: #fff5eb;
-    --accent-color: #fdcb2a;
+:root {
+  --primary-color: #522f1f;
+  --secondary-color: #ea8b82;
+  --third-color: #fff5eb;
+  --accent-color: #fdcb2a;
 }
-*{
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box !important;
   font-family: 'Fredoka', sans-serif;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 
 .bg-dark {
-    background-color: var(--primary-color)!important;
+  background-color: var(--primary-color) !important;
 }
 
-.img_logo{
+.img_logo {
   height: 64px;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   background-color: #522f1f;
 }
 
-.dropdown-item{
+.dropdown-item {
   color: var(--accent-color);
 }
+
+.dropdown-item:hover{
+  background-color: transparent;
+  color: orange;
+}
+
+.dropdown-toggle.active{
+  color: var(--third-color);
+}
+
+
 
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: 1.5rem;
@@ -40,86 +52,104 @@ html{
 }
 
 .navbar-light .navbar-brand {
-    color: var(--third-color);
-  }
-  
-  .navbar-light .navbar-brand:hover{
-    color: var(--accent-color);
-  }
-  
-  .navbar-light .navbar-nav .nav-link {
-    color:  var(--third-color);
-    
-  }
-  
-  .navbar-light .navbar-nav .nav-link{
-    color:  var(--third-color);
-    
-  }
-  
-  .navbar-light .navbar-nav .nav-link.active{
-    color: var(--accent-color);
-  }
-  
-  .navbar-light .navbar-nav .nav-link:hover{
-    color: var(--accent-color);
-  }
-
-  .navbar{
-    height:  100px;
-    width: 100% !important;
-    position: fixed !important;
-    z-index: 5;
-    top: 0;
-  }
-  
-  .navbar-brand img{
-    width: 115px;
-    object-fit: cover;
-  }
-  
-  .navbar-expand-lg .navbar-collapse{
-    justify-content: center !important;
-  }
-  
-  .navbar-nav{
-    gap: 25px;
-  }
-  
-  .nav-link{
-    font-size: 25px;
-  }
-  
-  .navbar-light .navbar-toggler-icon{
-    color: var(--secondary-color) !important;
-  }
-
-.button{
-    border-radius: 8px;
-    padding: 10px 25px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    border: solid 2px transparent;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    transition: all 0.2s ease-in;
-    user-select: none;
+  color: var(--third-color);
 }
 
-.button:hover{
-    scale: 1.1;
+.navbar-light .navbar-brand:hover {
+  color: var(--accent-color);
 }
 
-.button:active{
-    scale: 0.9;
+.navbar-light .navbar-nav .nav-link {
+  color: var(--third-color);
 }
 
-.button-disabled{
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--accent-color);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--accent-color);
+}
+
+.navbar {
+  height: 100px;
+  width: 100% !important;
+  position: fixed !important;
+  z-index: 5;
+  top: 0;
+}
+
+.navbar-brand img {
+  width: 115px;
+  object-fit: cover;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: center !important;
+}
+
+.navbar-nav {
+  gap: 25px;
+}
+
+.nav-link {
+  font-size: 25px;
+}
+
+.navbar-light .navbar-toggler-icon {
+  color: var(--secondary-color) !important;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  margin-left: 260px;
+}
+
+.login-btn a:hover {
+  color: var(--accent-color);
+}
+
+.login-btn a {
+  text-decoration: none;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  color: var(--third-color);
+  
+}
+
+.fa {
+  font-size:xx-large ;
+}
+
+.button {
+  border-radius: 8px;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: solid 2px transparent;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  transition: all 0.2s ease-in;
+  user-select: none;
+}
+
+.button:hover {
+  scale: 1.1;
+}
+
+.button:active {
+  scale: 0.9;
+}
+
+.button-disabled {
   pointer-events: none;
   background-color: #bdbdbd;
   color: rgb(86, 86, 86);
 }
+
 
 .button-border{
     border-radius: 8px;
@@ -148,59 +178,67 @@ html{
 }
 
 .alert-disabled{
+
+.alert-disabled {
+
   display: none;
 }
 
 
-.alert-error{
+.alert-error {
   display: block;
   color: #a30000;
 }
 
-.input-error{
+.input-error {
   border: solid 1px #a30000;
 }
 
-.input-correct{
-  border: solid 1px #00a500 !important;  
+.input-correct {
+  border: solid 1px #00a500 !important;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px var(--third-color) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--third-color) inset;
 }
 
 @media screen and (max-width: 992px) {
-    .navbar-nav{
-      position: absolute;
-      top: 70px;
-      right: 55px;
-      background-color: var(--primary-color);
-      border: solid 2px var(--secondary-color);
-      border-radius: 10px;
-      width: fit-content;
-      padding: 20px;
-      gap: 7px !important;
-    }
-  
-    .nav-link{
-      color: var(--third-color) !important;
-      font-size: 1.2em !important;
-      padding: 0 !important;
-      border-radius: 5px;
-    }
-  
-    .nav-link:hover{
-      color: var(--accent-color) !important;
-    }
-  
-    .nav-link.active{
-      color: var(--accent-color) !important;
-    }    
-    .navbar-toggler {
-      color: var(--secondary-color) !important;
-      border-color: var(--secondary-color) !important;
-    }
+  .navbar-nav {
+    position: absolute;
+    top: 70px;
+    right: 55px;
+    background-color: var(--primary-color);
+    border: solid 2px var(--secondary-color);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 20px;
+    gap: 7px !important;
   }
 
+  .nav-link {
+    color: var(--third-color) !important;
+    font-size: 1.2em !important;
+    padding: 0 !important;
+    border-radius: 5px;
+  }
+
+
+  .nav-link:hover {
+    color: var(--accent-color) !important;
+  }
+
+  .nav-link.active {
+    color: var(--accent-color) !important;
+  }
+
+  .login-btn{
+    font-size: 1.2em !important;
+  }
+
+  .navbar-toggler {
+    color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+  }
+}
