@@ -104,7 +104,7 @@ html {
 .login-btn {
   display: flex;
   align-items: center;
-  margin-left: 260px;
+  margin-left: 200px;
 }
 
 .login-btn a:hover {
@@ -114,7 +114,7 @@ html {
 .login-btn a {
   text-decoration: none;
   font-family: 'Fredoka', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   color: var(--third-color);
   
 }
@@ -150,7 +150,37 @@ html {
   color: rgb(86, 86, 86);
 }
 
+
+.button-border{
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border: solid 2px var(--accent-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: all 0.2s ease-in;
+    user-select: none;
+}
+
+.button-border:hover{
+  scale: 1.1;
+}
+
+.button-border:active{
+  scale: 0.9;
+}
+
+.button-xs{
+  padding: 7px 15px;
+  font-size: 16px;
+}
+
+.alert-disabled{
+
 .alert-disabled {
+
   display: none;
 }
 
