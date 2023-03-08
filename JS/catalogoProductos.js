@@ -16,7 +16,7 @@ function renderCards(data) {
   $cardsProductos.appendChild($fragment);
 }
 
-fetch("/JS/productos.json") //despues se cambia por la el endpoint correspondiente de mi apiRest
+fetch("../JS/productos.json") //despues se cambia por la el endpoint correspondiente de mi apiRest
   .then((response) => response.json())
   .then((data) => {
     renderCards(data);
