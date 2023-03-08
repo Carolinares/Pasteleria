@@ -17,6 +17,7 @@ html{
     scroll-behavior: smooth;
 }
 
+
 .bg-dark {
     background-color: var(--primary-color)!important;
 }
@@ -118,6 +119,32 @@ html{
   pointer-events: none;
   background-color: #bdbdbd;
   color: rgb(86, 86, 86);
+}
+
+.button-border{
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border: solid 2px var(--accent-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: all 0.2s ease-in;
+    user-select: none;
+}
+
+.button-border:hover{
+  scale: 1.1;
+}
+
+.button-border:active{
+  scale: 0.9;
+}
+
+.button-xs{
+  padding: 7px 15px;
+  font-size: 16px;
 }
 
 .alert-disabled{

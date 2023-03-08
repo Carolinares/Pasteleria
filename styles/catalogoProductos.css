@@ -1,0 +1,66 @@
+@import url('https://fonts.google.com/specimen/Fredoka?query=fredoka+&preview.size=32');
+
+:root{
+    --primary-color: #522f1f;
+    --secondary-color: #ea8b82;
+    --third-color: #fff5eb;
+    --accent-color: #fdcb2a;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box !important;
+  font-family: 'Fredoka', sans-serif;
+}
+
+main{
+    margin-top: 100px;
+    padding: 30px;
+}
+
+.buttons-category{
+    display: flex;
+    justify-content: center;
+    gap:40px;
+}
+
+.seccion-productos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: auto;
+    gap:2rem;
+    padding: 35px 0;
+}
+
+.card-productos{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 2px var(--secondary-color);
+}
+
+.card-productos > img{
+    height: 250px;
+}
+
+.card-productos > p{
+    color: var(--primary-color);
+}
+
+.card-productos > span{
+    font-size: 25px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.card-productos > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+}
