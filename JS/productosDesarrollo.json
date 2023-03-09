@@ -1,60 +1,60 @@
 [
     {
-        "img": "../assets/img/torta-header.png",
+        "img": "../assets/img/Tortas_img/tortaOreo.png",
         "titulo": "pastel1",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$45.000"
     },
     {
-        "img": "../assets/img/torta-descripcion.png",
+        "img": "../assets/img/Tortas_img/fondan.sirena.png",
         "titulo": "pastel2",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$25.000"
     },
     {
-        "img": "../assets/img/torta-header.png",
+        "img": "../assets/img/Tortas_img/mikie.png",
         "titulo": "pastel3",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$35.200"
     },
     {
-        "img": "../assets/img/torta-descripcion.png",
+        "img": "../assets/img/Tortas_img/tortacolor.png",
         "titulo": "pastel4",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$22.000"
     },
     {
-        "img": "../assets/img/torta-header.png",
+        "img": "../assets/img/Tortas_img/tortaChoco.png",
         "titulo": "pastel5",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$18.000"
     },
     {
-        "img": "../assets/img/torta-descripcion.png",
+        "img": "../assets/img/Tortas_img/tortacono.png",
         "titulo": "pastel6",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$25.000"
     },
     {
-        "img": "../assets/img/torta-header.png",
+        "img": "../assets/img/Tortas_img/cafe.png",
         "titulo": "pastel7",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$30.000"
     },
     {
-        "img": "../assets/img/torta-descripcion.png",
+        "img": "../assets/img/Tortas_img/ponque.rosa.png",
         "titulo": "pastel8",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$28.000"
     },
     {
-        "img": "../assets/img/torta-header.png",
+        "img": "../assets/img/Tortas_img/festival.png",
         "titulo": "pastel9",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$29.700"
     },
     {
-        "img": "../assets/img/torta-header.png",
+        "img": "../assets/img/Tortas_img/toperUnicornio.png",
         "titulo": "pastel10",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$12.000"
