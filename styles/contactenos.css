@@ -1,0 +1,125 @@
+:root{
+    --primary-color: #522f1f;
+    --secondary-color: #ea8b82;
+    --third-color: #fff5eb;
+    --accent-color: #fdcb2a;
+}
+
+body{
+    background-color: var(--third-color);
+}
+
+main{
+  margin-top: 100px;
+}
+/*seccion contactanos*/
+
+ #contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 30px;
+}
+ .titulo-seccion{
+    color: #d09030;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .contacto__form{
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .row > div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .contacto__form .row{
+    display: flex;
+    gap: 2.5rem;
+    width: 100%;
+  }
+
+  @media (max-width: 768px){
+    .contacto__form .row{
+        flex-wrap: wrap;
+    }
+  }
+
+  .contacto__form .row input,
+  .contacto__form  textarea{
+    background-color: transparent !important;
+    padding: 1.3rem 2rem;
+    border: none;
+    border-radius: 35px;
+    outline: none;
+    border: solid 1px gray;
+    width: 100%;
+  }
+
+  ::placeholder{
+    background-color: transparent !important;
+  }
+
+  .row > div{
+    position: relative;
+    padding: 0;
+  }
+  .row label{
+    background-color: var(--third-color);
+    position: absolute;
+    top: 0;
+    top: -.8em;
+    left: 1.8em;
+    padding: 0 10px;
+    color: rgb(85, 84, 84);
+    border-radius: 15px;
+  }
+
+  .contacto__form  textarea{
+    padding: 2rem;
+    width: 100%;
+    resize: none;
+  }
+
+  textarea{
+    resize: vertical !important;
+  }
+
+  .contacto__form .btn-enviar{
+    border: none;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 4px 4px 4px 0 #30303096, -5px -5px 3px 0 #fff;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+  }
+ 
+  .p-form {
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .p-principal {
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .alert{
+    margin: 0;
+    padding: 0 1.8em;
+  }
