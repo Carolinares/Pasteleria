@@ -28,23 +28,29 @@ html {
 }
 
 .dropdown-menu {
-  background-color: #522f1f;
+  width: fit-content;
+  background-color:var(--primary-color);
+  border: solid 2px var(--secondary-color);
+  border-radius: 5px;
 }
 
 .dropdown-item {
-  color: var(--accent-color);
+  color: var(--third-color);
 }
 
 .dropdown-item:hover{
   background-color: transparent;
   color: orange;
 }
+.dropdown-item.active {
+  color: var(--accent-color);
+  text-decoration: none;
+  background-color: transparent;
+}
 
 .dropdown-toggle.active{
   color: var(--third-color);
 }
-
-
 
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: 1.5rem;
@@ -81,7 +87,7 @@ html {
 }
 
 .navbar-brand img {
-  width: 115px;
+  width: 80px;
   object-fit: cover;
 }
 
@@ -94,7 +100,7 @@ html {
 }
 
 .nav-link {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -120,7 +126,15 @@ html {
 }
 
 .fa {
-  font-size:xx-large ;
+  font-size:x-large ;
+}
+
+.logo-footer{
+  width: 80px;
+}
+
+.btn-link{
+  color: var(--accent-color);
 }
 
 .button {
@@ -177,8 +191,6 @@ html {
   font-size: 16px;
 }
 
-
-
 .alert-disabled {
 
   display: none;
@@ -233,12 +245,14 @@ input:-webkit-autofill:focus {
     color: var(--accent-color) !important;
   }
 
-  .login-btn{
-    font-size: 1.2em !important;
-  }
-
   .navbar-toggler {
     color: var(--secondary-color) !important;
     border-color: var(--secondary-color) !important;
   }
+
+  .login-btn{
+    font-size: 1.2em !important;
+    margin: 0;
+  }
+
 }
