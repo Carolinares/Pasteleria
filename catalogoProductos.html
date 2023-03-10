@@ -27,103 +27,27 @@
       <!-- inicio de navBar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./index.html"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href=""
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Servicios
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="#">Catalogo de Productos</a>
-                  </li>
-                  <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./nosotros.html">Acerca de</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contactenos.html">Contactenos</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <header>
-      <!-- inicio de navBar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <div class="container-fluid">
           <a class="navbar-brand" href="./index.html">
-            <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones" />
+            <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html"
-                  >Inicio</a
-                >
+                <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
               </li>
               <li class="nav-item dropdown">
-                <a
-                  class="nav-link active dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
                   Servicios
                 </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li>
-                    <a class="dropdown-item" href="#">Catalogo de Productos</a>
+                    <a class="dropdown-item active" href="./catalogoProductos.html">Catalogo de Productos</a>
                   </li>
                   <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
                 </ul>
@@ -133,6 +57,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./contactenos.html">Contáctanos</a>
+              </li>
+              <li class="login-btn"><a href="#"><i class="fa fa-user-circle"></i>
+                  <span>Iniciar Sesion</span></a>
               </li>
             </ul>
           </div>
@@ -144,7 +71,6 @@
       <div class="buttons-category">
         <button class="button">Cubierta en Fondant</button>
         <button class="button">Cubierta en Crema</button>
-        <button class="button">Merengue Italiano</button>
       </div>
       <section class="seccion-productos"></section>
       <template id="template-card">
