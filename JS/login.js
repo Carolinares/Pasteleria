@@ -1,4 +1,4 @@
-const loginBtn = document.querySelector('.login-btn');
+const loginBtn = document.querySelector('.login__btn');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 
@@ -40,7 +40,7 @@ loginBtn.addEventListener('click', () => {
     }
   }
   
-
+  window.location.href = '/formularioAdmin.html';
   
 });
 
@@ -50,4 +50,9 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
-window.location.href = '/formularioAdmin.html';
+function isValidPassword(password){
+     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+     return passwordRegex.test(password);
+}
+
+
