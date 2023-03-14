@@ -18,14 +18,14 @@ function renderCards(data) {
 
 //para entorno de pruebas en vscode
 
-/* fetch("/JS/productosDesarrollo.json") //despues se cambia por la el endpoint correspondiente de mi apiRest
+ /*fetch("/JS/productosDesarrollo.json") //despues se cambia por la el endpoint correspondiente de mi apiRest
   .then((response) => response.json())
   .then((data) => {
     renderCards(data);
   })
-  .catch((error) => console.error(error)); */
+  .catch((error) => console.error(error)); 
 
-
+*/
 //para entorno de desarrollo con gitHub
 fetch("/Pasteleria/JS/productosProduccion.json") //despues se cambia por la el endpoint correspondiente de mi apiRest
   .then((response) => response.json())
