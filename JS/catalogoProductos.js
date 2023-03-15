@@ -17,8 +17,8 @@ function renderCards(data) {
 }
 
 //para entorno de pruebas en vscode
-
 /* fetch("/JS/productosDesarrollo.json") //despues se cambia por la el endpoint correspondiente de mi apiRest
+
   .then((response) => response.json())
   .then((data) => {
     renderCards(data);
