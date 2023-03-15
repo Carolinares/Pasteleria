@@ -1,9 +1,9 @@
-const loginBtn = document.querySelector('.login-btn');
+const loginBtn = document.querySelector('.login__btn');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 
-loginBtn.addEventListener('click', () => {
-  
+loginBtn.addEventListener('click', (event) => {
+  event.preventDefault();
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
@@ -23,7 +23,7 @@ loginBtn.addEventListener('click', () => {
     const passwordStrength = getPasswordStrength(password);
     alert(`Su contraseña es ${passwordStrength}`);
     return;
-  }
+  }window.location.href = '/formularioAdmin.html';
   
 
   function getPasswordStrength(password) {
@@ -31,16 +31,16 @@ loginBtn.addEventListener('click', () => {
     const length = password.length;
     const complexity = passwordRegex.test(password) ? 2 : 1;
     const strength = length * complexity;
-    if (strength < 16) {
-      return 'weak';
-    } else if (strength < 24) {
-      return 'medium';
+    if (strength < 5) {
+      return 'debil';
+    } else if (strength < 9) {
+      return 'media';
     } else {
-      return 'strong';
+      return 'fuerte';
     }
   }
   
-
+  
   
 });
 
@@ -50,4 +50,9 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
-window.location.href = '/formularioAdmin.html';
+function isValidPassword(password){
+     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+     return passwordRegex.test(password);
+}
+
+

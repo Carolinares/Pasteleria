@@ -4,7 +4,8 @@
     --primary-color: #522f1f;
     --secondary-color: #ea8b82;
     --third-color: #fff5eb;
-    --accent-color: #fdcb2a;
+    --accent-color: #fdcb2a;    
+    --division-color: #e3d5c9;
 }
 *{
   padding: 0;
@@ -21,8 +22,8 @@ body{
 header{  
   position: relative;
   background-color: var(--primary-color);
-  min-height: calc(100vh - 100px);
-  margin-top: 100px;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
 }
 
 #header-container{
@@ -141,7 +142,7 @@ main{
 
 
 .division{
-  border: solid 2px var(--secondary-color);
+  border: solid 2px var(--division-color);
 }
 
 /* estilo seccion creadores*/
@@ -158,12 +159,14 @@ main{
     color: var(--primary-color);
     margin: 0;
     font-weight: bold;
+    text-align: center;
   }
 
   .creadores p{
     color: var(--primary-color);
     margin: 0;
     font-size: 1.2em;
+    max-width: 1200px;
   }
 
 
@@ -172,7 +175,7 @@ main{
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    gap: 100px;
+    gap: 10px;
   }
   /*estilo articulos card*/
 .card_nosotros{
@@ -188,6 +191,7 @@ main{
 .card_nosotros > img{
   width: 250px;
   height: 260px; /* para no dañar la imagen*/
+  margin: auto;
 }
 .descripcion-integrantes{
   padding: 20px;

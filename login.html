@@ -13,9 +13,47 @@
 </head>
 <body>
     <header>
-
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Servicios
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactenos.html">Contáctanos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="login-btn"><a href="#">
+              <span>Iniciar Sesion</span>
+              <i class="fa fa-user-circle"></i></a>
+          </div>
+        </div>
+      </nav>
     </header>
-
     <main>
         <form class="login-form" action="javascript:void(0);">
             <h1>Iniciar Sesion</h1>
@@ -27,7 +65,7 @@
               <input type="password" name="password" id="password" placeholder=" " autocomplete="off" class="form-control-material" required />
               <label for="password">Contraseña</label>
             </div>
-            <button type="submit" class="login-btn btn-primary btn-ghost">Iniciar Sesion</button>
+            <button type="submit" class="login__btn btn-primary btn-ghost">Iniciar Sesion</button>
           </form>
           
 
@@ -35,6 +73,7 @@
     <script src="./JS/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="./JS/index.js"></script>
 
 </body>
 </html>

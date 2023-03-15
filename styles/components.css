@@ -4,6 +4,7 @@
   --primary-color: #522f1f;
   --secondary-color: #ea8b82;
   --third-color: #fff5eb;
+  --fourth-color: #422619;
   --accent-color: #fdcb2a;
 }
 
@@ -29,8 +30,8 @@ html {
 
 .dropdown-menu {
   width: fit-content;
-  background-color:var(--primary-color);
-  border: solid 2px var(--secondary-color);
+  background-color: var(--fourth-color);
+  border: none;
   border-radius: 5px;
 }
 
@@ -38,17 +39,18 @@ html {
   color: var(--third-color);
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
   background-color: transparent;
   color: orange;
 }
+
 .dropdown-item.active {
   color: var(--accent-color);
   text-decoration: none;
   background-color: transparent;
 }
 
-.dropdown-toggle.active{
+.dropdown-toggle.active {
   color: var(--third-color);
 }
 
@@ -79,15 +81,19 @@ html {
 }
 
 .navbar {
-  height: 100px;
+  height: 70px;
   width: 100% !important;
   position: fixed !important;
-  z-index: 5;
+  z-index: 999;
   top: 0;
+  padding: 0 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-brand img {
-  width: 80px;
+  width: 75px;
   object-fit: cover;
 }
 
@@ -110,7 +116,7 @@ html {
 .login-btn {
   display: flex;
   align-items: center;
-  margin-left: 200px;
+  margin: 0;
 }
 
 .login-btn a:hover {
@@ -122,19 +128,25 @@ html {
   font-family: 'Fredoka', sans-serif;
   font-size: 20px;
   color: var(--third-color);
-  
+
 }
 
 .fa {
-  font-size:x-large ;
+  font-size: x-large;
 }
 
-.logo-footer{
+.logo-footer {
   width: 80px;
 }
 
-.btn-link{
-  color: var(--accent-color);
+.btn-link {
+  color: white;
+  transition: all 0.15s ease-in;
+}
+
+.btn-link:hover {
+  color: var(--accent-color) !important;
+  scale: 1.2;
 }
 
 .button {
@@ -146,7 +158,7 @@ html {
   border: solid 2px transparent;
   background-color: var(--accent-color);
   color: var(--primary-color);
-  transition: all 0.2s ease-in;
+  transition: all 0.15s ease-in;
   user-select: none;
 }
 
@@ -165,28 +177,28 @@ html {
 }
 
 
-.button-border{
-    border-radius: 8px;
-    padding: 10px 25px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    border: solid 2px var(--accent-color);
-    background-color: transparent;
-    color: var(--primary-color);
-    transition: all 0.2s ease-in;
-    user-select: none;
+.button-border {
+  border-radius: 8px;
+  padding: 10px 25px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  border: solid 2px var(--accent-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  transition: all 0.2s ease-in;
+  user-select: none;
 }
 
-.button-border:hover{
+.button-border:hover {
   scale: 1.1;
 }
 
-.button-border:active{
+.button-border:active {
   scale: 0.9;
 }
 
-.button-xs{
+.button-xs {
   padding: 7px 15px;
   font-size: 16px;
 }
@@ -216,13 +228,13 @@ input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px var(--third-color) inset;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .navbar-nav {
     position: absolute;
-    top: 70px;
-    right: 55px;
-    background-color: var(--primary-color);
-    border: solid 2px var(--secondary-color);
+    top: 52px;
+    right: 72px;
+    background-color: var(--fourth-color);
+    border: none;
     border-radius: 10px;
     width: fit-content;
     padding: 20px;
@@ -236,7 +248,6 @@ input:-webkit-autofill:focus {
     border-radius: 5px;
   }
 
-
   .nav-link:hover {
     color: var(--accent-color) !important;
   }
@@ -246,11 +257,26 @@ input:-webkit-autofill:focus {
   }
 
   .navbar-toggler {
-    color: var(--secondary-color) !important;
-    border-color: var(--secondary-color) !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
-  .login-btn{
+  .navbar-light .navbar-toggler-icon {
+    background-image: url(../assets/svg/menu.svg) !important;
+  }
+
+  .navbar-light .navbar-toggler-icon:focus {
+    box-shadow: 0 0 0 transparent !important;
+  }
+
+  .dropdown-menu {
+    width: fit-content;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+}
+
+  .login-btn {
     font-size: 1.2em !important;
     margin: 0;
   }
