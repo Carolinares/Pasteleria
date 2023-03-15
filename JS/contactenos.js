@@ -3,24 +3,11 @@ const form = document.getElementById("contacto__form");
 const allInput = document.getElementsByClassName("input-mitad");
 
 
-Array.from(scrollTo).forEach(el => {
-  el.addEventListener("click", function (e) {
-    const target = e.currentTarget.getAttribute("target");
-    const sectionObjetivo = document.getElementById(target);
-    const position = sectionObjetivo.offsetTop - 100;
-    window.scrollTo({
-      top: position, behavior: "smooth"
-    })
-  })
-})
-
-
 Array.from(allInput).forEach(el => {
   el.addEventListener("blur", () => {
     validateForm(el)
   })
 });
-
 
 function validateForm(elemento) {
   const nombre = document.getElementById("form-nombre");

@@ -1,61 +1,61 @@
 [
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortaOreo.png",
-        "titulo": "pastel1",
+        "titulo": "Torta Oreo",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$45.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/fondan.sirena.png",
-        "titulo": "pastel2",
+        "titulo": "Pastillaje del Mar",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$25.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/mikie.png",
-        "titulo": "pastel3",
+        "titulo": "Mickey Mouse",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$35.200"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortacolor.png",
-        "titulo": "pastel4",
+        "titulo": "Pastel Arcoiris",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$22.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortaChoco.png",
-        "titulo": "pastel5",
+        "titulo": "Pastel Roché",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$18.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortacono.png",
-        "titulo": "pastel6",
+        "titulo": "Pastel Merlin",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$25.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/cafe.png",
-        "titulo": "pastel7",
+        "titulo": "Pastel de Charlie",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$30.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/ponque.rosa.png",
-        "titulo": "pastel8",
+        "titulo": "Pastel Reina",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$28.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/festival.png",
-        "titulo": "pastel9",
+        "titulo": "Chiscake de Maracuyá",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$29.700"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/toperUnicornio.png",
-        "titulo": "pastel10",
+        "titulo": "Pastel Fantasía",
         "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
         "precio": "$12.000"
     }
