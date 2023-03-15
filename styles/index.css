@@ -1,0 +1,232 @@
+@import url("https://fonts.google.com/specimen/Fredoka?query=fredoka+&preview.size=32");
+
+:root {
+  --primary-color: #522f1f;
+  --secondary-color: #ea8b82;
+  --third-color: #fff5eb;
+  --accent-color: #fdcb2a;
+  --division-color: #e3d5c9;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box !important;
+  font-family: "Fredoka", sans-serif;
+}
+
+body {
+  background-color: var(--third-color);
+}
+
+header {
+  background-color: var(--third-color);
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+}
+
+#header-container {
+  max-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+}
+
+#header-container button{
+  background-color: transparent;
+  border: none;
+}
+
+#header-container .slider{
+  min-height: calc(100vh - 70px);
+  position: relative;
+  overflow: hidden;
+}
+
+#header-container .slider #images{
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-height: calc(100vh - 70px);
+  transition: left 0.5s ease-in;
+}
+
+#header-container .slider #images img{
+  width: 100vw;
+  min-height: calc(100vh - 70px);
+  object-fit: cover;
+  object-position:top;
+}
+
+#iconos-header {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.7rem;
+}
+
+.angle-header {
+  font-size: 4rem;
+  color: white;
+  cursor: pointer;
+}
+
+#descripcion-header {
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  padding: 0 1.7rem;
+  background: linear-gradient(transparent, rgba(76, 47, 39, 0.801) 80%);
+}
+
+#descripcion-header > p {
+  max-width: 1200px;
+  font-size: calc(0.8em + 1vw);
+  color: white;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.7rem;
+  color:  var(--primary-color);
+}
+
+main > h1{
+    font-weight: bold;
+    font-size: 3.5em;
+    text-align: center;
+    color: var(--secondary-color);
+    width: 100%;
+    padding: 5px;
+}
+
+#catalogo-productos {
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 1.2em;
+}
+
+#catalogo-productos h2{    
+    font-weight: bold;
+    text-align: center;
+    font-size: calc(1.2em + 1vw);
+}
+
+#articulos-catalogo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.pasteles-catalogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pasteles-catalogo > img{
+    max-width: 200px;
+}
+
+.pasteles-catalogo> h3{       
+    font-weight: bold;
+}
+
+.pasteles-catalogo p{
+    max-width: 250px;
+    width: 100%;
+    margin: 0;    
+    text-align: justify;
+}
+
+.division{
+    border: solid 2px var(--division-color);
+    width: 100%;
+}
+
+#arma-tu-pastel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 1.2em;
+}
+
+#arma-tu-pastel > h2{
+    font-weight: bold;
+    text-align: center;
+    font-size: calc(1.2em + 1vw);
+}
+
+#articulos-arma-pastel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pasos-arma-pastel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 15px;
+}
+
+.pasos-arma-pastel i{
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+.pastel-arma-pastel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.pastel-arma-pastel > img{
+    max-width: 100px;
+}
+
+.pastel-arma-pastel > p{
+    max-width: 220px;
+    margin: 0;
+    text-align: justify;
+}
+
+@media screen and (max-width: 626px) {
+    
+    #articulos-arma-pastel,
+    .pasos-arma-pastel{
+        flex-direction: column;
+    }
+
+    .pasos-arma-pastel > i{
+        transform: rotateZ(90deg);
+    }
+}
