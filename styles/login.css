@@ -1,14 +1,23 @@
+@import url('https://fonts.google.com/specimen/Fredoka?query=fredoka+&preview.size=32');
+
+:root {
+  --primary-color: #522f1f;
+  --secondary-color: #ea8b82;
+  --third-color: #fff5eb;
+  --accent-color: #fdcb2a;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #eceffc;
+    background: var(--third-color);
   }
   
   .btn {
     padding: 8px 20px;
-    border-radius: 0;
+    border-radius: 20px;
     overflow: hidden;
   }
   .btn::before {
@@ -18,24 +27,24 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, var(--primary-color), transparent);
+    background: linear-gradient(120deg, transparent, var(--secondary-color), transparent);
     transform: translateX(-100%);
     transition: 0.6s;
   }
   .btn:hover {
     background: transparent;
-    box-shadow: 0 0 20px 10px rgba(51, 152, 219, 0.5);
+    box-shadow: 0 0 20px 10px rgba(244, 88, 4, 0.94);
   }
   .btn:hover::before {
     transform: translateX(100%);
   }
   
   .form-input-material {
-    --input-default-border-color: white;
-    --input-border-bottom-color: white;
+    --input-default-border-color: var(--third-color);
+    --input-border-bottom-color: var(--third-color);
   }
   .form-input-material input {
-    color: white;
+    color: var(--third-color);
   }
   
   .login-form {
@@ -43,10 +52,10 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 50px 40px;
-    color: white;
-    background: rgba(0, 0, 0, 0.8);
+    color: var(--third-color);
+    background: rgba(231, 108, 70, 0.983);
     border-radius: 10px;
-    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);
+    box-shadow: 0 0.4px 0.4px rgba(241, 148, 148, 0.109), 0 1px 1px rgba(247, 149, 149, 0.155), 0 2.1px 2.1px rgba(225, 121, 93, 0.195), 0 4.4px 4.4px rgba(239, 156, 117, 0.241), 0 12px 12px rgba(237, 132, 56, 0.35);
   }
   .login-form h1 {
     margin: 0 0 24px 0;
