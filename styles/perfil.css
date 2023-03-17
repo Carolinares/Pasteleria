@@ -1,40 +1,71 @@
-@import url('https://fonts.google.com/specimen/Fredoka?query=fredoka+&preview.size=32');
 
-:root {
-  --primary-color: #522f1f;
-  --secondary-color: #ea8b82;
-  --third-color: #fff5eb;
-  --accent-color: #fdcb2a;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box !important;
-  font-family: 'Fredoka', sans-serif;
-}
-
-#perfil {
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1.5em;
-    padding: 30px;
-}
-
-.perfil > h3{
-  color: #d09030;
-  text-align: center;
-  font-size: 40px;
-}
-
+/* Estilos para el formulario de perfil */
 .containerForm {
-  max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 35px;
+  max-width: 600px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para la foto de perfil */
+.foto-perfil {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos para los campos de formulario */
+.containerForm div {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.containerForm label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.3s ease-out;
+}
+
+.containerForm input {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+}
+
+.containerForm input:focus {
+  outline: none;
+  border-bottom: 2px solid #3498db;
+}
+
+
+
+
+/* Estilos para los botones */
+.containerForm input[type="button"], .containerForm input[type="submit"] {
+  border: none;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #522f1f;
+  background-color: #fdcb2a;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
 }
 
