@@ -1,9 +1,10 @@
 
-h1 {
+h2 {
+  margin-top: 90px;
   color: #522f1f;
-  font-family: 'Fredoka', sans-serif;
-  text-shadow:2px 2px 4px ;
-
+  font-family: sans-serif;
+  text-shadow:2px 2px 3px ;
+  font-weight: bold;
 }
 
 table {
@@ -22,6 +23,11 @@ th {
   background-color: #fdcb2a;
   color: #522f1f;
   font-family: 'Fredoka', sans-serif;
+}
+
+.letrades{/* cambio fuente y color de la letra de los campos a llenar*/
+  font-family: 'Fredoka', sans-serif;
+  color: #522f1f;
 }
 
 tr:nth-child(even) {
@@ -60,29 +66,7 @@ tr:nth-child(even) {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-
+  margin-left:20px ;
 
 }
 
-/* Estilos para las alertas */
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  margin-bottom: 15px;
-}
-
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: black;
-}

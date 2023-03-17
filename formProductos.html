@@ -11,8 +11,27 @@
   <title>Formulario Productos</title>
 </head>
 <body>
-  
-  <form id="nuevoProductoForm" onsubmit="return validarFormulario()">
+</head>
+<body>
+   <header> <!--agregue solo una parte de la nav: color y logo-->
+    <!-- inicio de navBar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+  </header>
+
+  <!--inicio form agregar producto-->
+  <h3>Agregar producto</h3>
+  <form id="nuevoProductoForm" onsubmit="return validarFormulario()"> <!--evento onsubmit para ejecura func validarForm..."return"  para indicar que el formulario se enviará Solo si la función retorna "true".-->
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre">
   
@@ -30,6 +49,7 @@
   
     <button type="submit">Agregar producto</button>
   </form>
+  <!--Inicio de footer-->
   <footer id="footer_Sample" class="text-center text-light" style="background-color: #522f1f;">
     <!-- Grid container -->
     <div class="container pt-4">
