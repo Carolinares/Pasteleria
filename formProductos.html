@@ -11,60 +11,19 @@
   <title>Formulario Productos</title>
 </head>
 <body>
-  <header>      
-    <!-- inicio de navBar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">
-          <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Servicios
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./nosotros.html">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contactenos.html">Contáctanos</a>
-            </li>
-            <li class="login-btn"><a href="#"><i class="fa fa-user-circle"></i>
-                <span>Iniciar Sesion</span></a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-    </header>
+  
   <form id="nuevoProductoForm" onsubmit="return validarFormulario()">
     <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre"><br>
+    <input type="text" id="nombre" name="nombre">
   
     <label for="imagen">Imagen:</label>
-    <input type="file" id="imagen" name="imagen"><br>
+    <input type="file" id="imagen" name="imagen">
   
     <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" name="descripcion"></textarea><br>
+    <textarea id="descripcion" name="descripcion"></textarea>
   
     <label for="porciones">Porciones:</label>
-    <input type="number" id="porciones" name="porciones"><br>
+    <input type="number" id="porciones" name="porciones">
   
     <label for="precio">Precio:</label>
     <input type="number" id="precio" name="precio"><br>

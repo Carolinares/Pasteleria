@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/tablaProductos.css"/>
+ 
+  <title>Editar productos</title>
+</head>
+<body>
+
+  <section id="formAdmin">
+    <h1>Tabla de productos</h1>
+    
+    <table id="tabla-productos">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Imagen</th>
+          <th>Descripción</th>
+          <th>Porciones</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Torta de <br>chocolate</td>
+          <td><img src="../assets/img/Tortas_img/tortaChoco.png" width="100"></td>
+          <td>Para elaborar esta torta, se utiliza una receta de bizcocho<br> de chocolate clásica, 
+             a la que se le agrega un toque especial<br> con trozos de Ferrero Rocher en su interior.
+              <br>Luego, se decora la torta con crema de chocolate y Ferrero Rocher, <br>lo que le da una apariencia elegante y sofisticada.</td>
+              <td>15</td>
+          <td>$40.000</td>
+        
+          <td>
+            <button class="btn btn-editar" onclick="editarProducto(this.parentNode.parentNode)">Editar</button>
+            <button class="btn btn-eliminar" onclick="eliminarProducto(this.parentNode.parentNode)">Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Producto 2</td>
+          <td><img src="../assets/img/Tortas_img/tortacolor.png" width="100"></td>
+          <td>Descripción del producto 2</td>
+          <td>10</td>
+          <td>$35.000</td>
+          <td>
+            <button class="btn btn-editar" onclick="editarProducto(this.parentNode.parentNode)">Editar</button> <!--this.parentNode.parentNode es una expresion js se refiere al boton en este caso editar o eliminar Esta aqúi para usarlo despues en JS-->
+            <button class="btn btn-eliminar" onclick="eliminarProducto(this.parentNode.parentNode)">Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Producto 3</td>
+          <td><img src="producto2.jpg" width="100"></td>
+          <td>Descripción del producto 2</td>
+          <td>20</td>
+          <td>$50.000</td>
+          <td>
+            <button class="btn btn-editar" onclick="editarProducto(this.parentNode.parentNode)">Editar</button>
+            <button class="btn btn-eliminar" onclick="eliminarProducto(this.parentNode.parentNode)">Eliminar</button>
+          <td>
+          </table>
+          <button class="btn-submit" id ="botonSubmit" >Agregar</button>
+  </section>
+  <script src="../JS/tablaProductos.js"></script>
+</body>
+</html>

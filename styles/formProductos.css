@@ -5,8 +5,13 @@
   max-width: 500px;
   margin: 0 auto;
 }
+form{
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
 
 label {
+  color: #522f1f;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
