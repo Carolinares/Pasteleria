@@ -131,6 +131,23 @@ html {
 
 }
 
+.register-btn{
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.register-btn a:hover{
+  color: var(--accent-color);
+}
+
+.register-btn a{
+  text-decoration: none;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 20px;
+  color: var(--third-color);
+}
+
 .fa {
   font-size: x-large;
 }
@@ -277,6 +294,11 @@ input:-webkit-autofill:focus {
 }
 
   .login-btn {
+    font-size: 1.2em !important;
+    margin: 0;
+  }
+
+  .register-btn{
     font-size: 1.2em !important;
     margin: 0;
   }
