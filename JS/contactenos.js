@@ -9,6 +9,12 @@ Array.from(allInput).forEach(el => {
   })
 });
 
+$(function(){
+  $("#NavBar").load("../navbar.html");
+});
+
+
+
 function validateForm(elemento) {
   const nombre = document.getElementById("form-nombre");
   const email = document.getElementById("form-correo");
