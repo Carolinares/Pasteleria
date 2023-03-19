@@ -1,5 +1,6 @@
 const $scroll = document.getElementsByClassName("scrollTo"),
   $btnLogin = document.querySelector(".login-btn"),
+  $btnRegistro = document.querySelector(".register-btn")
   $navContainer = document.querySelector(".container-fluid"),
   $ulNavBar = document.querySelector(".navbar-nav"),
   $images = document.getElementById("images"),
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     } else {
       $ulNavBar.removeChild($btnLogin);
       $navContainer.appendChild($btnLogin);
-    }
+    }    
   }
   breakpoint.addEventListener("change", responsive);
   responsive(breakpoint);
