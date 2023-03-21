@@ -26,7 +26,17 @@ body {
     background-color: var(--third-color);
 }
 
+main{    
+    padding: 20px;
+}
 
+main > h1 {
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+}
 
 .form-holder {
     display: flex;
@@ -39,7 +49,6 @@ body {
     text-align: center;
     
 }
-
 .form-holder .form-content {
     position: relative;
     text-align: center;
@@ -52,11 +61,11 @@ body {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    padding: 60px;
+    padding: 15px;
 }
 
 .form-content .form-items {
-    border: 3px solid var(--fourth-color);
+    border: 1px solid var(--primary-color);
     padding: 40px;
     display: inline-block;
     width: 100%;
@@ -69,25 +78,12 @@ body {
     transition: all 0.4s ease;
 }
 
-.form-content h3 {
-    color: var(--fourth-color);
-    text-align: left;
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.form-content h3.form-title {
-    margin-bottom: 30px;
-}
-
 .form-content p {
-    color: var(--fourth-color);
+    color: var(--primary-color);
     text-align: left;
     font-size: 17px;
     font-weight: 300;
     line-height: 20px;
-    margin-bottom: 30px;
 }
 
 .form-content label,
@@ -103,15 +99,17 @@ body {
     width: 100%;
     padding: 9px 20px;
     text-align: left;
-    border: 0;
+    border: solid 1px var(--primary-color);
+    background-color: transparent;
     outline: 0;
-    border-radius: 6px;
+    border-radius: 10px;
     font-size: 15px;
     font-weight: 300;
     color: var(--fourth-color);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     margin-top: 16px;
+    box-shadow: none;
 }
 
 option {
@@ -119,33 +117,14 @@ option {
 }
 
 option:hover {
-    background-color: var(--third-color);
+    background-color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .form-button.mt-3 {
     width: 350px;
     display: inline-block;
     margin-top: 10px;
-}
-
-.btn-primary {
-    background-color: var(--fourth-color);
-    outline: none;
-    border: 0px;
-    box-shadow: none;
-    height: 2.5rem;
-    width: 25%;
-    color: var(--third-color);
-    border-radius: 10px;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-    background-color: var(--accent-color);
-    outline: none !important;
-    border: none !important;
-    box-shadow: none;
 }
 
 .form-content textarea {
@@ -185,4 +164,19 @@ option:hover {
 
 .valid-feedback {
     color: #2acc80;
+}
+
+.requires-validation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.button{
+    width: 100%;
+}
+
+input:-internal-autofill-selected {
+    background-color: transparent !important;
 }

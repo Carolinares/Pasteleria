@@ -24,8 +24,7 @@ loginBtn.addEventListener('click', (event) => {
     return;
   }
 
-  validar()
-  
+  validar()  
  
 });
 
@@ -34,6 +33,7 @@ function validar() {
   var password = document.getElementById("password").value;
   var storedEmail = localStorage.getItem("email");
   var storedPassword = localStorage.getItem("password");
+  console.log("Desde validar");
 
   if (email == storedEmail && password == storedPassword) {
     alert("Bienvenido " );
