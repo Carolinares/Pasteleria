@@ -61,48 +61,53 @@
   <main>
     <section id="contacto">
       <h3 class="titulo-seccion">Contáctanos</h3>
-
-      <form class="contacto__form" id="contacto__form" action="https://formspree.io/f/xyyaejew" method="post">
+      <p>Si necesitas cotizar alguno de nuestros deliciosos pasteles, hacernos alguna sugerencia o compartirnos tu experiencia al probar alguno de nuestros productos ¡No dudes en escribirnos!</p>
+      <form class="contacto__form" action="https://formspree.io/f/xyyaejew" method="POST" target="_blank">
 
         <div class="row">
           <div>
-            <label for="nombre">Nombre completo</label>
-            <div>
-              <input id="form-nombre" name="nombre" type="text" class="input-mitad" />
-            </div>
-            <div class="alert alert-disabled"></div>
+            <label for="nombre">Nombre completo*</label>
+              <input name="nombre" type="text" class="input-mitad" placeholder="Escribe tu nombre" title="El nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
           </div>
 
           <div>
-            <label for="correo">Correo electrónico</label>
-            <div>
-              <input id="form-correo" name="correo" type="email" placeholder="ejemplo@abc.com" class="input-mitad" />
-            </div>
-            <div class="alert alert-disabled"></div>
+            <label for="correo">Correo electrónico*</label>
+              <input name="correo" type="email" placeholder="ejemplo@abc.com" class="input-mitad" title="Email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required/>
           </div>
 
           <div>
-            <label for="correo">Teléfono</label>
-            <div>
-              <input id="form-telefono" name="telefono" type="number" placeholder="3110000000" class="input-mitad" />
-            </div>
-            <div class="alert alert-disabled"></div>
+            <label for="telefono">Teléfono*</label>
+              <input name="telefono" type="text" placeholder="3110000000" class="input-mitad" title="El número de teléfono debe tener 10 dígitos" pattern="^\d{10}$" required/>            
           </div>
-
           <div>
-            <textarea id="form-mensaje" name="mensaje" class="input-mitad" cols="10" rows="10"
-              placeholder="Escribe aqui tu Mensaje..."></textarea>
-            <div class="alert alert-disabled"></div>
-          </div>
+          <label for="mensaje">Tu Mensaje*</label>
+            <textarea name="mensaje" class="input-mitad" cols="10" rows="5"           placeholder="Escribe aqui tu Mensaje..." data-pattern="^.{1,255}$" title="Tu comentario no debe exceder los 255 caracteres" required></textarea>
+          </div>          
         </div>
 
-
-        <button class="button button-disabled" type="submit">Enviar</button>
+        <input class="button" type="submit" value="Enviar">
       </form>
-      <p class="p-form">¡No dudes en llenar el formulario!</p>
     </section>
 
+    <section class="informacion">
+      <img src="./assets/img/pastelera.png" alt="Pasteleria tortones">
+      <div id="datos-info">
+        <div class="dato">
+          <img src="./assets/svg/location-dot-solid.svg" alt="icono ubicacion">
+          <p>Calle 23 # 4 - 16 Madrid, Cundinamarca - Colombia</p>
+        </div>
+        <div class="dato">
+          <img src="./assets/svg/phone-solid.svg" alt="icono telefono">
+          <p>(+57) 322 452 32 26</p>
+        </div>
+        <div class="dato">
+          <img src="./assets/svg/envelope-solid.svg" alt="icono correo">
+          <p>contacto@tortones.com</p>
+        </div>
+      </div>
+    </section>
 
+  </main>
     <!-- inicio de footer -->
 
     <footer class="text-center text-light" style="background-color: #522f1f;">
@@ -143,6 +148,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
     <script src="./JS/index.js"></script>
+    <script src="./JS/contactenos.js"></script>
 
 </body>
 

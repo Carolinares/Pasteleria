@@ -11,21 +11,17 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />    
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.min.css"
-    />    
     
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="./styles/login.css"/>
+    
     <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/login.css"/>
     <link rel="stylesheet" href="./styles/components.css" />
     
 
-    <title>Iniciar Sesion</title>
   </head>
   <body>
     <header>
@@ -85,34 +81,30 @@
       </nav>
     </header>
     <main>
+      <h1>Iniciar Sesión</h1>
       <!-- inicio del formulario -->
       <form class="login-form" action="./formProductos.html">
-        <h1>Iniciar Sesion</h1>
         <div class="form-input-material">
+          <label for="username">E-mail</label>
           <input
             type="text"
             name="username"
             id="email"
-            placeholder=" "
-            autocomplete="off"
             class="form-control-material"
             required
-          />
-          <label for="username">E-mail</label>
+          />          
         </div>
         <div class="form-input-material">
+          <label for="password">Contraseña</label>
           <input
             type="password"
             name="password"
             id="password"
-            placeholder=" "
-            autocomplete="off"
             class="form-control-material"
             required
-          />
-          <label for="password">Contraseña</label>
+          />          
         </div>
-        <button type="submit" class="btn login__btn  btn-ghost">
+        <button type="submit" class="button">
           Iniciar Sesion
         </button>
       </form>

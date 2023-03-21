@@ -16,39 +16,11 @@ body {
 }
 
 
-
-.btn {
-  color: var(--primary-color);
-  font-weight: 400;
-  font-size: medium;
-  padding: 8px 20px;
-  border-radius: 20px;
-  overflow: hidden;
-  border: solid;
-  border-width: 10;
-  border-color: #522f1f;
-}
-
-.btn::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, var(--secondary-color), transparent);
-  transform: translateX(-100%);
-  transition: 0.6s;
-}
-
-.btn:hover {
-  background: transparent;
-  box-shadow: 0 0 20px 10px rgba(244, 88, 4, 0.94);
-
-}
-
-.btn:hover::before {
-  transform: translateX(100%);
+main h1{
+  font-size: 2.5em;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .form-input-material {
@@ -56,32 +28,47 @@ body {
   --input-border-bottom-color: var(--primary-color);
 }
 
+.form-input-material{
+  position: relative;
+  padding: 0;
+}
+
+.form-input-material label{
+  background-color: var(--third-color);
+  position: absolute;
+  top: 0;
+  top: -0.8em;
+  left: .8em;
+  padding: 0 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 15px;
+}
+
 .form-input-material input {
-  color:orange;
+  background-color: transparent !important;
+  padding: .8rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  border: solid 1px gray !important;
+  width: 100%;
+  font-size: 1em;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   align-items: center;
   padding: 50px 40px;
   color: var(--primary-color);
   background: var(--third-color);
-  border-style: solid;
-  border-color: #522f1f;
+  border: solid 1px var(--primary-color);
   border-radius: 10px;
-  box-shadow: 0 0.4px 0.4px rgba(241, 148, 148, 0.109), 0 1px 1px rgba(247, 149, 149, 0.155), 0 2.1px 2.1px rgba(225, 121, 93, 0.195), 0 4.4px 4.4px rgba(239, 156, 117, 0.241), 0 12px 12px rgba(237, 132, 56, 0.35);
-}
-
-.login-form h1 {
-  margin: 0 0 24px 0;
 }
 
 .login-form .form-input-material {
   margin: 12px 0;
-}
-
-.login-form .btn {
-  width: 100%;
-  margin: 18px 0 9px 0;
 }
