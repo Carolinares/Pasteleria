@@ -231,3 +231,7 @@ main > h1{
         transform: rotateZ(90deg);
     }
 }
+
+.arrow-hidden{
+  visibility: hidden;
+}

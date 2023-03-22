@@ -92,7 +92,6 @@ main {
 .row label {
   background-color: var(--third-color);
   position: absolute;
-  top: 0;
   top: -0.8em;
   left: .8em;
   padding: 0 10px;
