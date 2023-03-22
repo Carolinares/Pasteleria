@@ -60,61 +60,52 @@
     </nav>
   </header>
   <main>
-    <h1>Registrate</h1>
-    <fieldset>
-      <div class="form-body">
-        <div class="row">
-          <div class="form-holder">
-            <div class="form-content">
-              <div class="form-items">
-                <p>Completa la información</p>
-                <form class="requires-validation" novalidate>
+    <h1>Regístrate</h1>
+    <div class="form-content">
+      <div class="form-items">
+        <p>Completa la información</p>
+        <form class="requires-validation" novalidate>
 
-                  <div class="col-md-12">
-                    <input class="form-control" type="text" name="name" placeholder="Nombre completo" required>
-                    <!-- <div class="valid-feedback">Nombre de usuario valido</div>
-                            <div class="invalid-feedback">Nombre de usuario no puede quedar vacio</div> -->
-                  </div>
-
-                  <div class="col-md-12">
-                    <input class="form-control" type="email" name="email" placeholder="Correo electronico" required>
-                    <!-- <div class="valid-feedback">Email valido/div>
-                            <div class="invalid-feedback">Email no puede quedar vacio</div> -->
-                  </div>
-
-                  <div class="col-md-12">
-                    <input class="form-control" type="text" name="address" placeholder="Dirección" required>
-                    <!-- <div class="valid-feedback">Email valido/div>
-                            <div class="invalid-feedback">Email no puede quedar vacio</div> -->
-                  </div>
-
-                  <div class="col-md-12">
-                    <select class="form-select mt-3" required>
-                      <option selected disabled value="">Selecciona un rol</option>
-                      <option value="Cliente">Cliente</option>
-                      <option value="Empleado">Empleado</option>
-                      <option value="Administrador">Administrador</option>
-                    </select>
-                    <!-- <div class="valid-feedback">Rol seleccionado</div>
-                            <div class="invalid-feedback">Por favor selecciona un rol</div> -->
-                  </div>
-
-                  <div class="col-md-12">
-                    <input class="form-control" type="password" name="password" placeholder="Contraseña" required>
-                    <!-- <div class="valid-feedback">Contrseña valida</div>
-                            <div class="invalid-feedback">Contraseña no puede estar vacia</div> -->
-                  </div>
-
-                  <div class="form-button mt-3">
-                    <button id="submit" type="submit" class="button">Registrar</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+          <div>
+            <label for="name">Nombre*</label>
+            <input class="form-control" type="text" name="name" placeholder="Escriba su nombre completo" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+            <!-- <div class="valid-feedback">Nombre de usuario valido</div>
+                    <div class="invalid-feedback">Nombre de usuario no puede quedar vacio</div> -->
           </div>
-        </div>
+
+          <div>
+            <label for="email">Correo electrónico*</label>
+            <input class="form-control" type="email" name="email" placeholder="ejemplo@gmail.com" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+            <!-- <div class="valid-feedback">Email valido/div>
+                    <div class="invalid-feedback">Email no puede quedar vacio</div> -->
+          </div>
+
+          <div>
+            <label for="name">Dirección*</label>
+            <input class="form-control" type="text" name="address" placeholder="Cra 0 # 0 - 22" required>
+            <!-- <div class="valid-feedback">Email valido/div>
+                    <div class="invalid-feedback">Email no puede quedar vacio</div> -->
+          </div>
+
+          <div>
+            <label for="name">Teléfono*</label>
+            <input class="form-control" type="text" name="phone" placeholder="3110000000" pattern="^\d{10}$" required>
+            <!-- <div class="valid-feedback">Email valido/div>
+                    <div class="invalid-feedback">Email no puede quedar vacio</div> -->
+          </div>
+
+          <div>
+            <label for="name">Contraseña*</label>
+            <input class="form-control" type="password" name="password" required>
+            <!-- <div class="valid-feedback">Contrseña valida</div>
+                    <div class="invalid-feedback">Contraseña no puede estar vacia</div> -->
+          </div>
+
+
+          <button id="submit" type="submit" class="button">Registrar</button>
+        </form>
       </div>
-    </fieldset>
+    </div>
   </main>
   <!-- inicio de footer -->
 

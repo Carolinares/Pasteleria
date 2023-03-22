@@ -38,38 +38,20 @@ main > h1 {
     margin: 0;
 }
 
-.form-holder {
+.form-content {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    position:relative;
-    z-index: 2;
-    margin-top: 0;
-    justify-content:center;
-    align-items:center;
-    text-align: center;
-    
-}
-.form-holder .form-content {
-    position: relative;
-    text-align: center;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: center;
     justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
-    padding: 15px;
+    margin: 25px 0;
 }
 
 .form-content .form-items {
+    max-width: 450px;
     border: 1px solid var(--primary-color);
-    padding: 40px;
+    padding: 30px;
     display: inline-block;
     width: 100%;
-    min-width: 540px;
+    min-width: auto;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -96,7 +78,7 @@ main > h1 {
 .form-content input[type="password"],
 .form-content input[type="email"],
 .form-content select {
-    width: 100%;
+    min-width: 100% !important;
     padding: 9px 20px;
     text-align: left;
     border: solid 1px var(--primary-color);
@@ -108,7 +90,7 @@ main > h1 {
     color: var(--fourth-color);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    margin-top: 16px;
+    margin: 0
     box-shadow: none;
 }
 
@@ -119,43 +101,6 @@ option {
 option:hover {
     background-color: var(--primary-color);
     color: var(--accent-color);
-}
-
-.form-button.mt-3 {
-    width: 350px;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.form-content textarea {
-    position: static !important;
-    width: 100%;
-    padding: 8px 20px;
-    border-radius: 6px;
-    text-align: left;
-    background-color: var(--fourth-color);
-    border: 0;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8d8d8d;
-    outline: none;
-    resize: none;
-    height: 120px;
-    -webkit-transition: none;
-    transition: none;
-    margin-bottom: 14px;
-}
-
-.form-content textarea:hover,
-.form-content textarea:focus {
-    border: 0;
-    background-color: #ebeff8;
-    color:var(--fourth-color);    
-}
-
-.mv-up {
-    margin-top: -9px !important;
-    margin-bottom: 8px !important;
 }
 
 .invalid-feedback {
@@ -170,13 +115,31 @@ option:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.requires-validation > div {
+    width: 100%;
+    position: relative;
+    padding: 0
+}
+
+.requires-validation label{
+background-color: var(--third-color);
+  position: absolute;
+  top: 0;
+  top: -0.8em;
+  left: .8em;
+  padding: 0 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: .9em;
+  border-radius: 15px;
 }
 
 .button{
     width: 100%;
 }
 
-input:-internal-autofill-selected {
-    background-color: transparent !important;
-}

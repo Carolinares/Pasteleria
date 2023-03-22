@@ -9,28 +9,57 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background: var(--third-color);
 }
 
+header{
+  width: 100%;
+}
+
+main{
+ margin-top: 70px;
+ padding: 40px;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
 
 main h1{
+  color: var(--secondary-color);
   font-size: 2.5em;
+  font-weight: bold;
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
 }
 
-.form-input-material {
-  --input-default-border-color:var(--primary-color) ;
-  --input-border-bottom-color: var(--primary-color);
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  padding: 1.8em;
+  color: var(--primary-color);
+  background: var(--third-color);
+  border: solid 1px var(--primary-color);
+  border-radius: 10px;
 }
 
-.form-input-material{
+.login-form .form-input-material {
+  margin: 12px 0;
+  width: 100%;
   position: relative;
   padding: 0;
+  --input-default-border-color:var(--primary-color) ;
+  --input-border-bottom-color: var(--primary-color);
 }
 
 .form-input-material label{
@@ -54,21 +83,9 @@ main h1{
   outline: none;
   border: solid 1px gray !important;
   width: 100%;
-  font-size: 1em;
+  font-size: .9em;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  padding: 50px 40px;
-  color: var(--primary-color);
-  background: var(--third-color);
-  border: solid 1px var(--primary-color);
-  border-radius: 10px;
-}
-
-.login-form .form-input-material {
-  margin: 12px 0;
+footer{
+  width: 100%;
 }
