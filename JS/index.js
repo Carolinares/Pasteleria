@@ -1,14 +1,10 @@
-const $scroll = document.getElementsByClassName("scrollTo"),
-  $btnLogin = document.querySelector(".login-btn"),
-  $btnRegistro = document.querySelector(".register-btn")
-  $navContainer = document.querySelector(".container-fluid"),
-  $ulNavBar = document.querySelector(".navbar-nav"),
+const $scroll = document.getElementsByClassName("scrollTo"),  
+  $btnRegistro = document.querySelector(".register-btn");  
   $images = document.getElementById("images"),
   $slider = document.querySelector(".slider");
 
 let leftSlider = 0,
-  currentImageSlider = 0,
-  breakpoint = window.matchMedia("(max-width: 991px)");
+  currentImageSlider = 0;
 
 Array.from($scroll).forEach(el => {
   el.addEventListener("click", function (e) {
@@ -22,12 +18,17 @@ Array.from($scroll).forEach(el => {
 })
 
 document.addEventListener("DOMContentLoaded", (e) => {
+  const $btnLogin = document.querySelector(".login-btn"),
+    $navContainer = document.querySelector(".container-fluid"),
+    $ulNavBar = document.querySelector(".navbar-nav");
+
+  let breakpoint = window.matchMedia("(max-width: 991px)");
 
   const responsive = (e) => {
     if (e.matches) {
       $navContainer.removeChild($btnLogin);
       $ulNavBar.append($btnLogin)
-    } else {
+    } else if($ulNavBar.contains($btnLogin)) {
       $ulNavBar.removeChild($btnLogin);
       $navContainer.appendChild($btnLogin);
     }    
@@ -43,7 +44,11 @@ window.addEventListener("resize", (e) => {
   leftSlider = window.innerWidth * currentImageSlider;
   $images.style.left = `-${leftSlider}px`;
 })
-document.addEventListener("click", function (e) {
+
+
+document.addEventListener("click", function (e) { 
+  let lastImage = $images.childElementCount - 1;
+
   if (e.target.matches("#arrowLeft") && $images.offsetLeft < 0) {
     //Restar a left
     leftSlider -= window.innerWidth;
@@ -51,9 +56,23 @@ document.addEventListener("click", function (e) {
     currentImageSlider = leftSlider / window.innerWidth;
   }
 
-  if (e.target.matches("#arrowRight") && (window.innerWidth * ($images.childElementCount - 1)) != -$images.offsetLeft) {
+  if (e.target.matches("#arrowRight") && (window.innerWidth * lastImage) != -$images.offsetLeft) {
     leftSlider += window.innerWidth;
     $images.style.left = `-${leftSlider}px`;
     currentImageSlider = leftSlider / window.innerWidth;
   }
+  
+  
+  if (currentImageSlider > 0){
+    $slider.nextElementSibling.children[0].classList.remove("arrow-hidden");
+  }else{
+    $slider.nextElementSibling.children[0].classList.add("arrow-hidden");
+  }
+
+  if (currentImageSlider === lastImage){
+    $slider.nextElementSibling.children[1].classList.add("arrow-hidden");
+  }else{
+    $slider.nextElementSibling.children[1].classList.remove("arrow-hidden");
+  }
+
 })
