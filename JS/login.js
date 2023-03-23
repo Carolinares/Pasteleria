@@ -35,11 +35,27 @@ function validarContrasena(password) {
   return true;
 }
 
+//**
 function validar(email, password) {
   const storedData = JSON.parse(localStorage.getItem('formData'));
   
   if (!storedData || email !== storedData.email || password !== storedData.password) {
     alert('Email o contraseña incorrectos o no se encontró información de registro.');
+
+  validar()  
+ 
+});
+
+function validar() {
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var storedEmail = localStorage.getItem("email");
+  var storedPassword = localStorage.getItem("password");
+  console.log("Desde validar");
+
+  if (email == storedEmail && password == storedPassword) {
+    alert("Bienvenido " );
+//**
   } else {
     alert('Bienvenido');
   }

@@ -9,79 +9,83 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background: var(--third-color);
 }
 
-
-
-.btn {
-  color: var(--primary-color);
-  font-weight: 400;
-  font-size: medium;
-  padding: 8px 20px;
-  border-radius: 20px;
-  overflow: hidden;
-  border: solid;
-  border-width: 10;
-  border-color: #522f1f;
-}
-
-.btn::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
+header{
   width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, var(--secondary-color), transparent);
-  transform: translateX(-100%);
-  transition: 0.6s;
 }
 
-.btn:hover {
-  background: transparent;
-  box-shadow: 0 0 20px 10px rgba(244, 88, 4, 0.94);
-
+main{
+ margin-top: 70px;
+ padding: 40px;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 
-.btn:hover::before {
-  transform: translateX(100%);
-}
-
-.form-input-material {
-  --input-default-border-color:var(--primary-color) ;
-  --input-border-bottom-color: var(--primary-color);
-}
-
-.form-input-material input {
-  color:orange;
+main h1{
+  color: var(--secondary-color);
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   align-items: center;
-  padding: 50px 40px;
+  width: 100%;
+  max-width: 350px;
+  padding: 1.8em;
   color: var(--primary-color);
   background: var(--third-color);
-  border-style: solid;
-  border-color: #522f1f;
+  border: solid 1px var(--primary-color);
   border-radius: 10px;
-  box-shadow: 0 0.4px 0.4px rgba(241, 148, 148, 0.109), 0 1px 1px rgba(247, 149, 149, 0.155), 0 2.1px 2.1px rgba(225, 121, 93, 0.195), 0 4.4px 4.4px rgba(239, 156, 117, 0.241), 0 12px 12px rgba(237, 132, 56, 0.35);
-}
-
-.login-form h1 {
-  margin: 0 0 24px 0;
 }
 
 .login-form .form-input-material {
   margin: 12px 0;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  --input-default-border-color:var(--primary-color) ;
+  --input-border-bottom-color: var(--primary-color);
 }
 
-.login-form .btn {
+.form-input-material label{
+  background-color: var(--third-color);
+  position: absolute;
+  top: 0;
+  top: -0.8em;
+  left: .8em;
+  padding: 0 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 15px;
+}
+
+.form-input-material input {
+  background-color: transparent !important;
+  padding: .8rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  border: solid 1px gray !important;
   width: 100%;
-  margin: 18px 0 9px 0;
+  font-size: .9em;
+}
+
+footer{
+  width: 100%;
 }

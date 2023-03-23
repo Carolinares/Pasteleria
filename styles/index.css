@@ -108,7 +108,7 @@ main {
 
 main > h1{
     font-weight: bold;
-    font-size: 3.5em;
+    font-size: 3em;
     text-align: center;
     color: var(--secondary-color);
     width: 100%;
@@ -127,7 +127,7 @@ main > h1{
 #catalogo-productos h2{    
     font-weight: bold;
     text-align: center;
-    font-size: calc(1.2em + 1vw);
+    font-size: calc(1.1em + 1vw);
 }
 
 #articulos-catalogo{
@@ -151,7 +151,8 @@ main > h1{
 }
 
 .pasteles-catalogo> h3{       
-    font-weight: bold;
+    font-weight: bold;    
+    font-size: calc(.7em + 1vw);
 }
 
 .pasteles-catalogo p{
@@ -229,4 +230,8 @@ main > h1{
     .pasos-arma-pastel > i{
         transform: rotateZ(90deg);
     }
+}
+
+.arrow-hidden{
+  visibility: hidden;
 }
