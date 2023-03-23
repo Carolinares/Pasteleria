@@ -3,26 +3,44 @@ const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 
 loginBtn.addEventListener('click', (event) => {
-  console.log("Aqui estoy")
-  
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
+  event.preventDefault();
 
-  if (!email || !isValidEmail(email)) {
-    event.preventDefault();
-    alert('Por favor ingrese un email válido');
-    return;
+  const email = emailInput.value;
+  const password = passwordInput.value;
+
+  const emailValidation = validarEmail(email);
+  const passwordValidation = validarContrasena(password);
+
+  if (emailValidation && passwordValidation) {
+    validar(email, password);
   }
+});
 
-  if (!password || password.length < 8) {
-    event.preventDefault();
+function validarEmail(email) {
+  if (!isValidEmail(email)) {
+    alert('Por favor ingrese un email válido');
+    return false;
+  }
+  return true;
+};
+
+function validarContrasena(password) {
+  if (!isValidPassword(password)) {
     alert('Por favor ingrese una contraseña de mínimo 8 caracteres');
-    return;
-  } else if (!isValidPassword(password)) {
+    return false;
+  } else {
     const passwordStrength = getPasswordStrength(password);
     alert(`La fortaleza de su contraseña es ${passwordStrength}`);
-    return;
   }
+  return true;
+}
+
+//**
+function validar(email, password) {
+  const storedData = JSON.parse(localStorage.getItem('formData'));
+  
+  if (!storedData || email !== storedData.email || password !== storedData.password) {
+    alert('Email o contraseña incorrectos o no se encontró información de registro.');
 
   validar()  
  
@@ -37,10 +55,11 @@ function validar() {
 
   if (email == storedEmail && password == storedPassword) {
     alert("Bienvenido " );
+//**
   } else {
-    alert("Email o contraseña incorrectos");
+    alert('Bienvenido');
   }
-}  
+};
 
 function getPasswordStrength(password) {
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
@@ -56,12 +75,12 @@ function getPasswordStrength(password) {
   }
 }
 
-function isValidEmail(email) {
+function isValidEmail(email){
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
-}
+};
 
-function isValidPassword(password) {
+function isValidPassword(password){
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
   return passwordRegex.test(password);
-}
+};
