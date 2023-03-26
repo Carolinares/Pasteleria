@@ -193,9 +193,8 @@ html {
 }
 
 .button-disabled {
-  pointer-events: none;
-  background-color: #bdbdbd;
-  color: rgb(86, 86, 86);
+  background-color: #d0cfcf;
+  color: #666666;
 }
 
 
@@ -289,4 +288,7 @@ input:-webkit-autofill:focus {
     margin: 0;
   }
 
+}
+footer{
+  width: 100%;
 }

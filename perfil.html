@@ -21,20 +21,46 @@
 
 <!-- inicio de navBar -->
 <header> <!--Solo se agrego una parte de la nav: color y logo-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">
-          <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Servicios
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
+              </li>
+              <li><a class="dropdown-item" href="./armaTuPastel.html">Arma tu Pastel</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contactenos.html">Contáctanos</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+      <div class="login-btn"><a href="./login.html">
+          <span>Iniciar Sesion</span>
+          <i class="fa fa-user-circle"></i></a>
+      </div>
+    </div>
+  </nav>
   </header>
 <!--Inicio sesion Perfil-->
   <section id="perfil">
