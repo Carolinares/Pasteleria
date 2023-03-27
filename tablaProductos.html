@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <script src="https://kit.fontawesome.com/17addb2750.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles/tablaProductos.css"/>
   <link rel="stylesheet" href="./styles/components.css">
-  <link rel="stylesheet" href="../styles/tablaProductos.css"/>
   <title>Editar productos</title>
 </head>
 <body>
@@ -28,6 +28,54 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Servicios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
+                </li>
+                <li><a class="dropdown-item" href="./armaTuPastel.html">Arma tu Pastel</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contactenos.html">Contáctanos</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sesion-status">
+          <div class="login-btn">
+            <a href="./login.html">
+              <span>Iniciar Sesion</span>
+              <i class="fa fa-user-circle"></i>
+            </a>
+          </div>
+  
+          <div id="user" class="hidden">
+            <div class="name">
+              <div>
+                <span id="name"></span>
+                <i class="fa fa-user-circle"></i>
+              </div>
+              <i class="fa-solid fa-cart-shopping" id="action"></i>
+            </div>
+  
+            <div class="user-menu hidden">
+              <a href="./perfil.html">Administrar perfil</a>
+              <button id="logout" class="button button-xs">Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
   </header>
 <!--Inicio tabla visualizar productos agregados-->
   <section id="tabla-Productos">
@@ -47,7 +95,7 @@
       <tbody>
         <tr>
           <td class="letrades">Torta de <br>chocolate</td>
-          <td><img src="../assets/img/Tortas_img/tortaChoco.png" width="100"></td>
+          <td><img src="./assets/img/Tortas_img/tortaChoco.png" width="100"></td>
           <td class="letrades">Para elaborar esta torta, se utiliza una receta de bizcocho<br> de chocolate clásica, a la que se le agrega un toque especial<br> con trozos de Ferrero Rocher en su interior.
               <br>Luego, se decora la torta con crema de chocolate y Ferrero Rocher, <br>lo que le da una apariencia elegante y sofisticada.</td>
               <td class="letrades">15</td>
@@ -60,7 +108,7 @@
         </tr>
         <tr>
           <td class="letrades">Producto 2</td>
-          <td><img src="../assets/img/Tortas_img/tortacolor.png" width="100"></td>
+          <td><img src="./assets/img/Tortas_img/tortacolor.png" width="100"></td>
           <td class="letrades">Descripción del producto 2</td>
           <td class="letrades">10</td>
           <td class="letrades">$35.000</td>
@@ -71,7 +119,7 @@
         </tr>
         <tr>
           <td class="letrades">Producto 3</td>
-          <td><img src="producto2.jpg" width="100"></td>
+          <td><img src="./assets/img/Tortas_img/festival.png" width="100"></td>
           <td class="letrades">Descripción del producto 2</td>
           <td class="letrades">20</td>
           <td class="letrades">$50.000</td>
@@ -80,8 +128,12 @@
             <button class="btn btn-eliminar" onclick="eliminarProducto(this.parentNode.parentNode)">Eliminar</button>
           <td>
           </table>
-          <button class="btn-submit" id ="botonSubmit" >Agregar</button>
+          <a class="btn-submit" id="botonSubmit" href="./formProductos.html">Agregar</a>
   </section>
-  <script src="../JS/tablaProductos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./JS/tablaProductos.js"></script>
+  <script src="./JS/index.js"></script>
 </body>
 </html>

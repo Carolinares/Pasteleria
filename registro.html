@@ -41,7 +41,7 @@
                 <li>
                   <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
+                <li><a class="dropdown-item" href="./armaTuPastel.html">Arma tu Pastel</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -52,30 +52,57 @@
             </li>
           </ul>
         </div>
+<<<<<<< HEAD
         <div class="login-btn"><a href="./login.html">
           <span>Iniciar Sesion</span>
           <i class="fa fa-user-circle"></i></a>
       </div>
+=======
+        <div class="sesion-status">
+          <div class="login-btn">
+            <a href="./login.html">
+              <span>Iniciar Sesion</span>
+              <i class="fa fa-user-circle"></i>
+            </a>
+          </div>
+  
+          <div id="user" class="hidden">
+            <div class="name">
+              <div>
+                <span id="name"></span>
+                <i class="fa fa-user-circle"></i>
+              </div>
+              <i class="fa-solid fa-cart-shopping" id="action"></i>
+            </div>
+  
+            <div class="user-menu hidden">
+              <a href="./perfil.html">Administrar perfil</a>
+              <button id="logout" class="button button-xs">Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+>>>>>>> 96db9f9d02e579f8d0ebd64ec59529cec26b68de
       </div>
     </nav>
+    
   </header>
   <main>
     <h1>Regístrate</h1>
     <div class="form-content">
       <div class="form-items">
         <p>Completa la información</p>
-        <form class="requires-validation" novalidate>
+        <form class="requires-validation" action="./login.html" novalidate>
 
           <div>
             <label for="name">Nombre*</label>
-            <input class="form-control" type="text" name="name" placeholder="Escriba su nombre completo" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+            <input class="form-control" type="text" name="name" placeholder="Escriba su nombre completo" title="El nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
             <!-- <div class="valid-feedback">Nombre de usuario valido</div>
                     <div class="invalid-feedback">Nombre de usuario no puede quedar vacio</div> -->
           </div>
 
           <div>
             <label for="email">Correo electrónico*</label>
-            <input class="form-control" type="email" name="email" placeholder="ejemplo@gmail.com" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+            <input class="form-control" type="email" name="email" placeholder="ejemplo@gmail.com" title="Email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
             <!-- <div class="valid-feedback">Email valido/div>
                     <div class="invalid-feedback">Email no puede quedar vacio</div> -->
           </div>
@@ -89,18 +116,22 @@
 
           <div>
             <label for="name">Teléfono*</label>
-            <input class="form-control" type="text" name="phone" placeholder="3110000000" pattern="^\d{10}$" required>
+            <input class="form-control" type="text" name="phone" placeholder="3110000000" title="El número de teléfono debe tener 10 dígitos" pattern="^\d{10}$" required>
             <!-- <div class="valid-feedback">Email valido/div>
                     <div class="invalid-feedback">Email no puede quedar vacio</div> -->
           </div>
 
-          <div>
+          <div id="pass">
             <label for="name">Contraseña*</label>
-            <input class="form-control" type="password" name="password" required>
+            <input class="form-control" type="password" name="password" title="La contraseña debe tener entre 8 y 15 caracteres, debe contener al menos una mayúscula, una minúscula, un dígito y un caracter especial y no permite espacios en blanco"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$" required>
             <!-- <div class="valid-feedback">Contrseña valida</div>
                     <div class="invalid-feedback">Contraseña no puede estar vacia</div> -->
           </div>
 
+          <span>
+            ¿Ya tienes una cuenta? <a href="./login.html">Inicia sesión aquí</a>
+          </span>
 
           <button id="submit" type="submit" class="button">Registrar</button>
         </form>
@@ -145,6 +176,9 @@
   <script src="./JS/registro.js"></script>
   
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
 </body>
 
 </html>
