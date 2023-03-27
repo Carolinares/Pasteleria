@@ -1,5 +1,4 @@
-const $scroll = document.getElementsByClassName("scrollTo"),  
-  $btnRegistro = document.querySelector(".register-btn");  
+const $scroll = document.getElementsByClassName("scrollTo"),      
   $images = document.getElementById("images"),
   $slider = document.querySelector(".slider");
 
@@ -19,10 +18,12 @@ Array.from($scroll).forEach(el => {
 
 document.addEventListener("DOMContentLoaded", (e) => {
   const $btnLogin = document.querySelector(".login-btn"),
+    $btnRegistro = document.querySelector(".register-btn"),
     $navContainer = document.querySelector(".container-fluid"),
     $ulNavBar = document.querySelector(".navbar-nav");
 
   let breakpoint = window.matchMedia("(max-width: 991px)");
+  let breakpoint2 = window.matchMedia("(max-width: 991px)");
 
   const responsive = (e) => {
     if (e.matches) {
@@ -31,10 +32,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
     } else if($ulNavBar.contains($btnLogin)) {
       $ulNavBar.removeChild($btnLogin);
       $navContainer.appendChild($btnLogin);
-    }    
+    }        
   }
+  
   breakpoint.addEventListener("change", responsive);
   responsive(breakpoint);
+
+  const responsiveRegister = (e) => {
+    if (e.matches) {
+      $navContainer.removeChild($btnRegistro);
+      $ulNavBar.append($btnRegistro)
+    } else if($ulNavBar.contains($btnRegistro)) {
+      $ulNavBar.removeChild($btnRegistro);
+      $navContainer.appendChild($btnRegistro);
+    }        
+  }
+
+  breakpoint2.addEventListener("change", responsiveRegister);
+  responsiveRegister(breakpoint2);
 })
 
 window.addEventListener("resize", (e) => {
