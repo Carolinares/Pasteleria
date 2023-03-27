@@ -53,9 +53,28 @@
             </li>
           </ul>
         </div>
-        <div class="login-btn"><a href="./login.html">
-            <span>Iniciar Sesion</span>
-            <i class="fa fa-user-circle"></i></a>
+        <div class="sesion-status">
+          <div class="login-btn">
+            <a href="./login.html">
+              <span>Iniciar Sesion</span>
+              <i class="fa fa-user-circle"></i>
+            </a>
+          </div>
+  
+          <div id="user" class="hidden">
+            <div class="name">
+              <div>
+                <span id="name"></span>
+                <i class="fa fa-user-circle"></i>
+              </div>
+              <i class="fa-solid fa-cart-shopping" id="action"></i>
+            </div>
+  
+            <div class="user-menu hidden">
+              <a href="./perfil.html">Administrar perfil</a>
+              <button id="logout" class="button button-xs">Cerrar sesión</button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -140,7 +159,7 @@
           </div>
         </article>
       </section>
-      <a href="#">
+      <a href="./armaTuPastel.html">
         <button class="button">Arma tu pastel</button>
       </a>      
     </section>

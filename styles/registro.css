@@ -143,3 +143,31 @@ background-color: var(--third-color);
     width: 100%;
 }
 
+.contacto__form-error {
+    margin-left: 1rem;
+    font-size: 80%;
+    color: red;
+    transition: all 800ms ease;
+  }
+  
+  .contacto__form-error.is-active {
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+  }
+  
+  .none {
+    display: none;
+  }
+  
+  @keyframes show-message {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+    }
+  
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+

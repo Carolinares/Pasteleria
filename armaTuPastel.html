@@ -33,31 +33,51 @@
               <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Servicios
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li>
                   <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
                 </li>
-                <li><a class="dropdown-item" href="./armaTuPastel.html">Arma tu Pastel</a></li>
+                <li><a class="dropdown-item active" href="./armaTuPastel.html">Arma tu Pastel</a></li>
               </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./nosotros.html">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="./contactenos.html">Contáctanos</a>
+              <a class="nav-link" href="./contactenos.html">Contáctanos</a>
             </li>
           </ul>
         </div>
-        <div class="login-btn"><a href="#">
-          <span>Iniciar Sesion</span>
-          <i class="fa fa-user-circle"></i></a>
-      </div>
+        <div class="sesion-status">
+          <div class="login-btn">
+            <a href="./login.html">
+              <span>Iniciar Sesion</span>
+              <i class="fa fa-user-circle"></i>
+            </a>
+          </div>
+  
+          <div id="user" class="hidden">
+            <div class="name">
+              <div>
+                <span id="name"></span>
+                <i class="fa fa-user-circle"></i>
+              </div>
+              <i class="fa-solid fa-cart-shopping" id="action"></i>
+            </div>
+  
+            <div class="user-menu hidden">
+              <a href="./perfil.html">Administrar perfil</a>
+              <button id="logout" class="button button-xs">Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
+
   </header>
   <main>
     <h1>Arma tu pastel</h1>
