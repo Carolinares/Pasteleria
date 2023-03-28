@@ -2,7 +2,7 @@
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortaOreo.png",
         "titulo": "Torta Oreo",
-        "descripcion": "La capa exterior de la torta es una crema batida. Esta capa de crema le da a la torta un sabor y una textura cremosa, mientras que las galletas Oreo le añaden un toque crujiente y sabroso. También se pueden decorar la torta con más galletas Oreo trituradas o enteras para darle un toque extra de sabor y presentación.",
+        "descripcion": "La capa exterior de la torta es una crema batida. Esta capa de crema le da a la torta un sabor y una textura cremosa, mientras que las galletas Oreo le añaden un toque crujiente y sabroso.",
         "precio": "$48.000"
     },
     {
@@ -33,7 +33,7 @@
         "img": "/Pasteleria/assets/img/Tortas_img/tortacono.png",
         "titulo": "Pastel Merlin",
         "descripcion": "Lo que lo hace especial es su decoración con motivos inspirados en la leyenda de Merlin. Sorprende a tus invitados con este pastel y déjalos impresionados con su sabor y su presentación ",
-        "precio": "$245.000"
+        "precio": "$45.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/cafe.png",
