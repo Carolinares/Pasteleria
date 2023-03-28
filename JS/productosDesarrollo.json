@@ -44,13 +44,13 @@
     {
         "img": "../assets/img/Tortas_img/ponque.rosa.png",
         "titulo": "Pastel Reina",
-        "descripcion": "Su sabor dulce y suave lo convierten en una opción perfecta para aquellos que buscan un postre delicioso pero no demasiado empalagoso. Exquisito y elegante que se distingue por su delicada apariencia rosa pastel y su sabor.",
+        "descripcion": "Su sabor dulce y suave lo convierten en una opción perfecta para aquellos que buscan un postre delicioso pero no demasiado empalagoso. Exquisito y elegante que se distingue por su delicada apariencia rosa pastel.",
         "precio": "$48.000"
     },
     {
         "img": "../assets/img/Tortas_img/festival.png",
         "titulo": "Chiscake de Maracuyá",
-        "descripcion": "Su sabor exótico y refrescante que combina la suavidad del queso crema con la acidez y dulzor de la fruta tropical maracuyá. Además, su textura cremosa y suave lo convierte en un postre delicioso que es perfecto para cualquier ocasión especial. ",
+        "descripcion": "Su sabor exótico y refrescante que combina la suavidad del queso crema con la acidez y dulzor de la fruta tropical maracuyá. Su textura cremosa y suave lo convierte en un postre delicioso que es perfecto para cualquier ocasión especial. ",
         "precio": "$29.700"
     },
     {
