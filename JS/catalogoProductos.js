@@ -53,7 +53,7 @@ const getPorciones = async (productos) => {
 
 //para entorno de pruebas en Github
 const getProductos = async () => {
-  const productos = getAPI("/Pasteleria/JS/productosProduccion.json");
+  const productos = await getAPI("/Pasteleria/JS/productosProduccion.json");
   getPorciones(productos);
 }  
 
