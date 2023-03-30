@@ -41,23 +41,26 @@ function renderCards(productos, porciones) {
 
 
 
-/* //para entorno de pruebas en vscode
-const getProductos = async () => {
+//para entorno de desarrollo en vscode
+/* const getProductos = async () => {
   const productos = await getAPI("/JS/productosDesarrollo.json");
   getPorciones(productos);
-} */
-
-//para entorno de produccion en Github
-const getProductos = async () => {
-  const productos = getAPI("/Pasteleria/JS/productosProduccion.json");
-  getPorciones(productos);
-} 
-
+}
 const getPorciones = async (productos) => {
   const porciones = await getAPI("/JS/porciones.json");
   renderCards(productos, porciones)
-}
+} */
 
+//para entorno de pruebas en Github
+const getProductos = async () => {
+  const productos = await getAPI("/Pasteleria/JS/productosProduccion.json");
+  getPorciones(productos);
+}  
+
+const getPorciones = async (productos) => {
+  const porciones = await getAPI("/Pasteleria/JS/porciones.json");
+  renderCards(productos, porciones)
+}
 
 const getAPI = async (uri) => {
   try{
