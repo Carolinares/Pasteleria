@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "peso": "1/4",
+        "descripcion": "2-4",
+        "factorPrecio": 1
+    },
+    {
+        "id": 2,
+        "peso": "1/2",
+        "descripcion": "4-8",
+        "factorPrecio": 2
+    },
+    {
+        "id": 3,
+        "peso": "1",
+        "descripcion": "8-15",
+        "factorPrecio": 3
+    }
+]
