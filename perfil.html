@@ -4,146 +4,240 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous" />
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="./styles/components.css">
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/17addb2750.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/components.css" />
     <link rel="stylesheet" href="styles/perfil.css" />
     <title>Perfil</title>
   </head>
-  
-<body>
 
-<!-- inicio de navBar -->
-<header> <!--Solo se agrego una parte de la nav: color y logo-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">
-          <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+  <body>
+    <!-- inicio de navBar -->
+    <header>
+      <!--Solo se agrego una parte de la nav: color y logo-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Servicios
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="./catalogoProductos.html"
+                      >Catalogo de Productos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./armaTuPastel.html"
+                      >Arma tu Pastel</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactenos.html">Contáctanos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="sesion-status">
+            <div class="login-btn">
+              <a href="./login.html">
+                <span>Iniciar Sesion</span>
+                <i class="fa fa-user-circle"></i>
+              </a>
+            </div>
+
+            <div id="user" class="hidden">
+              <div class="name">
+                <div>
+                  <span id="name"></span>
+                  <i class="fa fa-user-circle"></i>
+                </div>
+                <i class="fa-solid fa-cart-shopping" id="action"></i>
+              </div>
+
+              <div class="user-menu hidden">
+                <a href="./perfil.html">Administrar perfil</a>
+                <button id="logout" class="button button-xs">
+                  Cerrar sesión
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--Inicio sesion Perfil-->
+    <main>
+      <h1 class="titulo__perfil">Tu Perfil</h1>
+
+      <form class="form-content">
+        <div class="form-items">
+          <!--Inicio formalario perfil-->
+
+          <div>
+            
+            <canvas id="canvas"></canvas>
+            <img id="img" />
+            <input type="file" id="input-file" accept="image/*" />
+            <button id="delete-btn">Eliminar foto</button>
+            <label for="avatar">Seleccionar imagen de perfil</label>
+          </div>
+
+          <div>
+            <input
+              type="text"
+              name="nombreUsuario"
+              class="perfil__usuario"
+              id="name"
+            />
+            <label for="">Nombre de Usuario</label>
+          </div>
+          <div>
+            <input type="text" name="" id="name" class="perfil__nombre" />
+            <label for="">Nombre completo</label>
+          </div>
+
+          <div>
+            <input
+              type="date"
+              name=""
+              id="fechaNacimiento"
+              class="perfil__fechaNacimiento"
+            />
+            <label for="">Fecha de nacimiento</label>
+          </div>
+
+          <div>
+            <input type="text" name="" id="cedula" class="perfil__cedula" />
+            <label for="">Número de cédula</label>
+          </div>
+
+          <div>
+            <input type="tel" name="" id="telefono" class="perfil__telefono" />
+            <label for="">Número de teléfono</label>
+          </div>
+
+          <div>
+            <input type="email" name="" id="email" class="perfil__email" />
+            <label for="">Correo electronico</label>
+          </div>
+          <div>
+            <input type="text" name="" id="password" class="perfil__password" />
+            <label for="">Contraseña</label>
+          </div>
+
+          <input type="button" value="Editar" class="button" /> <br />
+          <input type="submit" value="Actualizar" class="button"/>
+        </div>
+      </form>
+    </main>
+
+    <!-- inicio de footer -->
+
+    <footer class="text-center text-light" style="background-color: #522f1f">
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <img
+          class="logo-footer"
+          src="./assets/svg/logo-tortones.svg"
+          alt="Logo tortones"
+        />
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <hr />
+          <!-- Facebook -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="light"
+            ><i class="fa fa-facebook-f"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-ligth m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="light"
+            ><i class="fa fa-instagram"></i
+          ></a>
+
+          <!-- Github -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="light"
+            ><i class="fa fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
       </div>
-    </nav>
-  </header>
-<!--Inicio sesion Perfil-->
-  <section id="perfil">
-    <h3>Perfil Administrador</h3>
+      <!-- Grid container -->
 
-  <form class="containerForm"> <!--Inicio formalario perfil-->
-    
-    <div class="foto-perfil">
-      <img src="imgperfil" alt="foto"> <!--porque ? si escribo en alt foto perfil me lo muestra en la página-->
+      <!-- Copyright -->
+      <div
+        class="text-center text-light p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        © 2023 Copyright
+      </div>
+      <!-- Copyright -->
+    </footer>
 
-    </div>
-
-    <div>
-      <input type="file" name="avatar" accept="image/*">
-      <label for="avatar">Seleccionar imagen de perfil</label>
-    </div>
-    
-
-    <div>
-      <input type="text" name="" id="name" >
-    <label for="">Nombre de Usuario</label>
-    </div>
-    <div>
-      <input type="text" name="" id="name" >
-      <label for="">Nombre completo</label>
-    </div>
-    
-    <div>
-      <input type="date" name="" id="fechaNacimiento" >
-      <label for="">Fecha de nacimiento</label>
-    </div>
-    
-    <div>
-      <input type="text" name="" id="cedula" >
-      <label for="">Número de cédula</label>
-    </div>
-    
-    <div>
-      <input type="tel" name="" id="telefono" >
-      <label for="">Número de teléfono</label>
-    </div>
-    
-    <div>
-      <input type="email" name="" id="email" >
-    <label for="">correo</label>
-    </div>
-    <div>
-      <input type="text" name="" id="password" >
-    <label for="">Contraseña</label>
-    </div>
-    
-    <input type="button" value="Editar"> <br>
-    <input type="submit" value="Actualizar">
-
-  </form>
-</section>
-
-   <!-- inicio de footer -->
-
-   <footer class="text-center text-light" style="background-color: #522f1f">
-    <!-- Grid container -->
-    <div class="container pt-4">
-      <img
-        class="logo-footer"
-        src="./assets/svg/logo-tortones.svg"
-        alt="Logo tortones"
-      />
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <hr />
-        <!-- Facebook -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-light m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="light"
-          ><i class="fa fa-facebook-f"></i
-        ></a>
-
-        <!-- Instagram -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-ligth m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="light"
-          ><i class="fa fa-instagram"></i
-        ></a>
-
-        <!-- Github -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-light m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="light"
-          ><i class="fa fa-github"></i
-        ></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div
-      class="text-center text-light p-3"
-      style="background-color: rgba(0, 0, 0, 0.2)"
-    >
-      © 2023 Copyright
-    </div>
-    <!-- Copyright -->
-  </footer>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./JS/index.js"></script>
+    <script src="./JS/perfil.js"></script>
+  </body>
 </html>

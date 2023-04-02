@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/17addb2750.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./styles/contactenos.css">
   <link rel="stylesheet" href="./styles/components.css">
@@ -32,15 +33,15 @@
               <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Servicios
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li>
                   <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
+                <li><a class="dropdown-item" href="./armaTuPastel.html">Arma tu Pastel</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -51,12 +52,39 @@
             </li>
           </ul>
         </div>
-        <div class="login-btn"><a href="#">
+<<<<<<< HEAD
+        <div class="login-btn"><a href="./login.html">
           <span>Iniciar Sesion</span>
           <i class="fa fa-user-circle"></i></a>
       </div>
+=======
+        <div class="sesion-status">
+          <div class="login-btn">
+            <a href="./login.html">
+              <span>Iniciar Sesion</span>
+              <i class="fa fa-user-circle"></i>
+            </a>
+          </div>
+  
+          <div id="user" class="hidden">
+            <div class="name">
+              <div>
+                <span id="name"></span>
+                <i class="fa fa-user-circle"></i>
+              </div>
+              <i class="fa-solid fa-cart-shopping" id="action"></i>
+            </div>
+  
+            <div class="user-menu hidden">
+              <a href="./perfil.html">Administrar perfil</a>
+              <button id="logout" class="button button-xs">Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+>>>>>>> 96db9f9d02e579f8d0ebd64ec59529cec26b68de
       </div>
     </nav>
+    
   </header>
   <main>
     <section id="contacto">

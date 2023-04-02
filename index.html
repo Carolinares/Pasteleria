@@ -42,7 +42,7 @@
                 <li>
                   <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Arma tu Pastel</a></li>
+                <li><a class="dropdown-item" href="./armaTuPastel.html">Arma tu Pastel</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -53,9 +53,28 @@
             </li>
           </ul>
         </div>
-        <div class="login-btn"><a href="./login.html">
-            <span>Iniciar Sesion</span>
-            <i class="fa fa-user-circle"></i></a>
+        <div class="sesion-status">
+          <div class="login-btn">
+            <a href="./login.html">
+              <span>Iniciar Sesion</span>
+              <i class="fa fa-user-circle"></i>
+            </a>
+          </div>
+  
+          <div id="user" class="hidden">
+            <div class="name">
+              <div>
+                <span id="name"></span>
+                <i class="fa fa-user-circle"></i>
+              </div>
+              <i class="fa-solid fa-cart-shopping" id="action"></i>
+            </div>
+  
+            <div class="user-menu hidden">
+              <a href="./perfil.html">Administrar perfil</a>
+              <button id="logout" class="button button-xs">Cerrar sesión</button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -75,9 +94,9 @@
         <i id="arrowRight" class="fa-solid fa-angle-right angle-header"></i>          
       </div>
       <div id="descripcion-header">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi ipsam natus exercitationem fuga quos
-          consequuntur labore qui ipsa modi repudiandae sit molestiae, optio iusto animi vitae, obcaecati a. Sed,
-          molestiae.</p>
+        <p>¡Bienvenidos al paraíso de los dulces! En nuestra pastelería, cada bocado es una
+          experiencia única y deliciosa que te transporta a un mundo de sabores y texturas
+          irresistibles.</p>
         <button class="scrollTo" target="principal"><i
             class="fa-solid fa-angle-down angle-header"></i>
         </button>
@@ -93,20 +112,17 @@
         <article class="pasteles-catalogo">
           <img src="./assets/img/index_img/catalogo-pasteles_1.png" alt="Pastel fantasía">
           <h3>Pastel fantasía</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur ex cum deleniti et sit autem numquam,
-            minus.</p>
+          <p>Con una textura húmeda y esponjosa, un sabor dulce y suave. Es un postre perfecto para celebraciones, o simplemente para alegrar cualquier día con su hermosa presentación.</p>
         </article>
         <article class="pasteles-catalogo">
           <img src="./assets/img/index_img/catalogo-pasteles_2.png" alt="Pastel Reina">
           <h3>Pastel Reina</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur ex cum deleniti et sit autem numquam,
-            minus.</p>
+          <p> Un pastel con una textura húmeda y esponjosa, una presentación elegante y atractiva. Exquisito y elegante que se distingue por su delicada apariencia rosa pastel y su sabor suave y dulce.</p>
         </article>
         <article class="pasteles-catalogo">
           <img src="./assets/img/index_img/catalogo-pasteles_3.png" alt="Pastel roche">
           <h3>Pastel roch</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur ex cum deleniti et sit autem numquam,
-            minus.</p>
+          <p>Un postre delicioso lleno de sabor, que seguramente satisfará a los amantes del chocolate y las avellanas. Se sirve a menudo en celebraciones especiales o como postre después de una cena.</p>
         </article>
       </section>
       <a href="./catalogoProductos.html">
@@ -140,7 +156,7 @@
           </div>
         </article>
       </section>
-      <a href="#">
+      <a href="./armaTuPastel.html">
         <button class="button">Arma tu pastel</button>
       </a>      
     </section>

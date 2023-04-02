@@ -1,5 +1,4 @@
-const scrollTo = document.getElementsByClassName("scrollTo");
-const $form = document.querySelector(".contacto__form"),
+  const $form = document.querySelector(".contacto__form"),
  $allInput = document.querySelectorAll(".contacto__form [required]");
 
  $allInput.forEach((input) => {

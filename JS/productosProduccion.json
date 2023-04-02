@@ -2,61 +2,61 @@
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortaOreo.png",
         "titulo": "Torta Oreo",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$45.000"
+        "descripcion": "La capa exterior de la torta es una crema batida. Esta capa de crema le da a la torta un sabor y una textura cremosa, mientras que las galletas Oreo le añaden un toque crujiente. Es una opción perfecta para los amantes de las galletas Oreo.",
+        "precio": "$48.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/fondan.sirena.png",
         "titulo": "Pastillaje del Mar",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$25.000"
+        "descripcion": "La torta Pastillaje de Mar en Fondant no solo es impresionante a la vista, sino que también es deliciosa, el fondant le da a la torta una textura suave y sedosa, que se combina perfectamente con el crujiente del pastillaje.",
+        "precio": "$55.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/mikie.png",
         "titulo": "Mickey Mouse",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$35.200"
+        "descripcion": " Esta torta es perfecta para fiestas y celebraciones temáticas de Disney, y es una forma divertida y creativa de sorprender a los invitados con un postre delicioso y temático.",
+        "precio": "$45.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortacolor.png",
         "titulo": "Pastel Arcoiris",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$22.000"
+        "descripcion": "Decoración exterior con diferentes colores del arcoiris, creando un efecto visual sorprendente y atractivo para los sentidos. Una opción divertida y única que  impresionará a todos tus comensales. ",
+        "precio": "$35.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortaChoco.png",
         "titulo": "Pastel Roché",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$18.000"
+        "descripcion": "Un postre delicioso lleno de sabor, que seguramente satisfará a los amantes del chocolate y las avellanas. Se sirve a menudo en celebraciones especiales o como postre después de una cena.",
+        "precio": "$40.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/tortacono.png",
         "titulo": "Pastel Merlin",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$25.000"
+        "descripcion": "Lo que lo hace especial es su decoración con motivos inspirados en la leyenda de Merlin. Sorprende a tus invitados con este pastel y déjalos impresionados con su sabor y su presentación ",
+        "precio": "$45.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/cafe.png",
         "titulo": "Pastel de Charlie",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$30.000"
+        "descripcion": "La decoración de este pastel es única y se enfoca en los detalles característicos de Charlie, perfecto para los amantes de los cómics y la animación, así como para cualquiera que quiera disfrutar de un postre delicioso y único.",
+        "precio": "$40.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/ponque.rosa.png",
         "titulo": "Pastel Reina",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$28.000"
+        "descripcion": "Su sabor dulce y suave lo convierten en una opción perfecta para aquellos que buscan un postre delicioso pero no demasiado empalagoso. Exquisito y elegante que se distingue por su delicada apariencia rosa pastel.",
+        "precio": "$48.000"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/festival.png",
         "titulo": "Chiscake de Maracuyá",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
+        "descripcion": "Su sabor exótico y refrescante que combina la suavidad del queso crema con la acidez y dulzor de la fruta tropical maracuyá. Su textura cremosa y suave lo convierte en un postre delicioso que es perfecto para cualquier ocasión. ",
         "precio": "$29.700"
     },
     {
         "img": "/Pasteleria/assets/img/Tortas_img/toperUnicornio.png",
         "titulo": "Pastel Fantasía",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim commodi minima sunt eum labore dolorum. Optio voluptates nam exercitationem maxime facere provident perferendis praesentium incidunt, eius aliquid ut nemo quo!",
-        "precio": "$12.000"
+        "descripcion": "Con una textura húmeda y esponjosa, un sabor dulce y suave. Es un postre perfecto para celebraciones o simplemente para alegrar cualquier día con su hermosa presentación.",
+        "precio": "$40.000"
     }
 ]

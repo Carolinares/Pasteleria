@@ -1,0 +1,26 @@
+[
+    {
+        "address": "Calle 2 # 2 -22",
+        "email": "lorena.garavito.itg@gmail.com",
+        "name": "Lorena Acuña",
+        "password": "Lorena*123",
+        "phone": "3115838858",
+        "rol": "admin"
+    },
+    {
+        "address": "Calle 2 # 2 -22",
+        "email": "edwin@gmail.com",
+        "name": "Edwin Suesca",
+        "password": "Edwin*123",
+        "phone": "3110000000",
+        "rol": "cliente"
+    },
+    {
+        "address": "Calle 2 # 2 -22",
+        "email": "natalia@gmail.com",
+        "name": "Natalia Suesca",
+        "password": "Natalia*123",
+        "phone": "3110000055",
+        "rol": "cliente"
+    }
+]

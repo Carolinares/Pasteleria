@@ -1,4 +1,5 @@
 
+//Carito es que este js pertenece al formulario formProductos, pero está vinculado es a tablaProductos.html, debes cambiarlo para que te funcione
 
 /*function validarTabla() //LOREE si ves esto intente hacer una validacion pero no pude
   let formulario = document.getElementById("formulario-producto");
@@ -38,9 +39,3 @@
     return false;
   }
   // Si se han validado todos los campos*/
-
-  //Se agrega evento para que btn Agregar envie al form producto
-  document.getElementById("botonSubmit").addEventListener("click", () => {
-    console.log("Agregar productos");
-    window.location.href="../formProductos.html";
-  });
