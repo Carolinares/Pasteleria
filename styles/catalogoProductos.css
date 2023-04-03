@@ -177,3 +177,14 @@ main > h1{
     gap: 35px;
     margin-top: .5em;
 }
+
+.carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px
+}
+
+.carrito > i, .carrito > span{
+  pointer-events: none;
+}

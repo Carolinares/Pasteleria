@@ -10,9 +10,10 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background: var(--third-color);
+  height: 100vh;
 }
 
 header{
