@@ -25,30 +25,20 @@
       } 
     });
 
+    //Recorrer inputs del formulario y construir objeto "datosUsuario"
     Array.from(form).forEach((input) => {
-      input.addEventListener('submit', (event) => {
+      input.addEventListener('submit', async (event) => {
+        event.preventDefault();
         if (!input.checkValidity()) { 
-          event.preventDefault(); 
           event.stopPropagation(); 
         } else {
           const formData = new FormData(input);
           if(!formData.get("rol")){
             formData.append("rol", "cliente");
           }
-          const serializedData = Object.fromEntries(formData.entries());
-
-          if(users){
-            //Agregar usuario
-            let allUsers = JSON.parse(users);
-            allUsers.push(serializedData);
-            allUsers = JSON.stringify(allUsers)
-            localStorage.setItem('users', allUsers);
-            return
-          } else {
-            //Crear primer usuario
-            const newUser = JSON.stringify([serializedData])
-            localStorage.setItem('users', newUser);
-          }
+          const datosUsuario = JSON.stringify(Object.fromEntries(formData.entries()));
+          const respuesta = await registrar("http://localhost:8080/api/usuarios", datosUsuario);
+          console.log(respuesta);
         }
   
         input.classList.add('was-validated'); 
@@ -56,13 +46,36 @@
     });
   })();
   
+  const registrar = async (uri, datosUsuario) => {
+    let headersList = {
+      "Content-Type": "application/json",
+      "acces-control-allow-origin": "*"
+    }
+  
+    const requestOptions = {
+      method: 'POST',
+      headers: headersList,
+      body: datosUsuario
+    };
+  
+    try{
+      const res = await fetch(uri, requestOptions),
+      data = await res.json();
+      if (!res.ok) throw { status: res.status, statusText: res.statusText };
+      return {data, res}
+    } catch (error) {
+      let message = error.statusText || "Ocurrio un error";
+      console.log(message);
+    }
+  }
+
   const insertSelectRoles = () => {
     const $pass = document.getElementById("pass");
     const sesion = localStorage.getItem("sesion");
     const user = JSON.parse(sesion);
     if(!sesion) return;
     
-    if(user.rol === "admin"){
+    if(user.rol === "Administrador"){
       const $selectRol = document.createElement("div");
       $selectRol.innerHTML = `
         <select class="form-select" required>
