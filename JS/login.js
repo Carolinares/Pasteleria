@@ -1,6 +1,6 @@
 const loginBtn = document.querySelector('.login__btn'),
-   emailInput = document.getElementById('email'),
-   passwordInput = document.querySelector('#password');
+   $emailInput = document.getElementById('email'),
+   $passwordInput = document.getElementById('password');
 
   const $span = document.createElement("span");
   $span.id = "aviso";
@@ -8,122 +8,48 @@ const loginBtn = document.querySelector('.login__btn'),
   $span.classList.add("contacto__form-error", "none");
   loginBtn.insertAdjacentElement("beforebegin", $span);
 
-  //para entorno de pruebas en vscode
-  loginBtn.addEventListener("click", e => {
-    e.preventDefault();
-    const respuesta = login();
-    if (respuesta){
-      const sesion = JSON.stringify(respuesta) 
-      localStorage.setItem("sesion", sesion);
-      window.location.href = "./index.html"
-      document.getElementById("aviso").classList.remove("is-active");
-    }else{
-      document.getElementById("aviso").classList.add("is-active");
-    }
-});
 
-const login = () => {
-  const data = localStorage.getItem("users");
-  if(data){
-    const users = JSON.parse(data);
-    const userFound = users.find(user => user.email === emailInput.value);
-    if (!userFound) return false;
-    if(userFound.password === passwordInput.value) return {name: userFound.name, rol: userFound.rol};
-    return false
-  }
-  return false
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* loginBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-
-  const email = emailInput.value;
-  const password = passwordInput.value;
-
-  const emailValidation = validarEmail(email);
-  const passwordValidation = validarContrasena(password);
-
-  if (emailValidation && passwordValidation) {
-    validar(email, password);
-  }
-});
-
-function validarEmail(email) {
-  if (!isValidEmail(email)) {
-    alert('Por favor ingrese un email válido');
-    return false;
-  }
-  return true;
-};
-
-function validarContrasena(password) {
-  if (!isValidPassword(password)) {
-    alert('Por favor ingrese una contraseña de mínimo 8 caracteres');
-    return false;
-  } else {
-    const passwordStrength = getPasswordStrength(password);
-    alert(`La fortaleza de su contraseña es ${passwordStrength}`);
-  }
-  return true;
-}
-
-//**
-function validar(email, password) {
-  const storedData = JSON.parse(localStorage.getItem('formData'));
+//login con backend
+loginBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const credenciales = JSON.stringify({
+    "correo": $emailInput.value,
+    "clave": $passwordInput.value
+  });
+  const respuesta =  await login("http://localhost:8080/api/login", credenciales)
   
-  if (!storedData || email !== storedData.email || password !== storedData.password) {
-    alert('Email o contraseña incorrectos o no se encontró información de registro.');
-
-  validar()  
- 
-}};
-
-function validar() {
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-  var storedEmail = localStorage.getItem("email");
-  var storedPassword = localStorage.getItem("password");
-  console.log("Desde validar");
-
-  if (email == storedEmail && password == storedPassword) {
-    alert("Bienvenido " );
-//**
-  } else {
-    alert('Bienvenido');
+  if (respuesta.data){
+    localStorage.setItem("sesion", JSON.stringify(respuesta.data));
+    window.location.href = "./index.html"
+    document.getElementById("aviso").classList.remove("is-active");
+  }else{
+    document.getElementById("aviso").classList.add("is-active");
   }
-};
+});
 
-function getPasswordStrength(password) {
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-  const length = password.length;
-  const complexity = passwordRegex.test(password) ? 2 : 1;
-  const strength = length * complexity;
-  if (strength < 5) {
-    return 'debil';
-  } else if (strength < 9) {
-    return 'media';
-  } else {
-    return 'fuerte';
+const login = async (uri, credenciales) => {
+  let headersList = {
+    "Content-Type": "application/json",
+    "acces-control-allow-origin": "*"
+  }
+
+  const requestOptions = {
+    method: 'POST',
+    headers: headersList,
+    body: credenciales
+  };
+
+  try{
+    const res = await fetch(uri, requestOptions),
+    data = await res.json();
+    if (!res.ok) {
+      document.getElementById("aviso").classList.add("is-active");
+      throw { status: res.status, statusText: res.statusText };
+    }
+    return {data, res}
+  } catch (error) {
+    document.getElementById("aviso").classList.add("is-active");
+    let message = error.statusText || "Ocurrio un error";
+    console.log(message);
   }
 }
-
-function isValidEmail(email){
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-};
-
-function isValidPassword(password){
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-  return passwordRegex.test(password);
-}; */
