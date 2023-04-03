@@ -60,7 +60,7 @@
             <div class="login-btn">
               <a href="./login.html">
                 <span>Iniciar Sesion</span>
-                <i class="fa fa-user-circle"></i>
+                <i class="fa-solid fa-user-large"></i>
               </a>
             </div>
     
@@ -68,9 +68,9 @@
               <div class="name">
                 <div>
                   <span id="name"></span>
-                  <i class="fa fa-user-circle"></i>
+                  <i class="fa-solid fa-user-large"></i>
                 </div>
-                <i class="fa-solid fa-cart-shopping" id="action"></i>
+                <i class="fa-solid fa-gear" id="action" hidden ></i>
               </div>
     
               <div class="user-menu hidden">
@@ -78,6 +78,7 @@
                 <button id="logout" class="button button-xs">Cerrar sesión</button>
               </div>
             </div>
+            <a class="fa-solid fa-cart-shopping carrito" href="./carroCompras.html"><span id="carrito-cantidad" hidden></span></a>
           </div>
         </div>
       </nav>
@@ -86,14 +87,6 @@
 
     <main>
       <h1>Catálogo de productos</h1>
-      <div class="buttons-category">
-        <button class="button">Cubierta en Fondant</button>
-        <button class="button">Cubierta en Crema</button>
-
-        <!--<button-- class="button">Merengue Italiano</button-->
-
-
-      </div>
       <section class="seccion-productos"></section>
       <template id="template-card">
         <article class="card-productos">
@@ -110,15 +103,16 @@
           <div class="precio-container">
             <span class="precio"></span>
             <div class="unidades">
-              <input class="unidades-value" type="number" name="quantity" min="1" max="5" value="1">
+              <input class="unidades-value" type="number" name="cantidad" min="1" max="5" value="1">
               <label>unidades</label>
             </div>
           </div>
           <div class="buttons">
-            <button class="button button-xs">Comprar</button>
-            <button class="button-border button-xs">
+            <button class="button-border button-xs carrito">
+              <span>Agregar</span>
               <i class="fa-solid fa-cart-shopping"></i>
             </button>
+            <button class="button button-xs comprar">Comprar</button>
           </div>
         </article>
       </template>
@@ -183,8 +177,8 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="./JS/catalogoProductos.js"></script>
     <script src="./JS/index.js"></script>
+    <script src="./JS/catalogoProductos.js"></script>
     
   </body>
 </html>

@@ -2,7 +2,11 @@ const $scroll = document.getElementsByClassName("scrollTo"),
   $btnRegistro = document.querySelector(".register-btn"),  
   $images = document.getElementById("images"),
   sesion = localStorage.getItem("sesion"),
-  $slider = document.querySelector(".slider");
+  $slider = document.querySelector(".slider"),
+  $carrito = document.querySelector(".carrito"),
+  $carritoCantidad = document.getElementById("carrito-cantidad");
+
+let productosPorComprar = localStorage.getItem("compras");
 
   let leftSlider = 0,
   currentImageSlider = 0;
@@ -45,47 +49,54 @@ const responsive = () => {
 
 
 const sliderIndex = () => {
-  if(window.location.pathname === "/Pasteleria/index.html"){
-  window.addEventListener("resize", (e) => {
-    
-    for (i = 0; i < $images.childElementCount; i++) {
-      $images.children[i].style.width = `${window.innerWidth}px`;
-    }
-    leftSlider = window.innerWidth * currentImageSlider;
-    $images.style.left = `-${leftSlider}px`;
-  })
-  
-  document.addEventListener("click", function (e) { 
-    let lastImage = $images.childElementCount - 1;
-    
-    if (e.target.matches("#arrowLeft") && $images.offsetLeft < 0) {
-      //Restar a left
-      leftSlider -= window.innerWidth;
+  if(window.location.pathname.includes("index.html")){
+    window.addEventListener("resize", (e) => {
+      
+      for (i = 0; i < $images.childElementCount; i++) {
+        $images.children[i].style.width = `${window.innerWidth}px`;
+      }
+      leftSlider = window.innerWidth * currentImageSlider;
       $images.style.left = `-${leftSlider}px`;
-      currentImageSlider = leftSlider / window.innerWidth;
-    }
+    })
   
-    if (e.target.matches("#arrowRight") && (window.innerWidth * lastImage) != -$images.offsetLeft) {
-      leftSlider += window.innerWidth;
-      $images.style.left = `-${leftSlider}px`;
-      currentImageSlider = leftSlider / window.innerWidth;
-    }
+    document.addEventListener("click", (e) => { 
+      let lastImage = $images.childElementCount - 1;
+      
+      //Slider home
+      if (e.target.matches("#arrowLeft") && $images.offsetLeft < 0) {
+        //Restar a left
+        leftSlider -= window.innerWidth;
+        $images.style.left = `-${leftSlider}px`;
+        currentImageSlider = leftSlider / window.innerWidth;
+      }
     
-    
-    if (currentImageSlider > 0){
-      $slider.nextElementSibling.children[0].classList.remove("arrow-hidden");
-    }else{
-      $slider.nextElementSibling.children[0].classList.add("arrow-hidden");
-    }
-    
-    if (currentImageSlider === lastImage){
-      $slider.nextElementSibling.children[1].classList.add("arrow-hidden");
-    }else{
-      $slider.nextElementSibling.children[1].classList.remove("arrow-hidden");
-    }
-    
-  })
-}}
+      if (e.target.matches("#arrowRight") && (window.innerWidth * lastImage) != -$images.offsetLeft) {
+        leftSlider += window.innerWidth;
+        $images.style.left = `-${leftSlider}px`;
+        currentImageSlider = leftSlider / window.innerWidth;
+      }
+      
+      if (currentImageSlider > 0){
+        $slider.nextElementSibling.children[0].classList.remove("arrow-hidden");
+      }else{
+        $slider.nextElementSibling.children[0].classList.add("arrow-hidden");
+      }
+      
+      if (currentImageSlider === lastImage){
+        $slider.nextElementSibling.children[1].classList.add("arrow-hidden");
+      }else{
+        $slider.nextElementSibling.children[1].classList.remove("arrow-hidden");
+      }
+      
+      console.log(e.target);
+
+      //Ir a página carrito compras
+      if(e.target.matches(".cart")){
+        window.location.href = "./carroCompras.html"
+      }
+    })
+  }
+}
 
 const menuUser = () => {
   const $user = document.getElementById("user"),
@@ -95,28 +106,27 @@ const menuUser = () => {
     $username = document.getElementById("name");
   if(sesion){
     const user = JSON.parse(sesion);
-    $username.textContent = user.name;
+    $username.textContent = `${user.nombre} ${user.apellido}`;
     $user.classList.remove("hidden");
     $login.classList.add("hidden");
 
     $user.addEventListener("click", (e) => {
       if(e.target.matches(".button")){
         localStorage.removeItem("sesion");
+        localStorage.removeItem("compras");
         window.location.href = "./login.html";
       } else if(e.target.matches("#action")){
-        const locat = (user.rol === "admin") ? "./tablaProductos.html" : "./index.html";
-        window.location.href = locat;
+        window.location.href = "./tablaProductos.html";
       } else {
         $userMenu.classList.toggle("hidden");
       }      
     })
     
-    if(user.rol === "admin"){
-      $action.classList.remove("fa-cart-shopping");
-      $action.classList.add("fa-gear");
-    } else{
-      $action.classList.add("fa-cart-shopping");
-      $action.classList.remove("fa-gear");
+    if(user.rol === "Administrador"){
+      $action.removeAttribute("hidden");
+      $carrito.setAttribute("hidden", null);
+    } else {
+      $action.setAttribute("hidden", null);
     }
   } else {
     $user.classList.add("hidden");
@@ -124,13 +134,12 @@ const menuUser = () => {
   }  
 }
 
-//<a href="./registro.html">Registrar usuario</a>
 const registrarUsuario = () => {
   const $buttonLogout = document.getElementById("logout");
   const user = JSON.parse(sesion);
   if(!sesion) return;
   
-  if(user.rol === "admin"){
+  if(user.rol === "Administrador"){
     const $register = document.createElement("a");
     $register.setAttribute("href", "./registro.html");
     $register.textContent = "Registrar usuario";
@@ -138,3 +147,14 @@ const registrarUsuario = () => {
   }
 }
 registrarUsuario();
+
+//Muestra la cantidad de productos en el carrito 
+if(productosPorComprar){
+  $carritoCantidad.removeAttribute("hidden");
+  let listaProductos = JSON.parse(productosPorComprar);
+  let cantidadTotal = 0;
+  listaProductos.forEach((producto) => {
+    cantidadTotal += producto.cantidad
+  })
+  $carritoCantidad.textContent = cantidadTotal;
+}
