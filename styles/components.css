@@ -195,6 +195,7 @@ html {
 .button-disabled {
   background-color: #d0cfcf;
   color: #666666;
+  pointer-events: none;
 }
 
 
