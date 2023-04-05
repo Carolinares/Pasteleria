@@ -1,7 +1,6 @@
 (function() {
     const form = document.querySelectorAll('.requires-validation');
     const $inputs = document.querySelectorAll('.requires-validation  [required]');
-    const users = localStorage.getItem("users");
 
     $inputs.forEach((input) => {
       const $span = document.createElement("span");
