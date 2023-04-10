@@ -20,11 +20,11 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 2rem;
     padding: 2.5rem;
     width: 100%;
+    min-height: calc(100vh - 70px);
   }
 
   main > h1{
@@ -53,12 +53,10 @@
     flex-wrap:wrap;
   }
 
-  .arma-tu-pastel .opciones .opcion1{
-    -webkit-clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0 51%, 0% 0%);
-    clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0 51%, 0% 0%);
-  }
-
-  .arma-tu-pastel .opciones .opcion{
+  .arma-tu-pastel .opciones .field-form .opcion{
+    text-align: center;
+    background-color: #d0cfcf;
+    color: #666666;
     padding: 15px 30px;
     margin: 5px 0;
     border: none;
@@ -67,9 +65,15 @@
     margin-left: -15px;
     -webkit-clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 25% 50%, 0% 0%);
     clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%, 0% 0%);
+    user-select: none;
   }
 
-  .active-btn{
+  .arma-tu-pastel .opciones .field-form .opcion1{
+    -webkit-clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0 51%, 0% 0%);
+    clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0 51%, 0% 0%);
+  }
+
+  .field-form > input[type="radio"]:checked + .opcion{
     background-color: var(--accent-color);
     color: var(--primary-color);
     font-weight: bold;
@@ -83,17 +87,14 @@
     margin-top: 3rem;
     max-width: 100%;
     width: 100%;
-    height: 300px;
   }
 
   .contenedor-lista{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 15px;
-    max-width: 300px;
-    border: solid 1px var(--primary-color);
+    min-width: 280px;
     border-radius: 10px;
     padding: 1.5rem;
   }
@@ -104,7 +105,7 @@
     font-size: 1.5rem;
   }
 
-  #lista-opciones{
+  #lista-ingredientes{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -112,8 +113,8 @@
   }
 
 
-  #lista-opciones > input[type="radio"] + label{
-    width: 100%;
+  #lista-ingredientes > input[type="radio"] + label{
+    width: calc(100% + 30px);
     border: none;
     background-color: #d0cfcf;
     color: #666666;
@@ -124,7 +125,7 @@
     cursor: pointer;
 }
 
-#lista-opciones > input[type="radio"] + label::before{
+#lista-ingredientes > input[type="radio"] + label::before{
     content: "";
     position: absolute;
     height: 30px;
@@ -136,36 +137,37 @@
     background-color: rgba(0, 0, 0, 0.207);
 }
 
-  #lista-opciones > input[type="radio"]:checked + label{
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-  }
+#lista-ingredientes > input[type="radio"]:checked + label{
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
 
-  #lista-opciones > input[type="radio"]:checked + label::after{
-    content: "✓";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 8px;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-  }
+#lista-ingredientes > input[type="radio"]:checked + label::after{
+  content: "✓";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
 
-  .form-opciones{
-    width: 100%;
-  }
+.form-opciones{
+  width: 100%;
+}
 
-  .pastel{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 350px;
-    overflow: hidden;
+.pastel{
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  max-width: 350px;
+  overflow: hidden;
+  height: max-content;
 }
 
 .sombras, .colores, .colores > svg{
@@ -180,14 +182,17 @@
     
 }
 
-.colores > svg > #cobertura{
+.colores > svg > #coberturaPastel{
     fill: #603f22;
+    transition: fill 0.2s ease-in;
 }
-.colores > svg > #relleno{
+.colores > svg > #rellenoPastel{
     fill: #f7e28e;
+    transition: fill 0.2s ease-in;
 }
-.colores > svg > #masa{
+.colores > svg > #masaPastel{
     fill: #c9802a;
+    transition: fill 0.2s ease-in;
 }
 
 #lista-tu-pastel{
@@ -200,12 +205,114 @@
     width: 100%;
 }
 
-#lista-tu-pastel span{
+#lista-tu-pastel li{
+  color: var(--primary-color);
+}
+
+#lista-tu-pastel li span:first-child{
     font-weight: bold;
 }
 
-#lista-tu-pastel span{
-    font-weight: bold;
+/*Estilos formulario cotización*/
+.form-container-cotizacion{
+  width: 100%;
+  max-width: 450px;
+  padding: 25px;
+  border-radius: 10px;
+  display: grid;
+  place-content: center;
+  color: var(--primary-color);
+  gap: 15px;  
+  height: max-content;
+}
+
+.acciones{
+  display: flex;
+  gap: 25px;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.form-container-cotizacion .button{
+  min-width: 150px;
+}
+
+#form-cotizacion{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#form-cotizacion .fieldForm{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#form-cotizacion .fieldForm > span:last-child{
+  max-width: 500px;
+}
+
+#form-cotizacion .fieldForm > input{
+  cursor: pointer;
+}
+
+#form-cotizacion > input,
+#form-cotizacion >  textarea,
+#form-cotizacion .fieldForm > input{
+padding: 0.5rem;
+font-size: small;
+margin-bottom: 1rem;
+border: 1px solid gray;
+border-radius: 5px;
+outline-color: gray;
+background-color: transparent;
+}
+
+#form-cotizacion label{
+  font-weight: bold;
+}
+
+#form-cotizacion > textarea{
+  min-height: 140px;
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.backdrop{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  background-color: #522f1f74;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.backdrop > .popup{
+  background-color: white;
+  max-width: 550px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 25px #522f1f2d;
+  color: var(--primary-color);
+  gap: 15px;
+}
+
+.backdrop > .popup h2{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.acciones{
+  display: flex;
+  justify-content: space-around;
+}
+.backdrop > .popup .button{
+  min-width: 150px;
 }
 
 @media screen and (max-width: 990px) {
@@ -255,7 +362,7 @@
     
       .pastel{
         grid-area: pastel;
-        height: 300px;
+        max-height: 200px;
       }
     
       .contenedor-lista-tu-pastel{

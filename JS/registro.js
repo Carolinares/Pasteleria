@@ -77,7 +77,7 @@
     if(user.rol === "Administrador"){
       const $selectRol = document.createElement("div");
       $selectRol.innerHTML = `
-        <select class="form-select" required>
+        <select class="form-select" name="rol" required>
           <option selected value="Cliente">Cliente</option>
           <option value="Administrador">Administrador</option>
         </select>

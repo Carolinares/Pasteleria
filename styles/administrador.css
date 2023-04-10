@@ -46,6 +46,7 @@ main > .tabs > .tab > label{
     border-radius: 7px 7px 0 0;
     text-align: center;
     width: 120px;
+    user-select: none;
 }
 
 .tab > input[type="radio"]:checked + label{
@@ -147,13 +148,15 @@ td, th{
 /* Estilos formulario*/
 .backdrop{
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 70px);
     position: fixed;
     top: 70px;
     left: 0;
     background-color: #522f1f74;
     display: grid;
-    place-content: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding-bottom: 70px;
 }
 .backdrop > .popup{
     background-color: white;
@@ -166,6 +169,8 @@ td, th{
     place-content: center;
     color: var(--primary-color);
     gap: 15px;
+    margin-top: 70px;    
+    height: max-content;
 }
 
 .backdrop > .popup h2{
