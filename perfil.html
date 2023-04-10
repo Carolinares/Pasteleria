@@ -76,54 +76,60 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./nosotros.html">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contactenos.html">Contáctanos</a>
-              </li>
+              <li><a class="dropdown-item" href="./armaTuPastel.html">Arma tu Pastel</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contactenos.html">Contáctanos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sesion-status">
+        <div class="login-btn">
+          <a href="./login.html">
+            <span>Iniciar Sesion</span>
+            <i class="fa-solid fa-user-large"></i>
+          </a>
+        </div>
+
+        <div id="user" class="hidden">
+          <div class="name">
+            <div>
+              <span id="name"></span>
+              <i class="fa-solid fa-user-large"></i>
+            </div>
+            <i class="fa-solid fa-gear" id="action" hidden ></i>
           </div>
-          <div class="sesion-status">
-            <div class="login-btn">
-              <a href="./login.html">
-                <span>Iniciar Sesion</span>
-                <i class="fa fa-user-circle"></i>
-              </a>
-            </div>
 
-            <div id="user" class="hidden">
-              <div class="name">
-                <div>
-                  <span id="name"></span>
-                  <i class="fa fa-user-circle"></i>
-                </div>
-                <i class="fa-solid fa-cart-shopping" id="action"></i>
-              </div>
-
-              <div class="user-menu hidden">
-                <a href="./perfil.html">Administrar perfil</a>
-                <button id="logout" class="button button-xs">
-                  Cerrar sesión
-                </button>
-              </div>
-            </div>
+          <div class="user-menu hidden">
+            <a href="./perfil.html">Administrar perfil</a>
+            <button id="logout" class="button button-xs">Cerrar sesión</button>
           </div>
         </div>
-      </nav>
-    </header>
-    <!--Inicio sesion Perfil-->
-    <main>
-      <h1 class="titulo__perfil">Tu Perfil</h1>
+        <a class="fa-solid fa-cart-shopping carrito" href="./carroCompras.html"><span id="carrito-cantidad" hidden></span></a>
+      </div>
+    </div>
+  </nav>
+  
+  </header>
+<!--Inicio sesion Perfil-->
+  <section id="perfil">
+    <h3>Perfil Administrador</h3>
 
-      <form class="form-content">
-        <div class="form-items">
-          <!--Inicio formalario perfil-->
+  <form class="containerForm"> <!--Inicio formalario perfil-->
+    
+    <div class="foto-perfil">
+      <img src="imgperfil" alt="foto"> <!--porque ? si escribo en alt foto perfil me lo muestra en la página-->
+
+    </div>
 
           <div>
             
-            <canvas id="canvas"></canvas>
-            <img id="img" />
+            <canvas id="canvas" width="250px"  height="250px"></canvas>
+            <img id="img" class="width-full border" />
             <input type="file" id="input-file" accept="image/*" />
             <button id="delete-btn">Eliminar foto</button>
             <label for="avatar">Seleccionar imagen de perfil</label>

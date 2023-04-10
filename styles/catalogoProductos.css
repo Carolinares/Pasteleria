@@ -54,6 +54,7 @@ main > h1{
     gap: 10px;
     padding: 20px;
     border-radius: 10px;
+    height: max-content;
     box-shadow: 5px 5px 30px #522f1f38;
 }
 
@@ -70,21 +71,120 @@ main > h1{
     font-size: 1.5em;
 }
 
-.card-productos > p{
+.card-productos > .descripcion{
     color: var(--primary-color);
     font-size: .9em;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    cursor: default;
+}
+
+.card-productos:hover > .descripcion{
+    transition: max-height 1s ease-in;
+    max-height: 2000px;
+}
+
+.card-productos > hr{
+    height: 1px;
+    background: var(--primary-color);
+    width: 100%;
     margin: 0;
 }
 
-.card-productos > span{
+.card-productos .porciones > h4{
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+
+.card-productos .porciones > .lista-porciones{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.card-productos .porciones > .lista-porciones .porcion{
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 7px;
+    border: solid 2px transparent;
+    user-select: none;
+    position: relative;
+}
+
+.card-productos .porciones > .lista-porciones .porcion > .check{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    place-content: center;
+}
+
+.card-productos .porciones > .lista-porciones .porcion > span{
+    color: var(--primary-color);
+}
+
+.card-productos .porciones > .lista-porciones .porcion > span:last-child{
+    font-size: 13px;
+}
+
+.card-productos .porciones > .lista-porciones input[type="radio"]:checked + label{
+    border-color: var(--accent-color);
+}
+
+.card-productos .porciones > .lista-porciones input[type="radio"]:checked + label > .check{
+    display: grid !important;
+}
+
+.card-productos > .precio-container{
+    display: flex;
+    gap: 7px;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.card-productos > .precio-container > .precio{
     font-size: 21px;
     color: var(--primary-color);
     font-weight: bold;
 }
 
-.card-productos > div{
+.card-productos > .precio-container > .unidades > input[type="number"]{
+    padding: 0 5px;
+    outline-color: var(--accent-color);
+    border: none;
+    text-align: center;
+}
+
+.card-productos > .buttons{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 35px;
     margin-top: .5em;
+}
+
+.carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px
+}
+
+.carrito > i, .carrito > span{
+  pointer-events: none;
 }

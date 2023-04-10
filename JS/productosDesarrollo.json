@@ -1,62 +1,72 @@
 [
     {
-        "img": "../assets/img/Tortas_img/tortaOreo.png",
-        "titulo": "Torta Oreo",
+        "id": 1,
+        "urlImagen": "../assets/img/Tortas_img/tortaOreo.png",
+        "nombre": "Torta Oreo",
         "descripcion": "La capa exterior de la torta es una crema batida que le da a la torta un sabor y una textura cremosa, mientras que las galletas Oreo le añaden un toque crujiente. Es una opción perfecta para los amantes de las galletas Oreo.",
-        "precio": "$48.000"
+        "precio": "48000"
     },
     {
-        "img": "../assets/img/Tortas_img/fondan.sirena.png",
-        "titulo": "Pastillaje del Mar",
+        "id": 2,
+        "urlImagen": "../assets/img/Tortas_img/fondan.sirena.png",
+        "nombre": "Pastillaje del Mar",
         "descripcion":" La torta Pastillaje de Mar en Fondant no solo es impresionante a la vista, sino que también es deliciosa, el fondant le da a la torta una textura suave y sedosa, que se combina perfectamente con el crujiente del pastillaje. ",
-        "precio": "$55.000"
+        "precio": "55000"
     },
     {
-        "img": "../assets/img/Tortas_img/mikie.png",
-        "titulo": "Mickey Mouse",
+        "id": 3,
+        "urlImagen": "../assets/img/Tortas_img/mikie.png",
+        "nombre": "Mickey Mouse",
         "descripcion": "Un postre divertido y delicioso. Esta torta es perfecta para fiestas y celebraciones temáticas de Disney, es una forma divertida y creativa de sorprender a los invitados con un postre delicioso y temático",
-        "precio": "$45.000"
+        "precio": "45000"
     },
     {
-        "img": "../assets/img/Tortas_img/tortacolor.png",
-        "titulo": "Pastel Arcoiris",
+        "id": 4,
+        "urlImagen": "../assets/img/Tortas_img/tortacolor.png",
+        "nombre": "Pastel Arcoiris",
         "descripcion": "Decoración exterior con diferentes colores del arcoiris, creando un efecto visual sorprendente y atractivo para los sentidos. Una opción divertida y única que  impresionará a todos tus comensales.",
-        "precio": "$35.000"
+        "precio": "35000"
     },
     {
-        "img": "../assets/img/Tortas_img/tortaChoco.png",
-        "titulo": "Pastel Roché",
+        "id": 5,
+        "urlImagen": "../assets/img/Tortas_img/tortaChoco.png",
+        "nombre": "Pastel Roché",
         "descripcion": "Un postre delicioso lleno de sabor, que seguramente satisfará a los amantes del chocolate y las avellanas. Se sirve a menudo en celebraciones especiales o como postre después de una cena.",
-        "precio": "$40.000"
+        "precio": "40000"
     },
     {
-        "img": "../assets/img/Tortas_img/tortacono.png",
-        "titulo": "Pastel Merlin",
+        "id": 6,
+        "urlImagen": "../assets/img/Tortas_img/tortacono.png",
+        "nombre": "Pastel Merlin",
         "descripcion": "Lo que lo hace especial es su decoración con motivos inspirados en la leyenda de Merlin. Sorprende a tus invitados con este pastel y déjalos impresionados con su sabor y su presentación ",
-        "precio": "$45.000"
+        "precio": "45000"
     },
     {
-        "img": "../assets/img/Tortas_img/cafe.png",
-        "titulo": "Pastel de Charlie",
+        "id": 7,
+        "urlImagen": "../assets/img/Tortas_img/cafe.png",
+        "nombre": "Pastel de Charlie",
         "descripcion": "La decoración de este pastel es única y se enfoca en los detalles característicos de Charlie, perfecto para los amantes de los cómics y la animación, así como para cualquiera que quiera disfrutar de un postre delicioso y único.",
-        "precio": "$40.000"
+        "precio": "40000"
     },
     {
-        "img": "../assets/img/Tortas_img/ponque.rosa.png",
-        "titulo": "Pastel Reina",
+        "id": 8,
+        "urlImagen": "../assets/img/Tortas_img/ponque.rosa.png",
+        "nombre": "Pastel Reina",
         "descripcion": "Su sabor dulce y suave lo convierten en una opción perfecta para aquellos que buscan un postre delicioso pero no demasiado empalagoso. Exquisito y elegante que se distingue por su delicada apariencia rosa pastel.",
-        "precio": "$48.000"
+        "precio": "48000"
     },
     {
-        "img": "../assets/img/Tortas_img/festival.png",
-        "titulo": "Chiscake de Maracuyá",
+        "id": 9,
+        "urlImagen": "../assets/img/Tortas_img/festival.png",
+        "nombre": "Chiscake de Maracuyá",
         "descripcion": "Su sabor exótico y refrescante que combina la suavidad del queso crema con la acidez y dulzor de la fruta tropical maracuyá. Su textura cremosa y suave lo convierte en un postre delicioso que es perfecto para cualquier ocasión. ",
-        "precio": "$29.700"
+        "precio": "29700"
     },
     {
-        "img": "../assets/img/Tortas_img/toperUnicornio.png",
-        "titulo": "Pastel Fantasía",
+        "id": 10,
+        "urlImagen": "../assets/img/Tortas_img/toperUnicornio.png",
+        "nombre": "Pastel Fantasía",
         "descripcion": "Con una textura húmeda y esponjosa, un sabor dulce y suave. Es un postre perfecto para celebraciones, o simplemente para alegrar cualquier día con su hermosa presentación.",
-        "precio": "$40.000"
+        "precio": "40000"
     }
 ]
