@@ -1,8 +1,18 @@
+import * as api from "../services/api.service.js";
+
 const $cardsProductos = document.querySelector(".seccion-productos"),
   $template = document.getElementById("template-card").content,
   $fragment = document.createDocumentFragment();
 
-function renderCards(productos, porciones) {
+async function renderCards() {
+  const respuestaProductos = await api.getAllProductos();
+  if(!respuestaProductos.res.ok)return;
+  const productos = respuestaProductos.data;
+
+  const respuestaPorciones = await api.getAllPorciones();
+  if(!respuestaPorciones.res.ok)return;
+  const porciones = respuestaPorciones.data;
+
   productos.forEach((producto) => {
     const precio = Number(producto.precio);
 
@@ -62,44 +72,6 @@ function renderCards(productos, porciones) {
   $cardsProductos.appendChild($fragment);
 }
 
-//para entorno de desarrollo en vscode
-const getProductos = async () => {
-  const productos = await getAPI("http://localhost:8080/api/productos");
-  getPorciones(productos);
-}
-const getPorciones = async (productos) => {
-  const porciones = await getAPI("http://localhost:8080/api/porciones");
-  renderCards(productos, porciones)
-}
-
-//para entorno de pruebas en Github
-/* const getProductos = async () => {
-  const productos = await getAPI("/Pasteleria/JS/productosProduccion.json");
-  getPorciones(productos);
-}  
-
-const getPorciones = async (productos) => {
-  const porciones = await getAPI("/Pasteleria/JS/porciones.json");
-  renderCards(productos, porciones)
-} */
-
-const getAPI = async (uri) => {
-  let headersList = {
-    "Content-Type": "application/json",
-    "acces-control-allow-origin": "*"
-   }
-
-  try{
-    const res = await fetch(uri,{
-      headers: headersList
-    }),
-    data = await res.json();
-    return data
-  } catch (err) {
-    return err
-  }
-}
-
 document.addEventListener("change", (e) => {
   if(e.target.name === "porcion"){
     const productoId = e.target.dataset.producto;
@@ -125,9 +97,7 @@ document.addEventListener("change", (e) => {
 
     $precioElement.textContent = `$${precio * factor * cantidad}`;
   }
-})
-
-getProductos();
+});
 
 document.addEventListener("click", (e) => {
   //Ir a página carrito compras
@@ -165,7 +135,7 @@ document.addEventListener("click", (e) => {
     
     //Mostrar total de productos en carrito
     if(productosPorComprar){
-      listaProductos = JSON.parse(productosPorComprar);
+      const listaProductos = JSON.parse(productosPorComprar);
       $carritoCantidad.removeAttribute("hidden");
       let cantidadTotal = 0;
       listaProductos.forEach((producto) => {
@@ -179,4 +149,6 @@ document.addEventListener("click", (e) => {
       window.location.href = `./${location}.html`;
     }
   }
-})
+});
+
+renderCards();
