@@ -46,6 +46,7 @@ main > .tabs > .tab > label{
     border-radius: 7px 7px 0 0;
     text-align: center;
     width: 120px;
+    user-select: none;
 }
 
 .tab > input[type="radio"]:checked + label{

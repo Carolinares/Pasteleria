@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./styles/administrador.css">
     <link rel="stylesheet" href="./styles/components.css" />
     <title>Administrar</title>
-    </head>
+  </head>
 <body>
   <header>
       <!-- inicio de navBar -->
@@ -88,8 +88,8 @@
   <main>
     <form class="tabs" id="tabs">
       <div class="tab">
-        <input type="radio" name="tab" id="tabProdutos" data-tab="productos" checked hidden>
-        <label for="tabProdutos">Productos</label>
+        <input type="radio" name="tab" id="tabProductos" data-tab="productos" checked hidden>
+        <label for="tabProductos">Productos</label>
       </div>
       <div class="tab">
         <input type="radio" name="tab" id="tabIngredientes" data-tab="ingredientes" hidden>
@@ -98,7 +98,7 @@
     </form>
 
     <section class="tabla-container">
-      <header class="tabla-header">
+      <header class="header-tabla">
         <h1>Administrar productos</h1>
         <button class="agregar button button-producto">Agregar producto</button>
       </header>
@@ -116,7 +116,7 @@
         </tbody>
       </table>
 
-      <table class="tablas-admin tabla-ingredientes">
+      <table class="tablas-admin tabla-ingredientes" hidden>
         <thead>
           <tr>
             <th>Nombre</th>
@@ -163,7 +163,7 @@
     </template>
 
     <!--********************************Diálogos y formularios emergentes (PopUps)********************************-->
-    <div class="backdrop" hidden>
+    <div class="backdrop" id="backdrop-productos" hidden>
       <div class="popup form">
         <h2 class="titulo"></h2>
         <form id="form-productos" enctype="multipart/form-data"> 
@@ -197,20 +197,25 @@
       </div>
     </div>
 
-    <div class="backdrop" hidden>
+    <div class="backdrop" id="backdrop-ingredientes" hidden>
       <div class="popup form">
         <h2 class="titulo"></h2>
         <form id="form-ingredientes" enctype="multipart/form-data"> 
           <input type="text" name="idIngrediente" id="id-ingrediente" hidden>
           <label for="nombreIngrediente">Nombre*:</label>
-          <input type="text" id="nombreIngrediente" name="nombreIngrediente" placeholder="Ejemplo: Torta Oreo" required>
+          <input type="text" id="nombreIngrediente" name="nombreIngrediente" placeholder="Ejemplo: Fondant" required>
         
           <label for="descripcionIngrediente">Descripción*:</label>
-          <textarea id="descripcionIngrediente" name="descripcionIngrediente" placeholder="Ejemplo: Su sabor dulce y suave lo convierten en una opción perfecta..." required></textarea>
+          <textarea id="descripcionIngrediente" name="descripcionIngrediente" placeholder="Ejemplo: Pastillaje de vainilla con decoraciones según requerimientos...." required></textarea>
         
+          <label for="categoriaIngrediente">Categoría de ingrediente*:</label>
+          <select name="categoriaIngrediente" id="categoriaIngrediente">
+            <option value="0">Seleccione una categoría</option>
+          </select>
+
           <label for="colorIngrediente">Color*:</label>
           <input type="color" id="colorIngrediente" name="colorIngrediente" required><br>
-        
+
           <div class="acciones">
             <button class="button-border button-xs cancelar" type="button">Cancelar</button>
             <button class="button button-xs aceptar" type="submit" hidden>Crear</button>
@@ -222,8 +227,8 @@
 
     <div class="backdrop backdrop-eliminar" hidden>
       <div class="popup">
-        <h2>Eliminar producto</h2>
-        <p>¿Confirma que desea eliminar este producto?</p>
+        <h2></h2>
+        <p></p>
         <div class="acciones">
           <button class="button-border cancelar">Cancelar</button>
           <button class="button confirmEliminar">Sí, eliminar</button>
@@ -290,7 +295,8 @@
     crossorigin="anonymous"
   ></script>
   <script src="./JS/index.js"></script>
-  <script src="./JS/tablaProductos.js"></script>
-  <script src="./JS/tablaIngredientes.js"></script>
+  <script src="./JS/administrador.js" type="module"></script>
+  <script src="./JS/tablaProductos.js" type="module"></script>
+  <script src="./JS/tablaIngredientes.js" type="module"></script>
 </body>
 </html>
