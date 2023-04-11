@@ -1,4 +1,4 @@
-const base_uri = "http://5.183.9.93:8080/api";
+const base_uri = "https://edwinsuesca.net:8443/api";
 
 const peticionAPI = async (uri, requestOptions) => {
     try {

@@ -36,7 +36,7 @@
             formData.append("rol", "cliente");
           }
           const datosUsuario = JSON.stringify(Object.fromEntries(formData.entries()));
-          const respuesta = await registrar("http://5.183.9.93:8080/api/usuarios", datosUsuario);
+          const respuesta = await registrar("https://edwinsuesca.net:8443/api/usuarios", datosUsuario);
           console.log(respuesta);
         }
   
