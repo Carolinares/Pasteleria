@@ -16,7 +16,7 @@ loginBtn.addEventListener("click", async (e) => {
     "correo": $emailInput.value,
     "clave": $passwordInput.value
   });
-  const respuesta =  await login("http://localhost:8080/api/login", credenciales)
+  const respuesta =  await login("https://edwinsuesca.net:8443/api/login", credenciales)
   
   if (respuesta.data){
     localStorage.setItem("sesion", JSON.stringify(respuesta.data));
