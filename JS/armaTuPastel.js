@@ -10,6 +10,7 @@ const $formListaIngredientes = document.getElementById("lista-ingredientes"),
     sesionObject = JSON.parse(sesion),
     $listaTuPastel = document.getElementById("lista-tu-pastel"),
     $tabsCategorias = document.getElementById("pasosPastel"),
+    $tabCotizar = document.querySelector(".tabCotizar"),
     $templateIngredientes = document.getElementById("template-opciones-pastel").content,
     $templateCategorias = document.getElementById("template-categorias").content,
     $fragmentoCategoria = document.createDocumentFragment(),
@@ -41,11 +42,14 @@ const listarCategorias = async () => {
     });
 
     $tabsCategorias.appendChild($fragmentoCategoria);
-    $tabsCategorias.innerHTML += `
-    <div class="field-form">
+
+    if(sesionObject.rol === "cliente"){
+        $tabsCategorias.innerHTML += `
+        <div class="field-form">
         <input type="radio" name="pasos" id="cotizar" hidden>
-        <label class="opcion" for="cotizar">Cotizar</label>
-    </div>`;
+        <label class="opcion tabCotizar" for="cotizar">Cotizar</label>
+        </div>`;
+    }
     
     $tabsCategorias.children[0].children[1].classList.add("opcion1");
     $tabsCategorias.children[0].children[0].setAttribute("checked", null);
@@ -53,6 +57,7 @@ const listarCategorias = async () => {
 
     listarIngredientesPorCategoria(primerCategoria);
     $tituloListaIngredientes.textContent = `Elige ${primerCategoria}`;
+
 }
 
 const listarIngredientes = (ingredientes, categoria) => {
@@ -174,6 +179,25 @@ document.addEventListener("click", async (e) => {
     }
 })
 
+const mensajeCorreo = (rol, urlImagenCorreo) =>{
+    const datosCliente = rol === "Administrador" ?`<p><strong>Cliente: </strong> ${sesionObject.nombre} ${sesionObject.apellido} - ${sesionObject.correo}</p>
+    <p><strong>Teléfono de cliente: </strong> ${sesionObject.telefono}</p>
+    <br>` : `<p>Gracias por interesarte en nuestros productos. Nos comunicaremos contigo al número <strong>${sesionObject.telefono}</strong></p>`;
+
+    const imagen = urlImagenCorreo ? `<img src="${urlImagenCorreo}">` : "";
+    return `
+    <body>
+        ${datosCliente}
+        <strong>Mensaje:</strong>
+        <p>Hola, deseo cotizar un pastel con las siguientes características: </p>
+        <ul>${$listaTuPastel.innerHTML}</ul>
+        <br>
+        ${imagen}
+        <a href="www.tortones.com">www.tortones.com</a>
+    </body>
+    `
+}
+
 document.addEventListener("submit", async (e) => {
     if(e.target === $formCotizacion){
         e.preventDefault();
@@ -183,41 +207,21 @@ document.addEventListener("submit", async (e) => {
             //Cargar imagen
             const respuestaImg = await api.crearArchivo(imagen);
             urlImagenCorreo = respuestaImg.data.url;
-            pastelPorCotizar.mensaje = `
-            <body>
-                <p><strong>Remitente: </strong> ${sesionObject.nombre} ${sesionObject.apellido} - ${sesionObject.correo}</p>
-                <br>
-                <strong>Mensaje:</strong>
-                <p>Hola, deseo cotizar un pastel con las siguientes características: </p>
-                <ul>${$listaTuPastel.innerHTML}</ul>
-                <br>
-                <img src="${urlImagenCorreo}">
-                <p><strong>Teléfono de contacto: </strong> ${sesionObject.telefono}</p>
-                <br>
-                <a href="www.tortones.com">www.tortones.com</a>
-            </body>
-            `
-        } else{
-            pastelPorCotizar.mensaje = `
-            <body>
-                <p><strong>Remitente: </strong> ${sesionObject.nombre} ${sesionObject.apellido} - ${sesionObject.correo}</p>
-                <br>
-                <strong>Mensaje:</strong>
-                <p>Hola, deseo cotizar un pastel con las siguientes características: </p>
-                <ul>${$listaTuPastel.innerHTML}</ul>
-                <br>
-                <p><strong>Teléfono de contacto: </strong> ${sesionObject.telefono}</p>
-                <br>
-                <a href="www.tortones.com">www.tortones.com</a>
-            </body>
-            `
         }
+        pastelPorCotizar.mensaje = mensajeCorreo("Cliente", urlImagenCorreo);
+
         const respuesta = await api.enviarCotizacion(JSON.stringify(pastelPorCotizar));
+
         console.log(respuesta);
         if(respuesta.res.ok){
             $telefono.textContent = sesionObject.telefono;
             $backdrop.removeAttribute("hidden");
         }
+
+        pastelPorCotizar.mensaje = mensajeCorreo("Administrador", urlImagenCorreo);
+    
+        const respuestaNotifAdmin = await api.notificarAdmin(JSON.stringify(pastelPorCotizar));
+        console.log(respuestaNotifAdmin);
     }
 })
 

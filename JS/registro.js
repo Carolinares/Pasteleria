@@ -38,6 +38,9 @@
           const datosUsuario = JSON.stringify(Object.fromEntries(formData.entries()));
           const respuesta = await registrar("https://edwinsuesca.net:8443/api/usuarios", datosUsuario);
           console.log(respuesta);
+          if(respuesta.res.ok){
+            location.href = "/login.html";
+          };
         }
   
         input.classList.add('was-validated'); 
