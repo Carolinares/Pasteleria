@@ -99,6 +99,7 @@ $btnConfirmar.addEventListener("click", async (e) => {
       }
       const respuesta = await api.enviarCotizacion(JSON.stringify(compraConfirmada));
       console.log(respuesta);
+      
       let notificacionAdmin = {
         asunto: `Nueva compra - ${sesionObject.nombre} ${sesionObject.apellido}`,
         remitente: sesionObject.correo,

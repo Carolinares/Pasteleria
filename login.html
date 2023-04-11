@@ -104,6 +104,7 @@
             name="username"
             id="email"
             class="form-control-material"
+            pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
             required
           />
         </div>
@@ -112,15 +113,16 @@
           <input
             type="password"
             name="password"
-            id="password"
+            id="password"            
             class="form-control-material"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$"
             required
           />
         </div>
         <span>
           ¿No tienes una cuenta? <a href="./registro.html">Regístrate aquí</a>
         </span>
-        <button type="submit" class="button login__btn">
+        <button type="submit" class="button button-disabled login__btn">
           Iniciar Sesion
         </button>
       </form>
