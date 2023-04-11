@@ -87,8 +87,6 @@ const sliderIndex = () => {
       }else{
         $slider.nextElementSibling.children[1].classList.remove("arrow-hidden");
       }
-      
-      console.log(e.target);
 
       //Ir a página carrito compras
       if(e.target.matches(".cart")){
@@ -116,7 +114,7 @@ const menuUser = () => {
         localStorage.removeItem("compras");
         window.location.href = "./login.html";
       } else if(e.target.matches("#action")){
-        window.location.href = "./tablaProductos.html";
+        window.location.href = "./administrador.html";
       } else {
         $userMenu.classList.toggle("hidden");
       }      

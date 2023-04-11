@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <script src="https://kit.fontawesome.com/17addb2750.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/administrador.css">
+    <link rel="stylesheet" href="./styles/components.css" />
+    <title>Administrar</title>
+  </head>
+<body>
+  <header>
+      <!-- inicio de navBar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img src="./assets/svg/logo-tortones.svg" alt="log0 tortones">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Servicios
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="./catalogoProductos.html">Catalogo de Productos</a>
+                  </li>
+                  <li><a class="dropdown-item" href="./armaTuPastel.html">Arma tu Pastel</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactenos.html">Contáctanos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="sesion-status">
+            <div class="login-btn">
+              <a href="./login.html">
+                <span>Iniciar Sesion</span>
+                <i class="fa-solid fa-user-large"></i>
+              </a>
+            </div>
+    
+            <div id="user" class="hidden">
+              <div class="name">
+                <div>
+                  <span id="name"></span>
+                  <i class="fa-solid fa-user-large"></i>
+                </div>
+                <i class="fa-solid fa-gear" id="action" hidden ></i>
+              </div>
+    
+              <div class="user-menu hidden">
+                <a href="./perfil.html">Administrar perfil</a>
+                <button id="logout" class="button button-xs">Cerrar sesión</button>
+              </div>
+            </div>
+            <a class="fa-solid fa-cart-shopping carrito" href="./carroCompras.html"><span id="carrito-cantidad" hidden></span></a>
+          </div>
+        </div>
+      </nav>
+      
+  </header>
+
+  <main>
+    <form class="tabs" id="tabs">
+      <div class="tab">
+        <input type="radio" name="tab" id="tabProductos" data-tab="productos" checked hidden>
+        <label for="tabProductos">Productos</label>
+      </div>
+      <div class="tab">
+        <input type="radio" name="tab" id="tabIngredientes" data-tab="ingredientes" hidden>
+        <label for="tabIngredientes">Ingredientes</label>
+      </div>
+    </form>
+
+    <section class="tabla-container">
+      <header class="header-tabla">
+        <h1>Administrar productos</h1>
+        <button class="agregar button button-producto">Agregar producto</button>
+      </header>
+      <table class="tablas-admin tabla-productos">
+        <thead>
+          <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Precio por 1/4 lb</th>
+              <th colspan="2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <table class="tablas-admin tabla-ingredientes" hidden>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Color</th>
+            <th>Descripción</th>
+            <th>Categoría</th>
+            <th colspan="2">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+
+    <!--********************************Templates de tablas********************************-->
+    <template id="template-admin-productos">
+        <tr>
+            <td><img class="imagen-template" src="" alt=""></td>
+            <td class="nombre"></td>
+            <td class="descripcion"></td>
+            <td class="precio"></td>
+            <td class="accion editar">
+              <i class="fa-solid fa-pen"></i>
+            </td>
+            <td class="accion borrar">
+              <i class="fa-solid fa-trash"></i>
+            </td>
+        </tr>
+    </template>
+
+    <template id="template-admin-ingredientes">
+      <tr>
+        <td class="nombre"></td>
+        <td class="color"></td>
+        <td class="descripcion"></td>
+        <td class="categoria"></td>
+        <td class="accion editar">
+          <i class="fa-solid fa-pen"></i>
+        </td>
+        <td class="accion borrar">
+          <i class="fa-solid fa-trash"></i>
+        </td>
+      </tr>
+    </template>
+
+    <!--********************************Diálogos y formularios emergentes (PopUps)********************************-->
+    <div class="backdrop" id="backdrop-productos" hidden>
+      <div class="popup form">
+        <h2 class="titulo"></h2>
+        <form id="form-productos" enctype="multipart/form-data"> 
+          <input type="text" name="idProduct" id="id-producto" hidden>
+          <label for="nombre">Nombre*:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ejemplo: Torta Oreo" required>
+
+          <div class="fieldForm imagen">
+            <label>Cargue una imagen*:</label>
+            <label for="imagen-producto" class="label-imagen">
+              <img src="./assets/img/default.png" alt="imagen pastel" id="image-preview">
+            </label>
+
+            <input type="file" id="imagen-producto" name="imagen" hidden required>
+
+            <span>Cargue una imagen con extención jpg, jpeg, png o webp, con tamaño máximo de 2MB. Se recomienda un archivo de 200px × 200px.</span>
+          </div>
+        
+          <label for="descripcion">Descripción*:</label>
+          <textarea id="descripcion" name="descripcion" placeholder="Ejemplo: Su sabor dulce y suave lo convierten en una opción perfecta..." required></textarea>
+        
+          <label for="precio">Precio por 1/4 lb*:</label>
+          <input type="text" id="precio" name="precio" placeholder="Ejemplo: 8950" required><br>
+        
+          <div class="acciones">
+            <button class="button-border button-xs cancelar" type="button">Cancelar</button>
+            <button class="button button-xs aceptar" type="submit" hidden>Crear</button>
+            <button class="button button-xs actualizar" type="submit" hidden>Actualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="backdrop" id="backdrop-ingredientes" hidden>
+      <div class="popup form">
+        <h2 class="titulo"></h2>
+        <form id="form-ingredientes" enctype="multipart/form-data"> 
+          <input type="text" name="idIngrediente" id="id-ingrediente" hidden>
+          <label for="nombreIngrediente">Nombre*:</label>
+          <input type="text" id="nombreIngrediente" name="nombreIngrediente" placeholder="Ejemplo: Fondant" required>
+        
+          <label for="descripcionIngrediente">Descripción*:</label>
+          <textarea id="descripcionIngrediente" name="descripcionIngrediente" placeholder="Ejemplo: Pastillaje de vainilla con decoraciones según requerimientos...." required></textarea>
+        
+          <label for="categoriaIngrediente">Categoría de ingrediente*:</label>
+          <select name="categoriaIngrediente" id="categoriaIngrediente">
+            <option value="0">Seleccione una categoría</option>
+          </select>
+
+          <label for="colorIngrediente">Color*:</label>
+          <input type="color" id="colorIngrediente" name="colorIngrediente" required><br>
+
+          <div class="acciones">
+            <button class="button-border button-xs cancelar" type="button">Cancelar</button>
+            <button class="button button-xs aceptar" type="submit" hidden>Crear</button>
+            <button class="button button-xs actualizar" type="submit" hidden>Actualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="backdrop backdrop-eliminar" hidden>
+      <div class="popup">
+        <h2></h2>
+        <p></p>
+        <div class="acciones">
+          <button class="button-border cancelar">Cancelar</button>
+          <button class="button confirmEliminar">Sí, eliminar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-light" style="background-color: #522f1f">
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <img
+          class="logo-footer"
+          src="./assets/svg/logo-tortones.svg"
+          alt="Logo tortones"
+        />
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <hr />
+          <!-- Facebook -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="light"
+            ><i class="fa fa-facebook-f"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-ligth m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="light"
+            ><i class="fa fa-instagram"></i
+          ></a>
+
+          <!-- Github -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="light"
+            ><i class="fa fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center text-light p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        © 2023 Copyright
+      </div>
+      <!-- Copyright -->
+  </footer>
+  
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <script src="./JS/index.js"></script>
+  <script src="./JS/administrador.js" type="module"></script>
+  <script src="./JS/tablaProductos.js" type="module"></script>
+  <script src="./JS/tablaIngredientes.js" type="module"></script>
+</body>
+</html>

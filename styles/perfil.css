@@ -30,7 +30,7 @@ main{
     padding: 20px;
 }
 
-main > h1 {
+main > h3 {
     color: var(--secondary-color);
     text-align: center;
     font-size: 2.5em;
@@ -71,11 +71,7 @@ main > h1 {
     line-height: 20px;
 }
 
-/* .form-content label,
-.was-validated .form-check-input:invalid~.form-check-label,
-.was-validated .form-check-input:valid~.form-check-label {
-    color: var(--fourth-color);
-} */
+
 
 .form-content input[type="text"],
 .form-content input[type="password"],
@@ -211,21 +207,7 @@ option:hover {
   }
 
 
-/*  Estilos para el formulario de perfil */
-/* .containerForm {
-  max-width: 600px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 
-/* Estilos para la foto de perfil */ 
-
-
-
-
-/* Estilos para los campos de formulario */
 .containerForm div {
   position: relative;
   margin-bottom: 20px;

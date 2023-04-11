@@ -1,7 +1,6 @@
 (function() {
     const form = document.querySelectorAll('.requires-validation');
     const $inputs = document.querySelectorAll('.requires-validation  [required]');
-    const users = localStorage.getItem("users");
 
     $inputs.forEach((input) => {
       const $span = document.createElement("span");
@@ -78,7 +77,7 @@
     if(user.rol === "Administrador"){
       const $selectRol = document.createElement("div");
       $selectRol.innerHTML = `
-        <select class="form-select" required>
+        <select class="form-select" name="rol" required>
           <option selected value="Cliente">Cliente</option>
           <option value="Administrador">Administrador</option>
         </select>
