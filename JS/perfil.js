@@ -19,17 +19,16 @@ inputFile.addEventListener('change', function() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.save();
       ctx.beginPath();
-      ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 2, 0, Math.PI * 2);
+      ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 4, 0, Math.PI * 2);    
       ctx.closePath();
       ctx.clip();
       // Asegurarse de que la imagen no se dibuje más grande que el círculo
-      const maxDimension = Math.max(img.width, img.height);
-      const scaleFactor = canvas.width / maxDimension;
-      const imgWidth = img.width * scaleFactor;
-      const imgHeight = img.height * scaleFactor;
+      const aspectRatio = img.height / img.width;
+      const imgWidth = canvas.width / 2;
+      const imgHeight = imgWidth * aspectRatio;
       const x = (canvas.width - imgWidth) / 2;
       const y = (canvas.height - imgHeight) / 2;
-      ctx.drawImage(img, x, y, imgWidth, imgHeight);
+      ctx.drawImage(img, x, y, imgWidth, imgHeight);        
       ctx.restore();
 
       imgElement.src = reader.result;
@@ -50,6 +49,8 @@ deleteBtn.addEventListener('click', function() {
     deleteBtn.style.display = 'none';
     inputFile.value = '';
   })
+
+
 
 
 
