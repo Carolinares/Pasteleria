@@ -1,5 +1,5 @@
-const base_uri = "http://localhost:8080/api"; // Entorno de desarrollo
-//const base_uri = "https://edwinsuesca.net:8443/api"; // Entorno de producción
+//const base_uri = "http://localhost:8080/api"; // Entorno de desarrollo
+const base_uri = "https://edwinsuesca.net:8443/api"; // Entorno de producción
 
 const peticionAPI = async (uri, requestOptions) => {
     try {
