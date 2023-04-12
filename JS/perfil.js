@@ -1,56 +1,79 @@
-const inputFile = document.getElementById('input-file');
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-const imgElement = document.getElementById('img');
-const deleteBtn = document.getElementById('delete-btn');
+import * as api from "../services/api.service.js";
 
-canvas.style.display = 'block';
-canvas.style.margin = '0 auto';
+const sesion = JSON.parse(localStorage.getItem("sesion")),
+      $formDatosUSuario = document.getElementById("form-datos"),
+      $formClave = document.getElementById("form-clave"),
+      $buttonClave = document.querySelector(".button-clave")
+;
 
+const precargarFormularioDatos = async() => {
+  const respuesta = await api.getUsuarioById(sesion.id);
+  const datosUsuario = respuesta.data;
+  console.log(datosUsuario);
 
-inputFile.addEventListener('change', function() {
-  const file = inputFile.files[0];
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
+  //Precargar datos del usuario
+  $formDatosUSuario.nombre.value = datosUsuario.nombre;
+  $formDatosUSuario.apellido.value = datosUsuario.apellido;
+  $formDatosUSuario.correo.value = datosUsuario.correo;
+  $formDatosUSuario.telefono.value = datosUsuario.telefono;
+  $formDatosUSuario.direccion.value = datosUsuario.direccion;
+}
 
-  reader.onload = function() {
-    const img = new Image();
-    img.onload = function() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 4, 0, Math.PI * 2);    
-      ctx.closePath();
-      ctx.clip();
-      // Asegurarse de que la imagen no se dibuje más grande que el círculo
-      const aspectRatio = img.height / img.width;
-      const imgWidth = canvas.width / 2;
-      const imgHeight = imgWidth * aspectRatio;
-      const x = (canvas.width - imgWidth) / 2;
-      const y = (canvas.height - imgHeight) / 2;
-      ctx.drawImage(img, x, y, imgWidth, imgHeight);        
-      ctx.restore();
+precargarFormularioDatos();
 
-      imgElement.src = reader.result;
-      canvas.style.display = 'none';
-      imgElement.style.display = 'block';
+$formClave.addEventListener("keyup", (e) => {
+  const nuevaClave = $formClave.claveNueva.value;
+  const confirmaClave = $formClave.claveConfirmar.value;
+  if(nuevaClave === "" || confirmaClave === ""){
+    $buttonClave.classList.add("button-disabled");
+    return;
+  }
 
-      // Mostrar el botón de eliminar
-      deleteBtn.style.display = 'block';
-    };
-    img.src = reader.result;
-  };
-});
+  if(nuevaClave === confirmaClave){
+    $buttonClave.classList.remove("button-disabled");
+  } else {
+    $buttonClave.classList.add("button-disabled");
+  }
+})
 
-deleteBtn.addEventListener('click', function() {
-    imgElement.src = '';
-    canvas.style.display = 'block';
-    imgElement.style.display = 'none';
-    deleteBtn.style.display = 'none';
-    inputFile.value = '';
-  })
+document.addEventListener("submit", async (e) =>{
+  //Actualizar datos de usuario
+  if(e.target.matches("#form-datos")){
+    e.preventDefault();
+    if($formDatosUSuario.checkValidity()){
+      const nuevosDatosUsuario = {
+        nombre: $formDatosUSuario.nombre.value,
+        apellido: $formDatosUSuario.apellido.value,
+        telefono: $formDatosUSuario.telefono.value,
+        direccion: $formDatosUSuario.direccion.value
+      }
 
+      const respuesta = await api.actualizarUsuario(JSON.stringify(nuevosDatosUsuario), sesion.id);
+      console.log(respuesta);
+      if (!respuesta.res.ok) {
+        throw { status: res.status, statusText: res.statusText };
+      }
+    
+      if (respuesta.data){
+        localStorage.setItem("sesion", JSON.stringify(respuesta.data));
+        location.reload();
+      }
+    }
+  }
 
+  //Enviar nueva clave
+  if(e.target.matches("#form-clave")){
+    e.preventDefault();
+      const nuevosDatos = {
+        correo: sesion.correo,
+        claveActual: $formClave.claveActual.value,
+        claveNueva: $formClave.claveNueva.value
+      }
 
-
-
+      const respuesta = await api.actualizaClave(JSON.stringify(nuevosDatos));
+      console.log(respuesta);
+      if(respuesta.res.ok){
+        location.reload();
+      }
+    }
+})

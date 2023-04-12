@@ -1,4 +1,5 @@
-const base_uri = "https://edwinsuesca.net:8443/api";
+//const base_uri = "http://localhost:8080/api"; // Entorno de desarrollo
+const base_uri = "https://edwinsuesca.net:8443/api"; // Entorno de producción
 
 const peticionAPI = async (uri, requestOptions) => {
     try {
@@ -11,6 +12,89 @@ const peticionAPI = async (uri, requestOptions) => {
         let message = error.statusText || "Ocurrio un error";
         console.log(message);
     }
+}
+
+//REGISTRAR USUARIO
+export const registrar = async (datosUsuario) => {
+    const uri = `${base_uri}/usuarios`;
+    const headersList = {
+        "Content-Type": "application/json",
+        "acces-control-allow-origin": "*",
+    };
+   
+    const requestOptions = {
+      headers: headersList,
+      method: "POST",
+      body: datosUsuario
+    };
+
+    return await peticionAPI(uri, requestOptions);
+}
+
+// ACTUALIZAR USUARIO POR ID
+export const actualizarUsuario = async (datosUsuario, id) => {
+    const uri = `${base_uri}/usuarios/${id}`;
+    const headersList = {
+        "Content-Type": "application/json",
+        "acces-control-allow-origin": "*",
+    };
+   
+    const requestOptions = {
+      headers: headersList,
+      method: "PUT",
+      body: datosUsuario
+    };
+
+    return await peticionAPI(uri, requestOptions);
+}
+
+// ACTUALIZAR CLAVE DE USUARIO
+export const actualizaClave = async (datos) => {
+    const uri = `${base_uri}/usuarios/cambiar-clave`;
+    const headersList = {
+        "Content-Type": "application/json",
+        "acces-control-allow-origin": "*",
+    };
+   
+    const requestOptions = {
+      headers: headersList,
+      method: "PUT",
+      body: datos
+    };
+
+    return await peticionAPI(uri, requestOptions);
+}
+
+export const getUsuarioById = async (id) => {
+    const uri = `${base_uri}/usuarios/${id}`;
+    const headersList = {
+        "Content-Type": "application/json",
+        "acces-control-allow-origin": "*",
+    };
+   
+    const requestOptions = {
+      headers: headersList,
+      method: "GET"
+    };
+
+    return await peticionAPI(uri, requestOptions);
+}
+
+//INICIO DE SESIÓN
+export const login = async (credenciales) => {
+    const uri = `${base_uri}/login`;
+    const headersList = {
+        "Content-Type": "application/json",
+        "acces-control-allow-origin": "*",
+    };
+   
+    const requestOptions = {
+      headers: headersList,
+      method: "POST",
+      body: credenciales
+    };
+
+    return await peticionAPI(uri, requestOptions);
 }
 
 //ENVIAR COTIZACION
