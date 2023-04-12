@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./styles/armaTuPastel.css">
   <link rel="stylesheet" href="./styles/components.css">
+  <link rel="icon" 
+  type="image/png" 
+  href="./assets/img/favicon.png">
   <title>Arma tu pastel</title>
 </head>
 
@@ -83,6 +86,7 @@
 
   <main>
     <h1>Arma tu pastel</h1>
+    <img src="./assets/img/Pastelera-arma.png" alt="Pastelera">
     <p>Te invitamos a crear tu pastel personalizado. Pulsa las etiquetas que aparecen a continuación y selecciona de la lista la opción que más te guste.</p>
     <section class="arma-tu-pastel">
       <form class="opciones" id="pasosPastel"></form>
@@ -118,8 +122,11 @@
             <textarea id="descripcion" name="descripcion" readonly></textarea>
     
             <div class="fieldForm imagen">
-              <label for="imagen-producto">Cargue una imagen de referencia si desea:</label>
-              <input type="file" id="imagen-producto" name="imagen">
+              <label>Cargue una imagen de referencia si desea:</label>
+              <label for="imagen-producto" class="label-imagen">
+                <img src="./assets/img/default.png" alt="imagen pastel" id="image-preview">
+              </label>
+              <input type="file" id="imagen-producto" name="imagen" hidden>
               <span>Cargue una imagen con extención jpg, jpeg, png o webp, con tamaño máximo de 2MB.</span>
             </div>
           

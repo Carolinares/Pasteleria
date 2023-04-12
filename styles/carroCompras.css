@@ -42,6 +42,9 @@ main > .tabla-container{
     color: var(--primary-color);
     overflow: hidden;
     border-radius: 10px;
+    overflow-x: auto;
+    width: 100%;
+    max-width: max-content;
 }
 
 .tabla-carrito > thead{
@@ -105,6 +108,7 @@ main > div > .buttons{
     flex-wrap: wrap-reverse;
     justify-content: space-around;
     margin: 50px 25px 25px 25px;
+    gap: 15px;
 }
 .backdrop{
     width: 100vw;

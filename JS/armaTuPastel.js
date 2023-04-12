@@ -157,21 +157,23 @@ const cotizar = (categoria) => {
         $formCotizacion.parentElement.removeAttribute("hidden");
         $formListaIngredientes.parentElement.setAttribute("hidden", null);
         $listaTuPastel.parentElement.setAttribute("hidden", null);
+        $listaTuPastel.parentElement.parentElement.classList.add("display-cotizar");
     }else{
         $formCotizacion.parentElement.setAttribute("hidden", null);
         listarIngredientesPorCategoria(categoria);
         $formListaIngredientes.parentElement.removeAttribute("hidden");
         $listaTuPastel.parentElement.removeAttribute("hidden");
+        $listaTuPastel.parentElement.parentElement.classList.remove("display-cotizar");
     }
 }
 
 //Previsualizar imagen en formulario
-/* $inputImg.addEventListener("change", function (e) {
+$inputImg.addEventListener("change", function (e) {
     if (this.files && this.files[0]) {
       const imgUrl = URL.createObjectURL(this.files[0]);
       $img.setAttribute("src", imgUrl);
     }
-  }); */
+  });
 
 document.addEventListener("click", async (e) => {
     if(e.target.matches(".aceptar")){
@@ -184,7 +186,7 @@ const mensajeCorreo = (rol, urlImagenCorreo) =>{
     <p><strong>Teléfono de cliente: </strong> ${sesionObject.telefono}</p>
     <br>` : `<p>Gracias por interesarte en nuestros productos. Nos comunicaremos contigo al número <strong>${sesionObject.telefono}</strong></p>`;
 
-    const imagen = urlImagenCorreo ? `<img src="${urlImagenCorreo}">` : "";
+    const imagen = urlImagenCorreo ? `<img style="width: 100%;  max-width: 180px;" src="${urlImagenCorreo}">` : "";
     return `
     <body>
         ${datosCliente}
