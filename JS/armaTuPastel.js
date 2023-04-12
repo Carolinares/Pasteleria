@@ -1,5 +1,6 @@
 import * as api from "../services/api.service.js";
-
+import { Alerta, Dialogo, acciones } from "./elementos.js";
+let alerta;
 const $formListaIngredientes = document.getElementById("lista-ingredientes"),
     $formCotizacion = document.getElementById("form-cotizacion"),
     $backdrop = document.querySelector(".backdrop"),
@@ -139,7 +140,8 @@ const cotizar = (categoria) => {
             asunto: `Arma tu pastel - ${sesionObject.nombre} ${sesionObject.apellido}`,
             remitente: sesionObject.correo,
             mensaje: `
-            <body>
+            <body>  
+<div id="alertasContainer"></div>
                 <p><strong>Remitente: </strong> ${sesionObject.nombre} ${sesionObject.apellido} - ${sesionObject.correo}</p>
                 <br>
                 <strong>Mensaje:</strong>
@@ -188,7 +190,8 @@ const mensajeCorreo = (rol, urlImagenCorreo) =>{
 
     const imagen = urlImagenCorreo ? `<img style="width: 100%;  max-width: 180px;" src="${urlImagenCorreo}">` : "";
     return `
-    <body>
+    <body>  
+<div id="alertasContainer"></div>
         ${datosCliente}
         <strong>Mensaje:</strong>
         <p>Hola, deseo cotizar un pastel con las siguientes características: </p>
@@ -203,12 +206,19 @@ const mensajeCorreo = (rol, urlImagenCorreo) =>{
 document.addEventListener("submit", async (e) => {
     if(e.target === $formCotizacion){
         e.preventDefault();
+        alerta = new Alerta('Enviando cotización...', 'info');
+        alerta.mostrar();
         if ($formCotizacion.imagen.files[0]) {
             const imagen = new FormData();
             imagen.append("archivo", $formCotizacion.imagen.files[0]);
             //Cargar imagen
             const respuestaImg = await api.crearArchivo(imagen);
-            urlImagenCorreo = respuestaImg.data.url;
+            if(!respuestaImg.data.url){
+                alerta = new Alerta('No se pudo cargar la imagen.', 'error');
+                alerta.mostrar();
+            } else{
+                urlImagenCorreo = respuestaImg.data.url;
+            }
         }
         pastelPorCotizar.mensaje = mensajeCorreo("Cliente", urlImagenCorreo);
 
@@ -218,12 +228,26 @@ document.addEventListener("submit", async (e) => {
         if(respuesta.res.ok){
             $telefono.textContent = sesionObject.telefono;
             $backdrop.removeAttribute("hidden");
+            alerta = new Alerta('Enviamos una copia de la cotización a tu correo.', 'success');
+            alerta.mostrar();
+        } else{
+            alerta = new Alerta('Hubo un problema al enviar copia de la cotización a tu correo.', 'error');
+            alerta.mostrar();
         }
 
         pastelPorCotizar.mensaje = mensajeCorreo("Administrador", urlImagenCorreo);
     
         const respuestaNotifAdmin = await api.notificarAdmin(JSON.stringify(pastelPorCotizar));
         console.log(respuestaNotifAdmin);
+        if(respuestaNotifAdmin.res.ok){
+            $telefono.textContent = sesionObject.telefono;
+            $backdrop.removeAttribute("hidden");
+            alerta = new Alerta('Cotización enviada existosamente.', 'success');
+            alerta.mostrar();
+        } else{
+            alerta = new Alerta('Hubo un problema al enviar la cotización.', 'error');
+            alerta.mostrar();
+        }
     }
 })
 

@@ -18,7 +18,8 @@
   <title>Registrate</title>
 </head>
 
-<body>
+<body>  
+<div id="alertasContainer"></div>
   <header>
     <!-- inicio de navBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -88,7 +89,7 @@
     <div class="form-content">
       <div class="form-items">
         <p>Completa la información</p>
-        <form class="requires-validation" novalidate>
+        <form class="requires-validation" novalidate id="formRegistro">
 
           <div>
             <label for="nombre">Nombre*</label>
@@ -125,7 +126,7 @@
             ¿Ya tienes una cuenta? <a href="./login.html">Inicia sesión aquí</a>
           </span>
 
-          <button id="submit" type="submit" class="button">Registrar</button>
+          <button id="submit" type="submit" class="button button-registrar">Registrar</button>
         </form>
       </div>
     </div>

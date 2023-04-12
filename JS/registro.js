@@ -1,4 +1,9 @@
 import * as api from "../services/api.service.js";
+import { Alerta, Dialogo, acciones } from "./elementos.js";
+const $formRegistro = document.getElementById("formRegistro"),
+      $botonRegistrar = document.querySelector(".button-registrar");
+;
+let alerta;
 (function() {
     const form = document.querySelectorAll('.requires-validation');
     const $inputs = document.querySelectorAll('.requires-validation  [required]');
@@ -10,9 +15,33 @@ import * as api from "../services/api.service.js";
       $span.classList.add("contacto__form-error", "none");
       input.insertAdjacentElement("afterend", $span);
     });
+
+    const validarFormulario = () => {
+      const nombreValido = $formRegistro.nombre.checkValidity();
+      const apellidoValido = $formRegistro.apellido.checkValidity();
+      const correoValido = $formRegistro.correo.checkValidity();
+      const direccionValido = $formRegistro.direccion.checkValidity();
+      const telefonoValido = $formRegistro.telefono.checkValidity();
+      const claveValido = $formRegistro.clave.checkValidity();
+
+      if(nombreValido &&
+        apellidoValido &&
+        correoValido &&
+        direccionValido &&
+        telefonoValido &&
+        claveValido
+        ){
+          $botonRegistrar.classList.remove("button-disabled");
+      } else{
+        $botonRegistrar.classList.add("button-disabled");
+      }
+    }
+
+    validarFormulario();
     
     document.addEventListener("keyup", (e) => {
       if(e.target.matches(".requires-validation [required]")){
+        validarFormulario();
         let $input = e.target,
             pattern = $input.pattern;
     
@@ -30,7 +59,9 @@ import * as api from "../services/api.service.js";
       input.addEventListener('submit', async (event) => {
         event.preventDefault();
         if (!input.checkValidity()) { 
-          event.stopPropagation(); 
+          event.stopPropagation();
+          alerta = new Alerta('Complete los campos con valores válidos.', 'error');
+          alerta.mostrar();
         } else {
           const formData = new FormData(input);
           if(!formData.get("rol")){
@@ -39,8 +70,12 @@ import * as api from "../services/api.service.js";
           const datosUsuario = JSON.stringify(Object.fromEntries(formData.entries()));
           const respuesta = await api.registrar(datosUsuario);
           console.log(respuesta);
-          if(respuesta.res.ok){
-            location.href = "./login.html";
+          if (respuesta.res.ok){
+            alerta = new Alerta('Usuario registrado exitosamente.', 'success');
+            alerta.mostrar();
+          } else{
+            alerta = new Alerta('No se pudo registrar el usuario.', 'error');
+            alerta.mostrar();
           };
         }
   
