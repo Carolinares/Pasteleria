@@ -1,3 +1,4 @@
+import * as api from "../services/api.service.js";
 (function() {
     const form = document.querySelectorAll('.requires-validation');
     const $inputs = document.querySelectorAll('.requires-validation  [required]');
@@ -36,10 +37,10 @@
             formData.append("rol", "cliente");
           }
           const datosUsuario = JSON.stringify(Object.fromEntries(formData.entries()));
-          const respuesta = await registrar("https://edwinsuesca.net:8443/api/usuarios", datosUsuario);
+          const respuesta = await api.registrar(datosUsuario);
           console.log(respuesta);
           if(respuesta.res.ok){
-            location.href = "/login.html";
+            location.href = "./login.html";
           };
         }
   
@@ -47,29 +48,6 @@
       }, false);
     });
   })();
-  
-  const registrar = async (uri, datosUsuario) => {
-    let headersList = {
-      "Content-Type": "application/json",
-      "acces-control-allow-origin": "*"
-    }
-  
-    const requestOptions = {
-      method: 'POST',
-      headers: headersList,
-      body: datosUsuario
-    };
-  
-    try{
-      const res = await fetch(uri, requestOptions),
-      data = await res.json();
-      if (!res.ok) throw { status: res.status, statusText: res.statusText };
-      return {data, res}
-    } catch (error) {
-      let message = error.statusText || "Ocurrio un error";
-      console.log(message);
-    }
-  }
 
   const insertSelectRoles = () => {
     const $pass = document.getElementById("pass");

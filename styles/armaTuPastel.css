@@ -242,23 +242,32 @@
   width: 100%;
 }
 
-#form-cotizacion .fieldForm{
+.fieldForm{
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-
-#form-cotizacion .fieldForm > span:last-child{
-  max-width: 500px;
+.imagen > .label-imagen{
+  width: 100%;
+  display: grid;
+  place-content: center;
+  border: 1px solid gray;
+  margin-bottom: 0;
+  border-radius: 5px;
+  padding: 20px;
 }
 
-#form-cotizacion .fieldForm > input{
-  cursor: pointer;
+.imagen > span:last-child{
+  margin-bottom: 1rem;
+  max-width: 500px;
+}
+.imagen > .label-imagen > img{
+  height: 100%;
+  max-height: 100px;
 }
 
 #form-cotizacion > input,
-#form-cotizacion >  textarea,
-#form-cotizacion .fieldForm > input{
+#form-cotizacion >  textarea{
 padding: 0.5rem;
 font-size: small;
 margin-bottom: 1rem;
@@ -316,58 +325,69 @@ background-color: transparent;
 }
 
 @media screen and (max-width: 990px) {
-    .armar-pastel{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 1fr auto;
-        grid-template-areas: 
-        "pastel pastel"
-        "listaIngredientes listaPastel";
-        align-items: flex-start;
-        justify-items: center;
-        max-width: 100%;
-        height: auto;
-      }
-    
-      .contenedor-lista-opciones{
-        grid-area: listaIngredientes;
-      }
-    
-      .pastel{
-        grid-area: pastel;
-        height: 300px;
-      }
-    
-      .contenedor-lista-tu-pastel{
-        grid-area: listaPastel;
-      }
+  .armar-pastel{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+    "pastel pastel"
+    "listaIngredientes listaPastel";
+    align-items: flex-start;
+    justify-items: center;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .contenedor-lista-opciones{
+    grid-area: listaIngredientes;
+  }
+  
+  .pastel{
+    grid-area: pastel;
+    height: 300px;
+  }
+  
+  .contenedor-lista-tu-pastel{
+    grid-area: listaPastel;
+  }
+
+  .display-cotizar{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 515px) {
-    .armar-pastel{
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 1fr 1fr auto;
-        grid-template-areas: 
-        "pastel"
-        "listaIngredientes" 
-        "listaPastel";
-        place-items: center;
-        gap: 0;
-      }
+  .armar-pastel{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "pastel"
+    "listaIngredientes" 
+    "listaPastel";
+    place-items: center;
+    gap: 0;
+  }
     
-      .contenedor-lista-opciones{
-        grid-area: listaIngredientes;
-      }
+  .contenedor-lista-opciones{
+    grid-area: listaIngredientes;
+  }
     
-      .pastel{
-        grid-area: pastel;
-        max-height: 200px;
-      }
+  .pastel{
+    grid-area: pastel;
+    max-height: 200px;
+  }
     
-      .contenedor-lista-tu-pastel{
-        grid-area: listaPastel;
-      }
+  .contenedor-lista-tu-pastel{
+    grid-area: listaPastel;
+  }
+
+  .display-cotizar{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 

@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <script src="https://kit.fontawesome.com/17addb2750.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./styles/registro.css">
+  <link rel="stylesheet" href="./styles/perfil.css">
   <link rel="stylesheet" href="./styles/components.css">
   <link rel="icon" 
   type="image/png" 
   href="./assets/img/favicon.png">
-  <title>Registrate</title>
+  <title>Tortones pastelería | Perfil</title>
 </head>
 
 <body>
@@ -33,11 +33,11 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Servicios
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -51,7 +51,7 @@
               <a class="nav-link" href="./nosotros.html">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="./contactenos.html">Contáctanos</a>
+              <a class="nav-link" href="./contactenos.html">Contáctanos</a>
             </li>
           </ul>
         </div>
@@ -81,55 +81,71 @@
         </div>
       </div>
     </nav>
-    
   </header>
-  <main>
-    <h1>Regístrate</h1>
-    <div class="form-content">
-      <div class="form-items">
-        <p>Completa la información</p>
-        <form class="requires-validation" novalidate>
 
-          <div>
-            <label for="nombre">Nombre*</label>
-            <input class="form-control" type="text" name="nombre" placeholder="Escriba su nombre" title="El nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
-          </div>
+  <main id="principal">
+    <img src="./assets/svg/perfiles.svg" alt="Avatars perfil" class="img-perfil">
+    <h1>Administrar perfil</h1>
+    <hr class="division">
+    <section id="datos-personales">
+        <h2>Datos personales</h2>
+        <form id="form-datos">
+            <div class="field-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+            </div>
 
-          <div>
-            <label for="apellido">Apellido*</label>
-            <input class="form-control" type="text" name="apellido" placeholder="Escriba su apellido" title="El apellido solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
-          </div>
+            <div class="field-form">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+            </div>
 
-          <div>
-            <label for="correo">Correo electrónico*</label>
-            <input class="form-control" type="email" name="correo" placeholder="ejemplo@gmail.com" title="Email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
-          </div>
+            <div class="field-form">
+                <label for="correo">Correo:</label>
+                <input type="text" id="correo" required readonly>
+            </div>
 
-          <div>
-            <label for="direccion">Dirección*</label>
-            <input class="form-control" type="text" name="direccion" placeholder="Cra 0 # 0 - 22" required>
-          </div>
+            <div class="field-form">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" pattern="^\d{10}$" required>
+            </div>
 
-          <div>
-            <label for="telefono">Teléfono*</label>
-            <input class="form-control" type="text" name="telefono" placeholder="3110000000" title="El número de teléfono debe tener 10 dígitos" pattern="^\d{10}$" required>
-          </div>
+            <div class="field-form">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" required>
+            </div>
 
-          <div id="pass">
-            <label for="clave">Contraseña*</label>
-            <input class="form-control" type="password" name="clave" title="La contraseña debe tener entre 8 y 15 caracteres, debe contener al menos una mayúscula, una minúscula, un dígito y un caracter especial y no permite espacios en blanco"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$" required>
-          </div>
-
-          <span>
-            ¿Ya tienes una cuenta? <a href="./login.html">Inicia sesión aquí</a>
-          </span>
-
-          <button id="submit" type="submit" class="button">Registrar</button>
+            <div class="acciones">
+                <input class="button" type="submit" value="Guardar cambios">
+            </div>
         </form>
-      </div>
-    </div>
+    </section>
+    <hr class="division">
+    <section id="clave">
+        <h2>Cambiar contraseña</h2>
+        <form id="form-clave">
+            <div class="field-form">
+                <label for="claveActual">Contraseña actual:</label>
+                <input type="password" id="claveActual" name="claveActual" required>
+            </div>
+
+            <div class="field-form">
+                <label for="claveNueva">Nueva contraseña:</label>
+                <input type="password" id="claveNueva" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$" name="claveNueva" required>
+            </div>
+
+            <div class="field-form">
+                <label for="claveConfirmar">Confirmar contraseña:</label>
+                <input type="password" id="claveConfirmar" name="claveConfirmar" required>
+            </div>
+
+            <div class="acciones">
+                <input class="button button-disabled button-clave" type="submit" value="Actualizar contraseña">
+            </div>
+        </form>
+    </section>
   </main>
+
   <!-- inicio de footer -->
 
   <footer id="footer_Sample" class="text-center text-light" style="background-color: #522f1f;">
@@ -164,15 +180,12 @@
     <!-- Copyright -->
   </footer>
 
-
-
   <script src="./JS/index.js"></script>
-  <script src="./JS/registro.js" type="module"></script>  
+  <script src="./JS/perfil.js" type="module"></script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-  crossorigin="anonymous"></script>
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

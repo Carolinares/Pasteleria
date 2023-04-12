@@ -84,6 +84,9 @@ main > .tabla-container{
     color: var(--primary-color);
     overflow: hidden;
     border-radius: 10px;
+    width: 100%;
+    overflow-x: auto;
+    max-width: max-content;
 }
 
 .tablas-admin{

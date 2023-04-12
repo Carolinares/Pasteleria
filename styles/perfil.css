@@ -6,259 +6,96 @@
     --third-color: #fff5eb;
     --fourth-color: #422619;
     --accent-color: #fdcb2a;
+    --division-color: #d3bfad;
+    --input-bgcolor: #f3e7dc;
 }
 
-
-header {
-    background-color: var(--third-color);    
-    
+body{
+  background-color: var(--third-color);
 }
 
-body {
-    min-height: calc(100vh - 70px);
-    margin-top: 100px;
-    height: auto;
-    font-family: "Fredoka", sans-serif;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: var(--third-color);
-}
-
-main{    
-    padding: 20px;
-}
-
-main > h3 {
-    color: var(--secondary-color);
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: bold;
-    margin: 0;
-}
-
-.form-content {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 25px 0;
-}
-
-.form-content .form-items {
-    max-width: 450px;
-    border: 1px solid var(--primary-color);
-    padding: 50px 30px;    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-    min-width: auto;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    text-align: left;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-}
-
-.form-content p {
-    color: var(--primary-color);
-    text-align: left;
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 20px;
-}
-
-
-
-.form-content input[type="text"],
-.form-content input[type="password"],
-.form-content input[type="email"],
-.form-content input[type="date"],
-.form-content input[type="tel"],
-.form-content select {
-    min-width: 100% !important;
-    padding: 9px 20px;
-    text-align: left;
-    border: solid 1px var(--primary-color);
-    background-color: transparent;
-    outline: 0;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 300;
-    color: var(--fourth-color);
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    margin: 0;
-    box-shadow: none;
-}
-
-#canvas{
-    
-    border: 1px solid var(--primary-color);    
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-#img {
-  display: none;
-  max-width: 100%;
-  max-height: 100%;  
-  border: 2px solid var(--primary-color);
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-#delete-btn {
-  display: none;
-}
-
-.foto-perfil>img {
-  position:inherit;
-  border: 1px solid var(--primary-color) ;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-#input-file {
-  border-radius: 8px;  
-  font-size: 17px;
-  font-weight: bold;
-  text-decoration: none;
-  border: solid 2px transparent;
-  background-color: var(--accent-color);
-  color: var(--primary-color);
-  transition: all 0.15s ease-in;
-  user-select: none;
-}
-
-#delete-btn {
-  border-radius: 8px;  
-  font-size: 15px;
-  font-weight: bold;
-  text-decoration: none;
-  border: solid 2px transparent;
-  background-color: var(--accent-color);
-  color: var(--primary-color);
-  transition: all 0.15s ease-in;
-  user-select: none;
-}
-
-div {
-  padding-bottom: 20px;
-}
-
-option {
-    background-color: var(--third-color);
-}
-
-option:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-}
-
-
-.button{
-    width: 100%;
-    border-radius: 8px;
-    padding: 10px 25px;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    border: solid 2px transparent;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    transition: all 0.15s ease-in;
-    user-select: none;
-  }
-
-
-.contacto__form-error {
-    margin-left: 1rem;
-    font-size: 80%;
-    color: red;
-    transition: all 800ms ease;
-  }
-  
-  .contacto__form-error.is-active {
-    display: block;
-    animation: show-message 1s 1 normal 0s ease-out both;
-  }
-  
-  .none {
-    display: none;
-  }
-  
-  @keyframes show-message {
-    0% {
-      visibility: hidden;
-      opacity: 0;
-    }
-  
-    100% {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-
-
-.containerForm div {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-
-.containerForm label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 16px;
-  color: #888;
-  pointer-events: none;
-  transition: all 0.3s ease-out;
-  line-height: end;
-}
-input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="file"] {
-  font-size: 1.2rem;
-  padding: 0.3rem 0.5rem;
-  margin: 0.5rem 0;
-}
-
-.containerForm input {
-  font-size: 16px;
-  padding: 10px;
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  margin-top: 120px;
   width: 100%;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  background-color: transparent;
-  line-height: end;
 }
 
-.containerForm input:focus {
-  outline: none;
-  border-bottom: 2px solid #3498db;
+.img-perfil{
+  width: 100%;
+  max-width: 250px;
 }
 
-
-
-
-/* Estilos para los botones */
-.containerForm input[type="button"], .containerForm input[type="submit"] {
-  border: none;
-  padding: 10px 10px;
-  font-size: 16px;
+h1{
+  color: var(--secondary-color);
   font-weight: bold;
-  color: #522f1f;
-  background-color: #fdcb2a;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
+  margin-top: 20px;
+  font-size: calc(1.7em + 1vw);
 }
 
- 
+.division{
+  border: solid 1.5px var(--division-color);
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+h2{
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+section{
+  width: 100%;
+}
+form{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--primary-color);
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.field-form{
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+
+.field-form > label{
+  font-weight: bold;
+}
+
+.field-form > input{
+  background-color: var(--input-bgcolor);
+  border-radius: 7px;
+  border: none;
+  outline-color: var(--secondary-color);
+  flex-grow: 1;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.field-form #correo{
+  outline: none;
+  background-color: transparent;
+}
+
+form > .acciones{
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+form > .acciones .button{
+  max-width: max-content;
+}
+
+#form-clave{
+  margin-bottom: 35px;
+}
