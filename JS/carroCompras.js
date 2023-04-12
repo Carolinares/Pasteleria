@@ -1,4 +1,6 @@
 import * as api from "../services/api.service.js";
+import { Alerta, Dialogo, acciones } from "./elementos.js";
+let alerta;
 
 const $tabla = document.querySelector(".tabla-carrito"),
 $templateProductos = document.getElementById("template-carrito").content,
@@ -66,7 +68,7 @@ const renderTemplateTablaCarrito = (producto) => {
 $btnConfirmar.addEventListener("click", async (e) => {
   const listaProductosCompra = localStorage.getItem("compras");
   const sesion = localStorage.getItem("sesion");
-
+  $btnConfirmar.classList.add("button-disabled");
   if(listaProductosCompra){
     if(!sesion){
       location.href = "./login.html";
@@ -78,16 +80,18 @@ $btnConfirmar.addEventListener("click", async (e) => {
       "productosCompra": JSON.parse(listaProductosCompra)
     });
 
+    alerta = new Alerta('Enviando solicitud de compra...', 'info');
+    alerta.mostrar();
+
     const respuesta = await api.crearCompra(nuevaCompra);
     if(respuesta.res.ok){
-      localStorage.removeItem("compras");
       $telefono.textContent = JSON.parse(sesion).telefono;
-      $backdrop.removeAttribute("hidden");
       compraConfirmada = {
         asunto: `Compra - ${sesionObject.nombre} ${sesionObject.apellido}`,
         remitente: sesionObject.correo,
         mensaje: `
-        <body>
+        <body>  
+<div id="alertasContainer"></div>
           <p>Gracias por interesarte en nuestros productos. Nos comunicaremos contigo al número <strong>${sesionObject.telefono}</strong></p>
           <strong>Recibimos tu mensaje:</strong>
           <p>Hola, deseo comprar los siguientes productos:</p>
@@ -100,11 +104,21 @@ $btnConfirmar.addEventListener("click", async (e) => {
       const respuesta = await api.enviarCotizacion(JSON.stringify(compraConfirmada));
       console.log(respuesta);
       
+      if(respuesta.res.ok){
+        $telefono.textContent = sesionObject.telefono;
+        alerta = new Alerta('Enviamos una copia de tu solicitud de compra a tu correo.', 'success');
+        alerta.mostrar();
+    } else{
+        alerta = new Alerta('Hubo un problema al enviar copia de la solicitud de compra a tu correo.', 'error');
+        alerta.mostrar();
+    }
+
       let notificacionAdmin = {
         asunto: `Nueva compra - ${sesionObject.nombre} ${sesionObject.apellido}`,
         remitente: sesionObject.correo,
         mensaje: `
-        <body>
+        <body>  
+<div id="alertasContainer"></div>
           <p><strong>Cliente: </strong> ${sesionObject.nombre} ${sesionObject.apellido} - ${sesionObject.correo}</p>
           <br>
           <p><strong>Teléfono del cliente: </strong> ${sesionObject.telefono}</p>
@@ -120,6 +134,17 @@ $btnConfirmar.addEventListener("click", async (e) => {
 
       const respuestaNotifAdmin = await api.notificarAdmin(JSON.stringify(notificacionAdmin));
       console.log(respuestaNotifAdmin);
+      console.log(respuestaNotifAdmin);
+      if(respuestaNotifAdmin.res.ok){
+        localStorage.removeItem("compras");
+        $telefono.textContent = sesionObject.telefono;
+        alerta = new Alerta('Solicitud de compra enviada existosamente.', 'success');
+        alerta.mostrar();
+        $backdrop.removeAttribute("hidden");
+      } else{
+          alerta = new Alerta('Hubo un problema al solicitar la compra.', 'error');
+          alerta.mostrar();
+      }
     }
   } else{
     location.href = "./catalogoProductos.html";

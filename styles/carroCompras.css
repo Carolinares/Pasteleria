@@ -107,7 +107,8 @@ main > div > .buttons{
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: space-around;
-    margin: 50px 25px 25px 25px;
+    margin-top: 50px;
+    margin-bottom: 25px;
     gap: 15px;
 }
 .backdrop{
