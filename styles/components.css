@@ -6,6 +6,16 @@
   --third-color: #fff5eb;
   --fourth-color: #422619;
   --accent-color: #fdcb2a;
+
+  --success-color: #1b591b;
+  --warning-color: #665521;
+  --error-color: #6a2323;
+  --info-color: #3e3e3e;
+
+  --success-bgcolor: #aaffaa;
+  --warning-bgcolor: #ffe694;
+  --error-bgcolor: #ffa2a2;
+  --info-bgcolor: #dbdbdb;
 }
 
 * {
@@ -18,7 +28,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 
 .bg-dark {
   background-color: var(--primary-color) !important;
@@ -382,4 +391,62 @@ input:-webkit-autofill:focus {
 
 footer{
   width: 100%;
+}
+
+#alertasContainer{
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 12px;
+}
+
+.alerta{
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 20px;
+  padding-right: 25px;
+  width: max-content;
+  max-width: 400px;
+  line-height: 25px;
+  position: relative;
+}
+
+.alerta-cerrar{
+  background-color: transparent;
+  color: var(--primary-color);
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  height: 18px;
+  width: 18px;
+  border: none;
+  outline: none;
+  line-height: 18px;
+  text-align: center;
+}
+
+.alerta-warning{
+  background-color: var(--warning-bgcolor);
+  color: var(--warning-color);
+  border: solid 2px var(--warning-color);
+}
+
+.alerta-success{
+  background-color: var(--success-bgcolor);
+  color: var(--success-color);
+  border: solid 2px var(--success-color);
+}
+
+.alerta-error{
+  background-color: var(--error-bgcolor);
+  color: var(--error-color);
+  border: solid 2px var(--error-color);
+}
+
+.alerta-info{
+  background-color: var(--info-bgcolor);
+  color: var(--info-color);
+  border: solid 2px var(--info-color);
 }

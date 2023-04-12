@@ -11,6 +11,7 @@ const peticionAPI = async (uri, requestOptions) => {
         console.log(error);
         let message = error.statusText || "Ocurrio un error";
         console.log(message);
+        return { data: null, res: error};
     }
 }
 
